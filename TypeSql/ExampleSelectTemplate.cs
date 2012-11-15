@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 
 namespace TypeSql
@@ -8,12 +9,13 @@ namespace TypeSql
     {
         private readonly SqlConnection _connection;
         private readonly string _connectionString;
-        private const string _sqlStatement = @"SELECT Name:string, DOB:DateTime, LastModified:DateTimeOffset FROM customers";
+        private const string _typedSqlStatement = @"SELECT FirstName:String, ModifiedDate:DateTime FROM SalesLT.customers";
+        private const string _sqlStatement = @"SELECT FirstName, ModifiedDate FROM SalesLT.Customer";
         private SqlTransaction _transaction;
 
         public ExampleSelectTemplate()
         {
-            _connectionString = "pull this from some web.config";
+            _connectionString = ConfigurationManager.ConnectionStrings["AdventureWorks"].ConnectionString;
         }
 
         public ExampleSelectTemplate(SqlConnection connection, SqlTransaction transaction = null)
@@ -46,9 +48,8 @@ namespace TypeSql
                         {
                             var record = new Record
                                          {
-                                             Name = reader.GetString(reader.GetOrdinal("Name")),
-                                             DOB = reader.GetDateTime(reader.GetOrdinal("DOB")),
-                                             LastModified = reader.GetDateTimeOffset(reader.GetOrdinal("LastModified")),
+                                             Name = reader.GetString(reader.GetOrdinal("FirstName")),
+                                             ModifiedDate = reader.GetDateTime(reader.GetOrdinal("ModifiedDate")),
                                          };
                             records.Add(record);
                         }
@@ -60,8 +61,7 @@ namespace TypeSql
         public class Record
         {
             public string Name { get; set; }
-            public DateTime DOB { get; set; }
-            public DateTimeOffset LastModified { get; set; }
+            public DateTime ModifiedDate { get; set; }
         }
     }
 }

@@ -9,3 +9,4 @@ NuGet.exe
 *.nupkg
 .docstats
 packages/
+TestResults/
