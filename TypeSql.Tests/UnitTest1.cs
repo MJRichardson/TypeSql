@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TypeSql.Tests
@@ -9,6 +10,7 @@ namespace TypeSql.Tests
         [TestMethod]
         public void TestMethod1()
         {
+            var records = new ExampleSelectTemplate().Records;
         }
     }
 }
