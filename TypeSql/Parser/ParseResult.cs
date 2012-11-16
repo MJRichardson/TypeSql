@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace TypeSql.Parser
 {
     internal class ParseResult
     {
-        public IEnumerable<OutputToken> OutputTokens { get; private set; }
+        public IList<OutputToken> OutputTokens { get; private set; }
 
         public ParseResult(IEnumerable<OutputToken> outputTokens)
         {
-            OutputTokens = outputTokens;
+            OutputTokens = outputTokens.ToList();
         }
     }
 
