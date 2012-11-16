@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System.Linq;
+using Xunit;
 
 namespace Tests.Parser
 {
@@ -14,6 +15,9 @@ namespace Tests.Parser
             var result = TypeSql.Parser.Parser.Parse(sql);
 
             Assert.NotNull(result);
+            Assert.Equal(1, result.OutputTokens.Count());
+            Assert.Equal("UserId", result.OutputTokens.First().Id);
+            Assert.Equal("int", result.OutputTokens.First().Type);
         }
     }
 }
