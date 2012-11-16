@@ -41,9 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExampleSelectTemplateWithWhereClause.cs" />
-    <Compile Include="ExampleSelectTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="TypeSql.nuspec" />
