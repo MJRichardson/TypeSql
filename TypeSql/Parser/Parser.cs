@@ -6,7 +6,6 @@ namespace TypeSql.Parser
 {
     internal class Parser
     {
-
         static Parser()
         {
             IdAndTypeRegex = new Regex(IdAndType, RegexOptions.Compiled | RegexOptions.IgnoreCase);

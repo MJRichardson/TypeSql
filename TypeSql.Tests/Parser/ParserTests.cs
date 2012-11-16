@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Xunit;
 
-namespace Tests.Parser
+namespace TypeSql.Tests.Parser
 {
     public class ParserTests
     {
