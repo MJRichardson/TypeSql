@@ -61,7 +61,6 @@
     <Compile Include="Parser\ParserTests.cs" />
     <Compile Include="Templates\DbTemplate.cs" />
     <Compile Include="Templates\ExampleSelectTemplate.cs" />
-    <Compile Include="Templates\ExampleSelectTemplateWithWhereClause.cs" />
     <Compile Include="SelectTemplateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
