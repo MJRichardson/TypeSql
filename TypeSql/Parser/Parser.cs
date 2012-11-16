@@ -4,7 +4,7 @@ namespace TypeSql.Parser
 {
     internal class Parser
     {
-        public ParseResult Parse(string sql)
+        public static ParseResult Parse(string sql)
         {
             throw new NotImplementedException();
         }
