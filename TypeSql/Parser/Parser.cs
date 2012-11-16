@@ -6,7 +6,6 @@ namespace TypeSql.Parser
 {
     internal class Parser
     {
-
         static Parser()
         {
             OutputTokenRegex = new Regex(OutputToken, RegexOptions.Compiled | RegexOptions.IgnoreCase);

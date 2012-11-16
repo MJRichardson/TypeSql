@@ -8,3 +8,4 @@ _Resharper*
 *.nupkg
 .docstats
 packages/
+TestResults/
