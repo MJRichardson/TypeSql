@@ -30,7 +30,7 @@ namespace TypeSql.Parser
         private const string Id = @"(?<" + IdGroupName + ">" + LettersAndDigits + ")";
         private const string Type = @"(?<" + TypeGroupName + ">" + LettersAndDigits + ")";
         private const string OutputToken = WordBoundary + Id + ":" + Type;
-        private const string InputToken = WordBoundary + "@" + Id + ":" + Type;
+        private const string InputToken =  "@" + Id + ":" + Type;
 
         private readonly static Regex OutputTokenRegex;
         private static readonly Regex InputTokenRegex;
