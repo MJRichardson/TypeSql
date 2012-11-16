@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace TypeSql.Tests.Templates
 {
-    public class ExampleSelectTemplate : DbTemplate
+    public class SelectTemplate : DbTemplate
     {
         private const string _typedSqlStatement = @"SELECT FirstName:String, ModifiedDate:DateTime FROM SalesLT.customers";
         private const string _sqlStatement = @"SELECT FirstName, ModifiedDate FROM SalesLT.Customer";
 
-        public ExampleSelectTemplate() : base("AdventureWorks") {}
+        public SelectTemplate() : base("AdventureWorks") {}
 
-        public ExampleSelectTemplate(DbConnection connection, DbTransaction transaction = null) : base(connection, transaction) {}
+        public SelectTemplate(DbConnection connection, DbTransaction transaction = null) : base(connection, transaction) {}
 
-        public ExampleSelectTemplate(string connectionStringKey, DbTransaction transaction = null) : base(connectionStringKey, transaction) {}
+        public SelectTemplate(string connectionStringKey, DbTransaction transaction = null) : base(connectionStringKey, transaction) {}
 
     
         public IEnumerable<Result> Execute()
@@ -64,8 +64,8 @@ namespace TypeSql.Tests.Templates
             }
             finally
             {
-                if (_connection == null) // if not user supplied connection.
-                    command.Connection.Dispose();
+//                if (_connection == null) // if not user supplied connection.
+                    //command.Connection.Dispose();
             }
         }
 
@@ -74,5 +74,8 @@ namespace TypeSql.Tests.Templates
             public string Name { get; set; }
             public DateTime ModifiedDate { get; set; }
         }
+
     }
+
+
 }

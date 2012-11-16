@@ -61,6 +61,7 @@
     <Compile Include="Parser\ParserTests.cs" />
     <Compile Include="Templates\DbTemplate.cs" />
     <Compile Include="Templates\ExampleSelectTemplate.cs" />
+    <Compile Include="Templates\SelectTemplate.cs" />
     <Compile Include="SelectTemplateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templating\TemplatingTests.cs" />

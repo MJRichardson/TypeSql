@@ -12,20 +12,20 @@ namespace TypeSql.Tests
     public class SelectTemplateTests
     {
         [TestMethod]
-        public void SimpleQuery_TypeArguments_NoConditions()
+        public void SelectTemplate_TypeArguments_NoConditions()
         {
-            var results = new ExampleSelectTemplate().Execute();
+            var results = new SelectTemplate().Execute();
             Assert.IsNotNull(results);
             Assert.IsTrue(results.Any());
         }
 
         [TestMethod]
-        public void SimpleQuery_TypeArguments_NoConditions_Async()
+        public void SelectTemplate_TypeArguments_NoConditions_Async()
         {
-            var executeAsync = new ExampleSelectTemplate().ExecuteAsync();
+            var executeAsync = new SelectTemplate().ExecuteAsync();
             var assertResults = executeAsync.ContinueWith((results, state) =>
             {
-                IEnumerable<ExampleSelectTemplate.Result> records = results.Result;
+                IEnumerable<SelectTemplate.Result> records = results.Result;
                 Assert.IsNotNull(records);
                 Assert.IsTrue(records.Any());
             }, true);
@@ -33,19 +33,15 @@ namespace TypeSql.Tests
         }
 
         [TestMethod]
-        public async Task SimpleQuery_TypeArguments_NoConditions_AsyncAwait()
+        public async Task SelectTemplate_TypeArguments_NoConditions_AsyncAwait()
         {
-            var asyncResults = await new ExampleSelectTemplate().ExecuteAsync();
+            var asyncResults = await new SelectTemplate().ExecuteAsync();
             Assert.IsNotNull(asyncResults);
             Assert.IsTrue(asyncResults.Any());
+            Assert.IsTrue(asyncResults.Count() > 0);
+            Assert.IsTrue(asyncResults.Any(c => c.Name.StartsWith("A")));    
+            
         }
-
-        [TestMethod]
-        public void SimpleQuery_DynamicArguments_NoConditions() {}
-
-        [TestMethod]
-        public void SimpleQuery_TypedAndDynamicArguments_NoConditions() { }
-
 
     }
 }
