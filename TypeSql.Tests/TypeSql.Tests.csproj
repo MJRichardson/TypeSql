@@ -63,6 +63,7 @@
     <Compile Include="Templates\ExampleSelectTemplate.cs" />
     <Compile Include="SelectTemplateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templating\TemplatingTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TypeSql\TypeSql.csproj">
