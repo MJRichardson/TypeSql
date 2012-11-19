@@ -51,6 +51,8 @@
       <DependentUpon>CSharpTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templating\CSharpTemplatePartial.cs" />
+    <Compile Include="Templating\Dapper\DapperDao.cs" />
+    <Compile Include="Templating\Dapper\SqlMapper.cs" />
     <Compile Include="TypeMapper.cs" />
   </ItemGroup>
   <ItemGroup>
