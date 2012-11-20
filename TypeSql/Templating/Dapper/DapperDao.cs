@@ -41,6 +41,7 @@ namespace TypeSql.Templating.Dapper
 
                 using (var connection = factory.CreateConnection())
                 {
+                    connection.ConnectionString = connectionStringSettings.ConnectionString;
                     connection.Open();
 
                     foreach (var result in connection.Query<TResult>(Sql))

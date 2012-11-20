@@ -6,6 +6,7 @@ using TypeSql.Templating.Dapper;
 using Xunit;
 using Roslyn.Scripting;
 using Roslyn.Scripting.CSharp;
+using System.Linq;
 
 namespace TypeSql.Tests.Templating
 {
@@ -34,10 +35,10 @@ namespace TypeSql.Tests.Templating
         {
             //arrange 
             var parseResult = new ParseResult(
-                new List<OutputToken> { new OutputToken("Name", "string") },
-                new List<InputToken>(), "SELECT Name FROM Users");
+                new List<OutputToken> { new OutputToken("FirstName", "string") },
+                new List<InputToken>(), "SELECT FirstName FROM SalesLT.Customer");
 
-            const string sqlName = "UserNameById";
+            const string sqlName = "CustomerFirstNameQuery";
 
             var template = new DapperDaoTemplate(sqlName, parseResult);
 
@@ -46,9 +47,13 @@ namespace TypeSql.Tests.Templating
 
             var engine = new ScriptEngine();
             var session = engine.CreateSession();
+            session.AddReference("System.Core");
             session.AddReference(typeof (DapperDaoTemplate).Assembly);
             session.AddReference(typeof(IDbConnection).Assembly);
+            session.Execute("using System.Linq;");
             session.Execute(result);
+            session.Execute("var query = new CustomerFirstNameQuery(\"AdventureWorks\");") ;
+            var queryResult = session.Execute("query.Execute().ToList();");
 
         }
     }
