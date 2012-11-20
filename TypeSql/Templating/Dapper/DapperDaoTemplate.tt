@@ -4,6 +4,9 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 
+using System.Data;
+using TypeSql.Templating.Dapper; 
+
 public partial class <#=_name#>Result 
 {
 	<# foreach (var outputToken in _parseResult.OutputTokens) { #>
@@ -15,7 +18,7 @@ public partial class <#=_name#>Result
 	<#}#>
 }
 
-public class <#=_name#><<#=_name#>Result> : DapperDao 
+public class <#=_name#> : DapperDao<<#=_name#>Result>
 {
         public <#=_name#>(string connectionStringName) : base(connectionStringName)
         {

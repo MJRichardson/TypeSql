@@ -1,7 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using TypeSql.Parser;
 using TypeSql.Templating;
+using TypeSql.Templating.Dapper;
 using Xunit;
+using Roslyn.Scripting;
+using Roslyn.Scripting.CSharp;
 
 namespace TypeSql.Tests.Templating
 {
@@ -25,20 +29,27 @@ namespace TypeSql.Tests.Templating
 
         }
 
-        //[Fact]
-        //public void DapperTemplateTest()
-        //{
-        //    //arrange 
-        //    var parseResult = new ParseResult(
-        //        new List<OutputToken> { new OutputToken("Name", "string") },
-        //        new List<InputToken>(), "SELECT Name FROM Users");
+        [Fact]
+        public void DapperTemplateTest()
+        {
+            //arrange 
+            var parseResult = new ParseResult(
+                new List<OutputToken> { new OutputToken("Name", "string") },
+                new List<InputToken>(), "SELECT Name FROM Users");
 
-        //    const string sqlName = "UserNameById";
+            const string sqlName = "UserNameById";
 
-        //    var template = new CSharpTemplate(sqlName, parseResult);
+            var template = new DapperDaoTemplate(sqlName, parseResult);
 
-        //    //act
-        //    string result = template.TransformText();
-        //}
+            //act
+            string result = template.TransformText();
+
+            var engine = new ScriptEngine();
+            var session = engine.CreateSession();
+            session.AddReference(typeof (DapperDaoTemplate).Assembly);
+            session.AddReference(typeof(IDbConnection).Assembly);
+            session.Execute(result);
+
+        }
     }
 }
