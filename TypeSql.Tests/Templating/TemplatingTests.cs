@@ -14,7 +14,7 @@ namespace TypeSql.Tests.Templating
            //arrange 
             var parseResult = new ParseResult(
                 new List<OutputToken> { new OutputToken("Name", "string") },
-                new List<InputToken> { new InputToken("Id", "int") });
+                new List<InputToken> { new InputToken("Id", "int") }, "");
 
             const string sqlName = "UserNameById";
 
@@ -24,5 +24,21 @@ namespace TypeSql.Tests.Templating
             string result = template.TransformText();
 
         }
+
+        //[Fact]
+        //public void DapperTemplateTest()
+        //{
+        //    //arrange 
+        //    var parseResult = new ParseResult(
+        //        new List<OutputToken> { new OutputToken("Name", "string") },
+        //        new List<InputToken>(), "SELECT Name FROM Users");
+
+        //    const string sqlName = "UserNameById";
+
+        //    var template = new CSharpTemplate(sqlName, parseResult);
+
+        //    //act
+        //    string result = template.TransformText();
+        //}
     }
 }

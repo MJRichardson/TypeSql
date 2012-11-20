@@ -5,17 +5,15 @@ namespace TypeSql.Parser
 {
     internal class ParseResult
     {
+        public string UnadornedSql { get; private set; }
         public IList<InputToken> InputTokens { get; private set; }
         public IList<OutputToken> OutputTokens { get; private set; }
 
 
-        public ParseResult(IEnumerable<OutputToken> outputTokens) 
-            : this (outputTokens, new List<InputToken>())
-        {
-        }
 
-        public ParseResult(IEnumerable<OutputToken> outputTokens, IEnumerable<InputToken> inputTokens )
+        public ParseResult(IEnumerable<OutputToken> outputTokens, IEnumerable<InputToken> inputTokens, string unadornedSql )
         {
+            UnadornedSql = unadornedSql;
             InputTokens = inputTokens.ToList().AsReadOnly();
             OutputTokens = outputTokens.ToList().AsReadOnly();
         }

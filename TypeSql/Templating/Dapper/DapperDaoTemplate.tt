@@ -1,0 +1,36 @@
+﻿<#@ template language="C#" visibility="internal" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+public partial class <#=_name#>Result 
+{
+	<# foreach (var outputToken in _parseResult.OutputTokens) { #>
+		public <#= outputToken.Type #>  <#= outputToken.Id #>
+		{
+			get;
+			private set;
+		}
+	<#}#>
+}
+
+public class <#=_name#><<#=_name#>Result> : DapperDao 
+{
+        public <#=_name#>(string connectionStringName) : base(connectionStringName)
+        {
+        }
+
+        protected <#=_name#>(IDbConnection connection, IDbTransaction transaction=null) : base(connection, transaction)
+        {
+        }
+
+		protected override string Sql
+		{
+			get{
+				return @"
+				<#=_parseResult.UnadornedSql#>
+				";
+			}
+		}
+}

@@ -20,7 +20,12 @@ namespace TypeSql.Parser
             var inputTokenMatches = InputTokenRegex.Matches(sql);
             var inputTokens = inputTokenMatches.Cast<Match>().Select(match => new InputToken(match.Groups[IdGroupName].Value, match.Groups[TypeGroupName].Value));
 
-            return new ParseResult(outputTokens, inputTokens);
+            string unadornedSql =
+                InputTokenRegex.Replace(
+                    OutputTokenRegex.Replace(sql, match => match.Groups[IdGroupName].Value),
+                    match => "@" + match.Groups[IdGroupName].Value); 
+
+            return new ParseResult(outputTokens, inputTokens, unadornedSql);
         }
 
         private const string IdGroupName = "Id";

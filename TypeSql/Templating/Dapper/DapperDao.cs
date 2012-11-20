@@ -7,10 +7,9 @@ using Dapper;
 
 namespace TypeSql.Templating.Dapper
 {
-    public class DapperDao<TResult>
+    public abstract class DapperDao<TResult>
     {
-
-        public DapperDao(string connectionStringName)
+        protected DapperDao(string connectionStringName)
         {
             if (connectionStringName==null)
                 throw new ArgumentNullException("connectionStringName");
@@ -18,22 +17,19 @@ namespace TypeSql.Templating.Dapper
             _connectionStringName = connectionStringName;
         }
 
-        public DapperDao(IDbConnection connection, IDbTransaction transaction=null)
+        protected DapperDao(IDbConnection connection, IDbTransaction transaction=null)
         {
+            if (connection == null)
+                throw new ArgumentNullException("connection");
             _connection = connection;
             _transaction = transaction;
         }
 
-        public IEnumerable<TResult> Enumerable()
+        public IEnumerable<TResult> Execute()
         {
             return _connectionStringName != null 
                 ? Enumerable(_connectionStringName) 
                 : _connection.Query<TResult>(Sql, transaction: _transaction);
-        }
-
-        public IList<TResult> List()
-        {
-            throw new NotImplementedException();
         }
 
         private IEnumerable<TResult> Enumerable(string connectionName)
@@ -52,8 +48,9 @@ namespace TypeSql.Templating.Dapper
                 }
         }
 
+        protected abstract string Sql { get; }
 
-        private const string Sql = @"";
+
 
         private readonly string _connectionStringName;
         private readonly IDbConnection _connection;
