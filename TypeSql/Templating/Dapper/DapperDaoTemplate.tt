@@ -6,6 +6,7 @@
 
 using System.Data;
 using TypeSql.Templating.Dapper; 
+using System.Collections.Generic;
 
 public partial class <#=_name#>Result 
 {
@@ -24,9 +25,21 @@ public class <#=_name#> : DapperDao<<#=_name#>Result>
         {
         }
 
-        protected <#=_name#>(IDbConnection connection, IDbTransaction transaction=null) : base(connection, transaction)
+        public <#=_name#>(IDbConnection connection, IDbTransaction transaction=null) : base(connection, transaction)
         {
         }
+
+		public IEnumerable<<#=_name#>Result> Execute(<#= string.Join("", _parseResult.InputTokens.Select(it=>string.Format("{0} {1}= default({0}), ", it.Type, it.Id)).ToArray()) #> bool buffered=true  )
+		{
+			<# if (_parseResult.InputTokens.Any()) { #>
+			object parameters = new {
+				<#= string.Join(",", _parseResult.InputTokens.Select(it=>it.Id).ToArray()) #>
+			};
+			<# } else { #>
+				object parameters = null;
+			<# } #>
+			return Execute(parameters:parameters, buffered:buffered);
+		}
 
 		protected override string Sql
 		{

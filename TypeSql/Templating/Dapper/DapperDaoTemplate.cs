@@ -27,75 +27,118 @@ namespace TypeSql.Templating.Dapper
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nusing System.Data;\r\nusing TypeSql.Templating.Dapper; \r\n\r\npublic partial class ");
+            this.Write("\r\nusing System.Data;\r\nusing TypeSql.Templating.Dapper; \r\nusing System.Collections" +
+                    ".Generic;\r\n\r\npublic partial class ");
             
-            #line 10 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            #line 11 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_name));
             
             #line default
             #line hidden
             this.Write("Result \r\n{\r\n\t");
             
-            #line 12 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            #line 13 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
  foreach (var outputToken in _parseResult.OutputTokens) { 
             
             #line default
             #line hidden
             this.Write("\t\tpublic ");
             
-            #line 13 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            #line 14 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(outputToken.Type));
             
             #line default
             #line hidden
             this.Write("  ");
             
-            #line 13 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            #line 14 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(outputToken.Id));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t{\r\n\t\t\tget;\r\n\t\t\tprivate set;\r\n\t\t}\r\n\t");
             
-            #line 18 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            #line 19 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
 }
             
             #line default
             #line hidden
             this.Write("}\r\n\r\npublic class ");
             
-            #line 21 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            #line 22 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_name));
             
             #line default
             #line hidden
             this.Write(" : DapperDao<");
             
-            #line 21 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            #line 22 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_name));
             
             #line default
             #line hidden
             this.Write("Result>\r\n{\r\n        public ");
             
-            #line 23 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            #line 24 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_name));
             
             #line default
             #line hidden
             this.Write("(string connectionStringName) : base(connectionStringName)\r\n        {\r\n        }\r" +
-                    "\n\r\n        protected ");
+                    "\n\r\n        public ");
             
-            #line 27 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            #line 28 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_name));
             
             #line default
             #line hidden
             this.Write("(IDbConnection connection, IDbTransaction transaction=null) : base(connection, tr" +
-                    "ansaction)\r\n        {\r\n        }\r\n\r\n\t\tprotected override string Sql\r\n\t\t{\r\n\t\t\tget" +
-                    "{\r\n\t\t\t\treturn @\"\r\n\t\t\t\t");
+                    "ansaction)\r\n        {\r\n        }\r\n\r\n\t\tpublic IEnumerable<");
             
-            #line 35 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            #line 32 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_name));
+            
+            #line default
+            #line hidden
+            this.Write("Result> Execute(");
+            
+            #line 32 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(string.Join("", _parseResult.InputTokens.Select(it=>string.Format("{0} {1}= default({0}), ", it.Type, it.Id)).ToArray())));
+            
+            #line default
+            #line hidden
+            this.Write(" bool buffered=true  )\r\n\t\t{\r\n\t\t\t");
+            
+            #line 34 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+ if (_parseResult.InputTokens.Any()) { 
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tobject parameters = new {\r\n\t\t\t\t");
+            
+            #line 36 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(",", _parseResult.InputTokens.Select(it=>it.Id).ToArray())));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n\t\t\t};\r\n\t\t\t");
+            
+            #line 38 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+ } else { 
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\tobject parameters = null;\r\n\t\t\t");
+            
+            #line 40 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\treturn Execute(parameters:parameters, buffered:buffered);\r\n\t\t}\r\n\r\n\t\tprotected " +
+                    "override string Sql\r\n\t\t{\r\n\t\t\tget{\r\n\t\t\t\treturn @\"\r\n\t\t\t\t");
+            
+            #line 48 "C:\code\TypeSql\TypeSql\Templating\Dapper\DapperDaoTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_parseResult.UnadornedSql));
             
             #line default
