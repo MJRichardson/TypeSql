@@ -66,5 +66,25 @@ namespace TypeSql.Tests.Parser
             Assert.Equal("int", result.OutputTokens[1].Type);
             Assert.Equal(expectedUnadornedSql, result.UnadornedSql);
         }
+
+        [Fact] 
+        public void BracketedOutputId()
+        {
+            //arrange
+            const string sql = 
+                @"SELECT [Name]:string FROM Users";
+
+            //act
+            var result = TypeSql.Parser.Parser.Parse(sql);
+
+            //assert
+            const string expectedUnadornedSql = @"SELECT [Name] FROM Users";
+            Assert.NotNull(result);
+            Assert.Equal(1, result.OutputTokens.Count());
+            Assert.Equal("Name", result.OutputTokens[0].Id);
+            Assert.Equal("string", result.OutputTokens[0].Type);
+            Assert.False(result.InputTokens.Any());
+            Assert.Equal(expectedUnadornedSql, result.UnadornedSql);
+        }
     }
 }
