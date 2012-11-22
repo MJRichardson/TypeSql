@@ -1,4 +1,5 @@
-﻿using TypeSql.Parser;
+﻿
+using TypeSql.Parsing;
 
 namespace TypeSql.Templating.Dapper
 {

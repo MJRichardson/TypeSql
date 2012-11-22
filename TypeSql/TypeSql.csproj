@@ -42,15 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Parser\Parser.cs" />
-    <Compile Include="Parser\ParseResult.cs" />
+    <Compile Include="Parsing\Parser.cs" />
+    <Compile Include="Parsing\ParseResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Templating\CSharpTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CSharpTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templating\CSharpTemplatePartial.cs" />
     <Compile Include="Templating\Dapper\DapperDao.cs" />
     <Compile Include="Templating\Dapper\DapperDaoTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -62,10 +56,6 @@
     <Compile Include="TypeMapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Templating\CSharpTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>CSharpTemplate.cs</LastGenOutput>
-    </None>
     <None Include="Templating\Dapper\DapperDaoTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DapperDaoTemplate.cs</LastGenOutput>

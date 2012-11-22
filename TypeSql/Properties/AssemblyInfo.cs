@@ -23,7 +23,8 @@ using System.Runtime.InteropServices;
 [assembly: Guid("4df1f47a-7005-43c5-a0fd-20b9e194a3a5")]
 
 //allow the test assembly to see internal types
-[assembly:InternalsVisibleTo("TypeSql.Tests")]
+[assembly:InternalsVisibleTo("TypeSql.UnitTests")]
+[assembly:InternalsVisibleTo("TypeSql.DbTests")]
 
 // Version information for an assembly consists of the following four values:
 //
