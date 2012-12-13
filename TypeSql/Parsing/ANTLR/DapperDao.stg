@@ -1,0 +1,59 @@
+group DapperDao;
+
+dao(name, outputTokens, inputTokens, rawSql) ::= <<
+using System.Data;
+using TypeSql; 
+using System.Collections.Generic;
+
+public partial class $name$Result 
+{
+	$outputTokens:outputGetter()$
+}
+
+public class $name$ : DapperDao<$name$Result>
+{
+
+	public $name$(string connectionStringName) : base(connectionStringName)
+        {
+        }
+        
+        public IEnumerable<$name$Result> Execute( $inputTokens:inputParameter(); separator=", "$
+        $if (inputTokens)$ , $endif$ 
+        bool buffered=true  )
+	{
+		object parameters = new {
+			$inputTokens:tokenId(); separator=", "$
+		};
+		
+		return Execute(parameters: parameters, buffered:buffered);
+		
+	}
+	
+	protected override string Sql
+	{
+		get{
+			return @"
+				$rawSql$
+				";
+		}
+	}
+
+}
+>>
+
+outputGetter(outputToken) ::= <<
+public $outputToken.Type$ $outputToken.Id$
+		{
+			get;
+			private set;
+		}
+>>
+
+inputParameter(inputToken) ::= <<
+$inputToken.Type$ $inputToken.Id$ = default($inputToken.Type$)
+>>
+
+tokenId(token) ::= <<
+$token.Id$
+>>
+

@@ -6,7 +6,7 @@ namespace TypeSql.DbTests.Roslyn
     public class OneOutput : DapperTemplateViaRoslyn
     {
         public const string Name = @"CustomerFirstNameQuery";
-        public const string Sql = @"SELECT FirstName FROM SalesLT.Customer";
+        public const string Sql = @"SELECT FirstName:string FROM SalesLT.Customer";
 
         public OneOutput() : base(Name, Sql)
         {
