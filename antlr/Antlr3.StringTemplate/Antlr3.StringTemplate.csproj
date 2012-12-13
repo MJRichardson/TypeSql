@@ -129,7 +129,7 @@
     <Compile Include="TypeRegistry`1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\antlr\antlr3-main\runtime\CSharp3\Sources\Antlr3.Runtime\Antlr3.Runtime.csproj">
+    <ProjectReference Include="..\Antlr3.Runtime\Antlr3.Runtime.csproj">
       <Project>{8FDC0A87-9005-4D5A-AB75-E55CEB575559}</Project>
       <Name>Antlr3.Runtime</Name>
     </ProjectReference>

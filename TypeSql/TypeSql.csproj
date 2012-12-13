@@ -62,10 +62,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Parsing\ANTLR\Generated\DaoTransform.cs" />
-    <Compile Include="Parsing\ANTLR\Generated\RawSqlTransform.cs" />
-    <Compile Include="Parsing\ANTLR\Generated\TypeSqlLexer.cs" />
-    <Compile Include="Parsing\ANTLR\Generated\TypeSqlParser.cs" />
+    <Compile Include="Parsing\Generated\DaoTransform.cs" />
+    <Compile Include="Parsing\Generated\RawSqlTransform.cs" />
+    <Compile Include="Parsing\Generated\TypeSqlLexer.cs" />
+    <Compile Include="Parsing\Generated\TypeSqlParser.cs" />
     <Compile Include="Parsing\InputToken.cs" />
     <Compile Include="Parsing\OutputToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,15 +74,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Parsing\ANTLR\DaoTransform.g" />
-    <None Include="Parsing\ANTLR\DapperDao.stg" />
-    <None Include="Parsing\ANTLR\RawSqlTransform.g" />
-    <None Include="Parsing\ANTLR\TypeSql.g" />
+    <None Include="Parsing\DaoTransform.g" />
+    <None Include="Parsing\DapperDao.stg" />
+    <None Include="Parsing\Generated\DaoTransform.tokens" />
+    <None Include="Parsing\Generated\RawSqlTransform.tokens" />
+    <None Include="Parsing\Generated\TypeSql.tokens" />
+    <None Include="Parsing\RawSqlTransform.g" />
+    <None Include="Parsing\TypeSql.g" />
     <None Include="TypeSql.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
