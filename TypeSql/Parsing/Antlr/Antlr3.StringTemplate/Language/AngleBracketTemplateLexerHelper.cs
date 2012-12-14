@@ -30,9 +30,9 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr3.ST.Language
+namespace TypeSql.Antlr3.ST.Language
 {
-    using ANTLRReaderStream = Antlr.Runtime.ANTLRReaderStream;
+    using AntlrReaderStream = Antlr.Runtime.ANTLRReaderStream;
     using RecognitionException = Antlr.Runtime.RecognitionException;
     using TextReader = System.IO.TextReader;
 
@@ -42,7 +42,7 @@ namespace Antlr3.ST.Language
         protected StringTemplate self;
 
         public AngleBracketTemplateLexer( StringTemplate self, TextReader r )
-            : this( new ANTLRReaderStream( r ) )
+            : this( new AntlrReaderStream( r ) )
         {
             this.self = self;
         }

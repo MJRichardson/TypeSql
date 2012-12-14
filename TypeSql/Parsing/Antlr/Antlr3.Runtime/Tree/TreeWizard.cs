@@ -33,7 +33,7 @@
 // TODO: build indexes for wizard
 //#define BUILD_INDEXES
 
-namespace Antlr.Runtime.Tree
+namespace TypeSql.Antlr.Runtime.Tree
 {
     using System.Collections.Generic;
 

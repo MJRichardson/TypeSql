@@ -74,11 +74,11 @@ outputFile(	LEXER,PARSER,TREE_PARSER, actionScope, actions,
 
 <@imports>
 using System.Collections.Generic;
-using Antlr.Runtime;
-using Antlr.Runtime.Misc;
+using TypeSql.Antlr.Runtime;
+using TypeSql.Antlr.Runtime.Misc;
 <if(TREE_PARSER)>
-using Antlr.Runtime.Tree;
-using RewriteRuleITokenStream = Antlr.Runtime.Tree.RewriteRuleTokenStream;
+using TypeSql.Antlr.Runtime.Tree;
+using RewriteRuleITokenStream = TypeSql.Antlr.Runtime.Tree.RewriteRuleTokenStream;
 <endif>
 <@end>
 <if(actions.(actionScope).namespace)>
@@ -98,7 +98,7 @@ lexerInputStreamType() ::= <<
 >>
 
 lexer(grammar, name, tokens, scopes, rules, numRules, filterMode, labelType="CommonToken",
-      superClass={<if(actions.(actionScope).superClass)><actions.(actionScope).superClass><else>Antlr.Runtime.Lexer<endif>},
+      superClass={<if(actions.(actionScope).superClass)><actions.(actionScope).superClass><else>TypeSql.Antlr.Runtime.Lexer<endif>},
 	  rewriteElementType={}, ASTLabelType={}) ::= <<
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "<ANTLRVersion>")]
 [System.CLSCompliant(false)]
@@ -407,7 +407,7 @@ this.state.ruleMemo = new System.Collections.Generic.Dictionary\<int, int>[<leng
 >>
 
 parser(grammar, name, scopes, tokens, tokenNames, rules, numRules, bitsets,
-       ASTLabelType="object", superClass={<if(actions.(actionScope).superClass)><actions.(actionScope).superClass><else>Antlr.Runtime.Parser<endif>}, labelType="IToken",
+       ASTLabelType="object", superClass={<if(actions.(actionScope).superClass)><actions.(actionScope).superClass><else>TypeSql.Antlr.Runtime.Parser<endif>}, labelType="IToken",
        members={<actions.parser.members>}) ::= <<
 <genericParser(inputStreamType="ITokenStream", rewriteElementType="IToken", filterMode=false, ...)>
 >>
@@ -417,7 +417,7 @@ parser(grammar, name, scopes, tokens, tokenNames, rules, numRules, bitsets,
  */
 treeParser(grammar, name, scopes, tokens, tokenNames, globalAction, rules,
            numRules, bitsets, filterMode, labelType={<ASTLabelType>}, ASTLabelType="object",
-           superClass={<if(actions.(actionScope).superClass)><actions.(actionScope).superClass><else>Antlr.Runtime.Tree.<if(filterMode)><if(buildAST)>TreeRewriter<else>TreeFilter<endif><else>TreeParser<endif><endif>},
+           superClass={<if(actions.(actionScope).superClass)><actions.(actionScope).superClass><else>TypeSql.Antlr.Runtime.Tree.<if(filterMode)><if(buildAST)>TreeRewriter<else>TreeFilter<endif><else>TreeParser<endif><endif>},
            members={<actions.treeparser.members>}) ::= <<
 <genericParser(inputStreamType="ITreeNodeStream", rewriteElementType="Node", ...)>
 >>

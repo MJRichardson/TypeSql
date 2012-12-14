@@ -30,7 +30,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr3.ST.Language
+namespace TypeSql.Antlr3.ST.Language
 {
     /** <summary>Represents a chunk of just simple text to spit out; nothing to "evaluate"</summary> */
     public class StringRef : Expr

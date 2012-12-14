@@ -92,26 +92,26 @@
     <Compile Include="Parsing\Antlr\Antlr3.StringTemplate\Language\AngleBracketTemplateLexerHelper.cs">
       <DependentUpon>AngleBracketTemplateLexer.g3</DependentUpon>
     </Compile>
-    <Antlr Include="Parsing\TypeSql.g3">
+    <Antlr3 Include="Parsing\TypeSql.g3">
       <Generator>MSBuild:Compile</Generator>
-    </Antlr>
+    </Antlr3>
     <Compile Include="Parsing\TypeSqlParser.cs">
       <DependentUpon>TypeSql.g3</DependentUpon>
     </Compile>
     <Compile Include="Parsing\TypeSqlLexer.cs">
       <DependentUpon>TypeSql.g3</DependentUpon>
     </Compile>
-    <Antlr Include="Parsing\DaoTransform.g3">
+    <Antlr3 Include="Parsing\DaoTransform.g3">
       <Generator>MSBuild:Compile</Generator>
-    </Antlr>
+    </Antlr3>
     <Compile Include="Parsing\DaoTransform.cs">
       <DependentUpon>DaoTransform.g3</DependentUpon>
     </Compile>
-    <Antlr Include="Parsing\RawSqlTransform.g3">
+    <Antlr3 Include="Parsing\RawSqlTransform.g3">
       <Generator>MSBuild:Compile</Generator>
-    </Antlr>
+    </Antlr3>
     <Compile Include="Parsing\RawSqlTransform.cs">
-      <DependentUpon>DaoTransform.g3</DependentUpon>
+      <DependentUpon>RawSqlTransform.g3</DependentUpon>
     </Compile>
     <Compile Include="Parsing\Antlr\Antlr3.Runtime\ANTLRFileStream.cs">
       <SubType>Code</SubType>
@@ -458,8 +458,6 @@
     <Compile Include="Parsing\Antlr\Antlr3.StringTemplate\TypeRegistry`1.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Parsing\Generated\DaoTransform.cs" />
-    <Compile Include="Parsing\Generated\RawSqlTransform.cs" />
     <Compile Include="Parsing\InputToken.cs" />
     <Compile Include="Parsing\OutputToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

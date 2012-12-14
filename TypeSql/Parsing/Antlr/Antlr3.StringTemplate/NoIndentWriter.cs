@@ -30,7 +30,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr3.ST
+namespace TypeSql.Antlr3.ST
 {
     using TextWriter = System.IO.TextWriter;
 

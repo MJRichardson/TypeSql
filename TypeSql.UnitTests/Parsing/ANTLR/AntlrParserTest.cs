@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Antlr.Runtime;
-using Antlr.Runtime.Tree;
+using TypeSql.Antlr.Runtime;
+using TypeSql.Antlr.Runtime.Tree;
 using TypeSql.Parsing;
 
 namespace TypeSql.UnitTests.Parsing.ANTLR

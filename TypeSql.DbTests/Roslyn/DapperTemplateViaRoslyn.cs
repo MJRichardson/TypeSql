@@ -1,9 +1,9 @@
 ﻿using System.Data;
 using System.IO;
-using Antlr.Runtime;
-using Antlr.Runtime.Tree;
-using Antlr3.ST;
-using Antlr3.ST.Language;
+using TypeSql.Antlr.Runtime;
+using TypeSql.Antlr.Runtime.Tree;
+using TypeSql.Antlr3.ST;
+using TypeSql.Antlr3.ST.Language;
 using Roslyn.Scripting;
 using Roslyn.Scripting.CSharp;
 using TypeSql.Parsing;

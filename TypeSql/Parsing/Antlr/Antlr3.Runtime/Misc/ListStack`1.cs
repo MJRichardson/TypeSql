@@ -30,7 +30,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr.Runtime.Misc
+namespace TypeSql.Antlr.Runtime.Misc
 {
     using System.Collections.Generic;
     using InvalidOperationException = System.InvalidOperationException;

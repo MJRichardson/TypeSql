@@ -30,9 +30,9 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr.Runtime
+namespace TypeSql.Antlr.Runtime
 {
-    using Antlr.Runtime.Tree;
+    using TypeSql.Antlr.Runtime.Tree;
 
     using ArgumentException = System.ArgumentException;
     using ArgumentNullException = System.ArgumentNullException;

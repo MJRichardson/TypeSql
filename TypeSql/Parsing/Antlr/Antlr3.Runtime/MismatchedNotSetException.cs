@@ -30,7 +30,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr.Runtime
+namespace TypeSql.Antlr.Runtime
 {
     using Exception = System.Exception;
     using SerializationInfo = System.Runtime.Serialization.SerializationInfo;

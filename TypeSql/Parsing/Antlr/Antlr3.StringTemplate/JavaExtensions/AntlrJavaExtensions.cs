@@ -33,9 +33,9 @@
 using System;
 using System.Collections.Generic;
 
-using ITree = Antlr.Runtime.Tree.ITree;
+using ITree = TypeSql.Antlr.Runtime.Tree.ITree;
 
-namespace Antlr.Runtime.JavaExtensions
+namespace TypeSql.Antlr.Runtime.JavaExtensions
 {
     public static class AntlrJavaExtensions
     {

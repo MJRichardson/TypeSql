@@ -30,13 +30,13 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr3.ST
+namespace TypeSql.Antlr3.ST
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Antlr3.ST.Extensions;
-    using Antlr3.ST.Language;
+    using TypeSql.Antlr3.ST.Extensions;
+    using TypeSql.Antlr3.ST.Language;
 
     using DebuggerDisplay = System.Diagnostics.DebuggerDisplayAttribute;
     using StringBuilder = System.Text.StringBuilder;

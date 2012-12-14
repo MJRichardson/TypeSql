@@ -41,12 +41,12 @@ options
 @header
 {
 using System.Linq;
-using Antlr.Runtime.JavaExtensions;
+using TypeSql.Antlr.Runtime.JavaExtensions;
 
 using StringWriter = System.IO.StringWriter;
 }
 
-@namespace {Antlr3.ST.Language}
+@namespace {TypeSql.Antlr3.ST.Language}
 @ctorModifier{private}
 
 public

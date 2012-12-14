@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
-using Dapper;
+using TypeSql.Dapper;
 
 namespace TypeSql
 {

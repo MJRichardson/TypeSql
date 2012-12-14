@@ -30,10 +30,10 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr3.ST.Language
+namespace TypeSql.Antlr3.ST.Language
 {
-    using Antlr.Runtime;
-    using Antlr.Runtime.Tree;
+    using TypeSql.Antlr.Runtime;
+    using TypeSql.Antlr.Runtime.Tree;
 
 #if COMPILE_EXPRESSIONS
     using System.Collections.Generic;

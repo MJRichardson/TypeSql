@@ -30,7 +30,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr3.ST.Extensions
+namespace TypeSql.Antlr3.ST.Extensions
 {
     using System;
 

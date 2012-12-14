@@ -35,8 +35,8 @@
 
 <if(!TREE_PARSER)>
 <! tree parser would already have imported !>
-using Antlr.Runtime.Tree;
-using RewriteRuleITokenStream = Antlr.Runtime.Tree.RewriteRuleTokenStream;
+using TypeSql.Antlr.Runtime.Tree;
+using RewriteRuleITokenStream = TypeSql.Antlr.Runtime.Tree.RewriteRuleTokenStream;
 <endif>
 >>
 

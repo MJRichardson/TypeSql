@@ -30,10 +30,10 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr3.ST.Language
+namespace TypeSql.Antlr3.ST.Language
 {
-    using ANTLRReaderStream = Antlr.Runtime.ANTLRReaderStream;
-    using RecognitionException = Antlr.Runtime.RecognitionException;
+    using AntlrReaderStream = TypeSql.Antlr.Runtime.ANTLRReaderStream;
+    using RecognitionException = TypeSql.Antlr.Runtime.RecognitionException;
     using TextReader = System.IO.TextReader;
 
     partial class TemplateLexer
@@ -50,7 +50,7 @@ namespace Antlr3.ST.Language
         }
 
         public TemplateLexer( StringTemplate self, TextReader r )
-            : this( new ANTLRReaderStream( r ) )
+            : this( new AntlrReaderStream( r ) )
         {
             this.self = self;
         }

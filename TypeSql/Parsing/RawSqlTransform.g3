@@ -20,7 +20,6 @@ public sql
 			)*
 		) 
 	;
-	
 
 outputToken 
 	:	^(OUTPUT_TOKEN id=ID type=ID ) -> template(id={$id.text}, type={$type.text}) "[<id>]" 

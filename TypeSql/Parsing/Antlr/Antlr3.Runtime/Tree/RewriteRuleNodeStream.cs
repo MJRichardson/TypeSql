@@ -30,7 +30,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr.Runtime.Tree
+namespace TypeSql.Antlr.Runtime.Tree
 {
     using IList = System.Collections.IList;
     using NotSupportedException = System.NotSupportedException;

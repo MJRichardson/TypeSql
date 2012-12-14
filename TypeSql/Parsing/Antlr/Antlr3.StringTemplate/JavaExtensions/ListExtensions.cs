@@ -30,7 +30,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr.Runtime.JavaExtensions
+namespace TypeSql.Antlr.Runtime.JavaExtensions
 {
     using System.Linq;
     using IEnumerable = System.Collections.IEnumerable;

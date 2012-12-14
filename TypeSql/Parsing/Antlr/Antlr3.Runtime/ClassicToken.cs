@@ -30,7 +30,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr.Runtime
+namespace TypeSql.Antlr.Runtime
 {
     /** <summary>
      *  A Token object like we'd use in ANTLR 2.x; has an actual string created

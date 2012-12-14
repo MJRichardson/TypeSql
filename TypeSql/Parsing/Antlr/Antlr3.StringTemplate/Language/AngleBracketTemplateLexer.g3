@@ -37,7 +37,7 @@ options
 	language=CSharp3;
 }
 
-@namespace {Antlr3.ST.Language}
+@namespace {TypeSql.Antlr3.ST.Language}
 @ctorModifier{private}
 
 NEWLINE

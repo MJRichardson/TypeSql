@@ -30,16 +30,16 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr3.ST
+namespace TypeSql.Antlr3.ST
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
-    using Antlr3.ST.Extensions;
+    using TypeSql.Antlr3.ST.Extensions;
 
     using AngleBracketTemplateLexer = Antlr3.ST.Language.AngleBracketTemplateLexer;
-    using ANTLRReaderStream = Antlr.Runtime.ANTLRReaderStream;
+    using AntlrReaderStream = Antlr.Runtime.ANTLRReaderStream;
     using Assembly = System.Reflection.Assembly;
     using CommonTokenStream = Antlr.Runtime.CommonTokenStream;
     using ConstructorInfo = System.Reflection.ConstructorInfo;
@@ -1118,7 +1118,7 @@ namespace Antlr3.ST
         {
             try
             {
-                GroupLexer lexer = new GroupLexer( new ANTLRReaderStream( r ) );
+                GroupLexer lexer = new GroupLexer( new AntlrReaderStream( r ) );
                 GroupParser parser = new GroupParser( new CommonTokenStream( lexer ) );
                 parser.group( this );
                 //System.out.println("read group\n"+this.toString());

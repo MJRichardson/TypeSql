@@ -30,9 +30,9 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr.Runtime.Tree
+namespace TypeSql.Antlr.Runtime.Tree
 {
-    using Antlr.Runtime.Misc;
+    using TypeSql.Antlr.Runtime.Misc;
 
     public class TreeFilter : TreeParser
     {

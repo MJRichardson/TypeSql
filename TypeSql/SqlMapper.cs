@@ -20,7 +20,7 @@
     using System.Diagnostics;
 
 
-    namespace Dapper
+    namespace TypeSql.Dapper
     {
         /// <summary>
         /// Dapper, a light weight object mapper for ADO.NET

@@ -35,8 +35,8 @@
 
 @outputFile.imports() ::= <<
 <@super.imports()>
-using Antlr3.ST;
-using Antlr3.ST.Language;
+using TypeSql.Antlr3.ST;
+using TypeSql.Antlr3.ST.Language;
 >>
 
 @genericParser.members() ::= <<

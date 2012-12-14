@@ -30,10 +30,10 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr3.ST.Language
+namespace TypeSql.Antlr3.ST.Language
 {
     using System.Collections.Generic;
-    using Antlr.Runtime.JavaExtensions;
+    using TypeSql.Antlr.Runtime.JavaExtensions;
 
     using ITree = Antlr.Runtime.Tree.ITree;
     using RecognitionException = Antlr.Runtime.RecognitionException;

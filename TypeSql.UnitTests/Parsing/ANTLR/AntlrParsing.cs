@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using Antlr.Runtime;
-using Antlr.Runtime.Tree;
-using Antlr3.ST;
-using Antlr3.ST.Language;
+using TypeSql.Antlr.Runtime;
+using TypeSql.Antlr.Runtime.Tree;
+using TypeSql.Antlr3.ST;
+using TypeSql.Antlr3.ST.Language;
 using TypeSql.Parsing;
 using Xunit;
 using System.Linq;

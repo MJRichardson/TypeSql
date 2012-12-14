@@ -30,9 +30,9 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr3.ST.Language
+namespace TypeSql.Antlr3.ST.Language
 {
-    using Antlr.Runtime;
+    using TypeSql.Antlr.Runtime;
     using ITreeAdaptor = Antlr.Runtime.Tree.ITreeAdaptor;
 
     partial class ActionParser

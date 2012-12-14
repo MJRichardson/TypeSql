@@ -30,11 +30,11 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-using Antlr.Runtime.Tree;
+using TypeSql.Antlr.Runtime.Tree;
 
-using IToken = Antlr.Runtime.IToken;
+using IToken = TypeSql.Antlr.Runtime.IToken;
 
-namespace Antlr3.ST.Language
+namespace TypeSql.Antlr3.ST.Language
 {
     public class StringTemplateTreeAdaptor : CommonTreeAdaptor
     {

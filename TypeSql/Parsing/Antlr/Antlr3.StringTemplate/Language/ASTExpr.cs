@@ -30,13 +30,13 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Antlr3.ST.Language
+namespace TypeSql.Antlr3.ST.Language
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
-    using Antlr.Runtime.JavaExtensions;
+    using TypeSql.Antlr.Runtime.JavaExtensions;
 
     using FieldInfo = System.Reflection.FieldInfo;
     using ICollection = System.Collections.ICollection;

@@ -42,8 +42,8 @@ tokens
 	OPTIONAL = 'optional';
 }
 
-@lexer::namespace {Antlr3.ST.Language}
-@parser::namespace {Antlr3.ST.Language}
+@lexer::namespace {TypeSql.Antlr3.ST.Language}
+@parser::namespace {TypeSql.Antlr3.ST.Language}
 
 public
 groupInterface[StringTemplateGroupInterface groupI]
