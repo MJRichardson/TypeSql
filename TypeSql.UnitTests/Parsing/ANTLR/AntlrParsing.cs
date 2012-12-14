@@ -27,7 +27,7 @@ namespace TypeSql.UnitTests.Parsing.ANTLR
             var parseResult = parser.sql();
 
             var templateGroup = new StringTemplateGroup(
-                new StreamReader(new FileStream(@"..\..\..\TypeSql\Parsing\ANTLR\DapperDao.stg", FileMode.Open)),
+                new StreamReader(new FileStream(@"..\..\..\TypeSql\Parsing\DapperDao.stg", FileMode.Open)),
                 typeof (TemplateLexer));
 
             var dapperDaoTransform = new DaoTransform(new CommonTreeNodeStream(parseResult.Tree))

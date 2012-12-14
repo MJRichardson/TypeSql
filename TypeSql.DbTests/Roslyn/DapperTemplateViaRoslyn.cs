@@ -39,7 +39,7 @@ namespace TypeSql.DbTests.Roslyn
              parser.Reset();
              nodeStream.Reset();
              var daoTransform = new DaoTransform(nodeStream){TemplateGroup = new StringTemplateGroup(
-                new StreamReader(new FileStream(@"..\..\..\TypeSql\Parsing\ANTLR\DapperDao.stg", FileMode.Open)),
+                new StreamReader(new FileStream(@"..\..\..\TypeSql\Parsing\DapperDao.stg", FileMode.Open)),
                 typeof (TemplateLexer))};
              var template = daoTransform.sql(name, rawSql).Template;
              string src = template.ToString();
