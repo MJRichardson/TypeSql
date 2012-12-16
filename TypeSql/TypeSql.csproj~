@@ -47,6 +47,7 @@
     <Antlr3 Include="Parsing\Antlr\Antlr3.StringTemplate\Language\Template.g3">
       <Generator>MSBuild:Compile</Generator>
     </Antlr3>
+    <Compile Include="Compiler.cs" />
     <Compile Include="Parsing\Antlr\Antlr3.StringTemplate\Language\TemplateLexerHelper.cs">
       <DependentUpon>Template.g3</DependentUpon>
     </Compile>
@@ -92,27 +93,15 @@
     <Compile Include="Parsing\Antlr\Antlr3.StringTemplate\Language\AngleBracketTemplateLexerHelper.cs">
       <DependentUpon>AngleBracketTemplateLexer.g3</DependentUpon>
     </Compile>
-    <Antlr3 Include="Parsing\TypeSql.g3">
+    <None Include="Parsing\TypeSql.g">
       <Generator>MSBuild:Compile</Generator>
-    </Antlr3>
-    <Compile Include="Parsing\TypeSqlParser.cs">
-      <DependentUpon>TypeSql.g3</DependentUpon>
-    </Compile>
-    <Compile Include="Parsing\TypeSqlLexer.cs">
-      <DependentUpon>TypeSql.g3</DependentUpon>
-    </Compile>
-    <Antlr3 Include="Parsing\DaoTransform.g3">
+    </None>
+    <None Include="Parsing\DaoTransform.g">
       <Generator>MSBuild:Compile</Generator>
-    </Antlr3>
-    <Compile Include="Parsing\DaoTransform.cs">
-      <DependentUpon>DaoTransform.g3</DependentUpon>
-    </Compile>
-    <Antlr3 Include="Parsing\RawSqlTransform.g3">
+    </None>
+    <None Include="Parsing\RawSqlTransform.g">
       <Generator>MSBuild:Compile</Generator>
-    </Antlr3>
-    <Compile Include="Parsing\RawSqlTransform.cs">
-      <DependentUpon>RawSqlTransform.g3</DependentUpon>
-    </Compile>
+    </None>
     <Compile Include="Parsing\Antlr\Antlr3.Runtime\ANTLRFileStream.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -458,8 +447,18 @@
     <Compile Include="Parsing\Antlr\Antlr3.StringTemplate\TypeRegistry`1.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Parsing\DaoTransform.cs" >
+	    <DependentUpon>DaoTransform.g</DependentUpon>
+    </Compile>
     <Compile Include="Parsing\InputToken.cs" />
     <Compile Include="Parsing\OutputToken.cs" />
+    <Compile Include="Parsing\RawSqlTransform.cs" />
+    <Compile Include="Parsing\TypeSqlLexer.cs" >
+      <DependentUpon>TypeSql.g</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\TypeSqlParser.cs" >
+      <DependentUpon>TypeSql.g</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DapperDao.cs" />
     <Compile Include="SqlMapper.cs" />
