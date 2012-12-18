@@ -21,7 +21,7 @@ namespace TypeSql.VisualStudio
     {
 #pragma warning disable 0414
         //The name of this generator (use for 'Custom Tool' property of project item)
-        internal static string name = "TypeSql";
+        internal static string name = "TypeSqlGenerator";
 #pragma warning restore 0414
 
         public TypeSqlGenerator()
@@ -92,8 +92,12 @@ namespace TypeSql.VisualStudio
                 return VSConstants.E_FAIL;
             }
 
+            // convert our handle to a ProjectItem
+            item = new ServiceProvider(oleSp).GetService(typeof(EnvDTE.ProjectItem))
+                        as EnvDTE.ProjectItem;
+
             //compile the typeSql
-            var compileResult = TypeSqlCompiler.Compile(bstrInputFileContents, Path.GetFileName(wszInputFilePath));
+            var compileResult = TypeSqlCompiler.Compile(bstrInputFileContents, Path.GetFileNameWithoutExtension(wszInputFilePath));
 
             //write the raw-sql file
             string sqlFilePath = Path.Combine(Path.GetDirectoryName(wszInputFilePath), Path.GetFileNameWithoutExtension(wszInputFilePath) + ".sql");
