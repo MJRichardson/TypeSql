@@ -13,14 +13,14 @@ PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
 using System.Reflection;
 using System.Resources;
 
-[assembly: AssemblyTitle("SingleFileGenerator")]
-[assembly: AssemblyDescription("Single-file generator VS SDK Sample")]
+[assembly: AssemblyTitle("TypeSql.VisualStudio")]
+[assembly: AssemblyDescription("Visual Studio integration for TypeSql.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("MJ Richardson")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright ("© 2005 Microsoft Corporation")]
+[assembly: AssemblyCopyright ("MJ Richardson")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.1.0")]
 [assembly: AssemblyDelaySign(false)]
 [assembly: NeutralResourcesLanguageAttribute("en-US")]

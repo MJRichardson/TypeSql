@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>TypeSql</id>
+    <version>0.1.0</version>
+    <authors>MJ Richardson</authors>
+    <owners>MJ Richardson</owners>
+    <projectUrl>https://github.com/mjrichardson/TypeSql</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <dependencies>
+    </dependencies>
+    <description>TypeSql compiles annotated SQL into strongly-typed data-access-objects</description>
+    <tags>SQL typed ORM micro</tags>
+  </metadata>
+  <files>
+    <file src="TypeSql\bin\Release\TypeSql.dll" target="lib\net40" /> 
+  </files>
+</package>
