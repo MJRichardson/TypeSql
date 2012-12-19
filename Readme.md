@@ -38,9 +38,11 @@ Compile with TypeSql. This produces a class called `TurtlesByColor`. `TurtlesByC
 	TurtlesByColor(IDbConnection connection, IDbTransaction transaction=null) 
 
 And a method:
+
 	IEnumerable<TurtlesByColorResult> Execute(string color, bool buffered=true); 
 
 The 'TurtlesByColorResult' class looks like:
+
 	public partial class TurtlesByColorResult
 	{
 		public TurtlesByColorResult(int id, string name)
