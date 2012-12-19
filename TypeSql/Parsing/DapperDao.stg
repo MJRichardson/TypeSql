@@ -10,7 +10,14 @@ public partial class $name$Result
 	$outputTokens:outputGetter()$
 }
 
-public class $name$ : DapperDao<$name$Result>
+public interface I$name$
+{
+	IEnumerable<$name$Result> Execute( $inputTokens:inputParameter(); separator=", "$
+        $if (inputTokens)$ , $endif$ 
+        bool buffered=true  );
+}
+
+public class $name$ : DapperDao<$name$Result>, I$name$
 {
 
 	public $name$(string connectionStringName) : base(connectionStringName)
