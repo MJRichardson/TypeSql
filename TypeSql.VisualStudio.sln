@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeSql.VisualStudio", "TypeSql.VisualStudio\TypeSql.VisualStudio.csproj", "{461089E7-008E-4737-BA17-E1FCD1CC3D0E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeSql", "TypeSql\TypeSql.csproj", "{0993078F-20AF-4D73-81EA-C85A33402EA5}"

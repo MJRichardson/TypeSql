@@ -38,7 +38,7 @@ EF & friends also deal with concerns like caching and object-identity; TypeSql d
  
 
 ##Show me some code! 
-Here's how it works. We have some data in our relational DB. We want to query it. We write our parameterised SQL ( let's suppose its in a file called 'TurtlesByColor.sql' ).
+Here's how it works. We have some data in our relational DB. We want to query it. We write our parameterised SQL ( let's suppose its in a file called 'TurtlesByColor.tsql' ).
 
 	SELECT Id, Name 
 	FROM TeenageMutantNinjaTurtles

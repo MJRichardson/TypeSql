@@ -21,6 +21,6 @@ using System.Resources;
 [assembly: AssemblyCopyright ("MJ Richardson")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
-[assembly: AssemblyVersion("0.1.0")]
+[assembly: AssemblyVersion("0.3.0")]
 [assembly: AssemblyDelaySign(false)]
 [assembly: NeutralResourcesLanguageAttribute("en-US")]

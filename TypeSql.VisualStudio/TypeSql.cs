@@ -15,16 +15,16 @@ namespace TypeSql.VisualStudio
 {
     [ComVisible(true)]
     [Guid("DED9B845-2507-4B2E-B850-F52101E19C47")]
-    [CodeGeneratorRegistration(typeof(TypeSqlGenerator), "TypeSql", vsContextGuids.vsContextGuidVCSProject, GeneratesDesignTimeSource = true)]
-    [ProvideObject(typeof(TypeSqlGenerator))]
-    public class TypeSqlGenerator : IVsSingleFileGenerator, IObjectWithSite 
+    [CodeGeneratorRegistration(typeof(TypeSql), "TypeSql", vsContextGuids.vsContextGuidVCSProject, GeneratesDesignTimeSource = true)]
+    [ProvideObject(typeof(TypeSql))]
+    public class TypeSql : IVsSingleFileGenerator, IObjectWithSite 
     {
 #pragma warning disable 0414
         //The name of this generator (use for 'Custom Tool' property of project item)
-        internal static string name = "TypeSqlGenerator";
+        internal static string name = "TypeSql";
 #pragma warning restore 0414
 
-        public TypeSqlGenerator()
+        public TypeSql()
         {
             EnvDTE.DTE dte = (EnvDTE.DTE)Package.GetGlobalService(typeof(EnvDTE.DTE));
             Array ary = (Array)dte.ActiveSolutionProjects;
