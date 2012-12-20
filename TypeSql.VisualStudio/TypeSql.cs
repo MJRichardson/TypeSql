@@ -99,8 +99,12 @@ namespace TypeSql.VisualStudio
             //compile the typeSql
             var compileResult = TypeSqlCompiler.Compile(bstrInputFileContents, Path.GetFileNameWithoutExtension(wszInputFilePath));
 
-            //write the raw-sql file
-            string sqlFilePath = Path.Combine(Path.GetDirectoryName(wszInputFilePath), Path.GetFileNameWithoutExtension(wszInputFilePath) + ".sql");
+            //create the raw-sql file
+            //if the original type-sql file was named with a .sql extension, they we'll call the raw sql file {originalFileNameWithoutExtension}_raw.sql
+            string sqlFilePath = Path.GetExtension(wszInputFilePath).Equals(".sql", StringComparison.InvariantCultureIgnoreCase) 
+                ? Path.Combine(Path.GetDirectoryName(wszInputFilePath), Path.GetFileNameWithoutExtension(wszInputFilePath) + "_raw" + ".sql")
+                : Path.Combine(Path.GetDirectoryName(wszInputFilePath), Path.GetFileNameWithoutExtension(wszInputFilePath) + ".sql");
+
             using (var fileStream = File.CreateText(sqlFilePath))
             {
                 fileStream.Write(compileResult.RawSql);
