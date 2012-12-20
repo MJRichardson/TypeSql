@@ -1,6 +1,8 @@
 #TypeSql
 
-TypeSql is a compiler. It compiles annotated SQL into strongly-typed data-access-objects. The inspiration was [TypeScript](http://www.typescriptlang.org/).
+TypeSql is a compiler. It compiles annotated SQL into strongly-typed data-access-objects. 
+
+The inspiration was [TypeScript](http://www.typescriptlang.org/). But don't try to take the analogy too far. TypeScript takes annotated javascript and compiles it into plain javascript. Its primary purpose is verification. TypeSQL takes annotated SQL and compiles it into a different, general-purpose programming language (C# only, for the moment). Our primary purpose is for you to write less code. Less code means less bugs and more functionality. It means you can ask for more money and go home earlier. Your family will love you more, and you will live longer. 
 
 Do you believe that a strongly-typed, object-orientated programming language is the best way to write applications?
 Do you believe that SQL is *still* the best language for querying relational databases?
@@ -14,6 +16,12 @@ Here's our wish-list:
 - We want getting our data to be minimum friction. We don't want to repeat ourselves. The typical data-retrieval ceremony (connection, command, reader, casting, etc) is tedious, and surface-area for bugs.
 
 So that's where we're coming from.
+
+##I already have [insert ORM of choice], why do I need TypeSql?
+Maybe you don't. If your team is happy and productive using [ORM](http://en.wikipedia.org/wiki/Object-relational_mapping) X, then carry on. 
+Full-service ORMs like [Entity Framework](http://msdn.microsoft.com/en-us/data/ef.aspx) and [NHibernate](http://nhforge.org/) are cruise-ships; TypeSQL is a surfboard. We just want to make travelling through the water a little easier and more fun. They do their best to hide the fact the ocean even exists (until the abstraction leaks, and sinks the ship...forgive me). But seriously, we approach the problem from different angles. TypeSql knows nothing about your database schema, and why should it? We care about the shape of the data you are *retrieving*, not the shape the data is *stored*. That is the fundamental difference. EF & friends map things that live in the database (like tables, views, and stored-procedures) to objects. They then attempt to translate interactions with those objects (ie. accessing properties and calling methods) into the appropriate SQL (this often happens at runtime). With TypeSQL, *you* write your SQL (plus a few annotations), and at *compile time* the SQL is translated to data-access objects that represent your *query* (not stuff that lives in the database). 
+EF & friends also deal with concerns like caching and object-identity; TypeSql does not. 
+ 
 
 ##Show me some code! 
 Here's how it works. We have some data in our relational DB. We want to query it. We write our parameterised SQL ( let's suppose its in a file called 'TurtlesByColor.sql' ).
@@ -70,8 +78,14 @@ Currently, the only supported method for using TypeSql is via a VisualStudio ext
 - Right click on the file in the Visual Studio Solution Explorer, click 'Properties', and set the 'Custom Tool' property to 'TypeSql'.
 - Two dependent files should be added under your TypeSql file: One will contain the source code of your generated data-access class; the other will contain the raw, unadorned SQL (this is just for convenience if you want to execute the SQL directly). 
 
+##Its not you, its me
+This is an alpha release. There are an infinite number of scenarios we have not thought of. We welcome your feedback. But please be gentle, our egos are fragile and we cry easily.
+
+##Performance
+Internally, TypeSql uses [Dapper](http://code.google.com/p/dapper-dot-net/) for data-access. Its performance is effectively identical, which is fast. Checkout the [benchmarks](http://code.google.com/p/dapper-dot-net/#Performance).
+
 ##Credits
-Internally, TypeSql stands on the shoulders of two brilliant projects.
+TypeSql stands on the shoulders of two brilliant projects.
 
 ###ANTLR
 If you need to parse text, [ANTLR](http://www.antlr.org/) is your tool. [Terence Parr](http://www.cs.usfca.edu/~parrt/) has made language-recognition possible for mere mortals. And thanks to Sam Harwell for the C# version.
