@@ -4,16 +4,30 @@ TypeSql is a compiler. It compiles annotated SQL into strongly-typed data-access
 
 The inspiration was [TypeScript](http://www.typescriptlang.org/). But don't try to take the analogy too far. TypeScript takes annotated javascript and compiles it into plain javascript. Its primary purpose is verification. TypeSQL takes annotated SQL and compiles it into a different, general-purpose programming language (C# only, for the moment). Our primary purpose is for you to write less code. Less code means less bugs and more functionality. It means you can ask for more money and go home earlier. Your family will love you more, and you will live longer. 
 
+##It sounds interesting, but I'm scared of disappointment. Should I keep reading?
 Do you believe that a strongly-typed, object-orientated programming language is the best way to write applications?
 Do you believe that SQL is *still* the best language for querying relational databases?
 
 Good for you. Here at TypeSql HQ, we feel the same.
 
-Bridging the O-O relational-databases divide has been attempted many times, in many ways. Frankly, we don't like any of them.
+Bridging the O-O relational-databases divide has been attempted many times, in many ways. Frankly, we don't love any of them.
 Here's our wish-list:
 - We want to use SQL. Not a vaguely SQLish language that we have to reverse-engineeer to produce the SQL we want (e.g. Linq, Hibernate Query Language, etc).
 - We want the data returned to be typed. Call us old-fashioned if you will, but we like types. It's a little piece of certainty in an uncertain world.
 - We want getting our data to be minimum friction. We don't want to repeat ourselves. The typical data-retrieval ceremony (connection, command, reader, casting, etc) is tedious, and surface-area for bugs.
+
+The closest we've found are micro-ORMs (eg. [Dapper](http://code.google.com/p/dapper-dot-net/)). Our issue with using these is how to manage the classes created to hold query results (we like types, remember). In a large application, it is not uncommon for many queries to differ only slightly in the results they return. Which tends to lead to either:
+
+###Class explosion
+	User
+	UserWithAddress
+	UserWithImage
+	UserAccounts
+
+**or**
+
+###Object reference may not be set to an instance of an object
+One class that contains all possible properties that can be returned. Consumers of the class accessing, say `user.Address.Street` then play Russian-Roulette, hoping that the data-access operation they just performed resulted in the Address property being populated. Otherwise, its that most dreaded of exceptions.
 
 So that's where we're coming from.
 
@@ -62,11 +76,15 @@ The 'TurtlesByColorResult' class looks like:
 		
 	}
 
+Accessing your data then looks like:
+
+	IEnumerable<TurtlesByColorResult> redTurtles = new TurtlesByColor("turtlesDb").Execute("Red");
+
 ##Availability
 Currently, TypeSQL is available in C# flavor only. Hopefully, we will be coming soon to a language near you.
 
 ##Usage
-Currently, the only supported method for using TypeSql is via a VisualStudio extension in Visual Studio 2010 or Visual Studio 2012. 
+Currently, the supported method for using TypeSql is via a VisualStudio extension in Visual Studio 2010 or Visual Studio 2012. 
 
 ###Installation
 - Install the [TypeSql Visual Studio extension](http://visualstudiogallery.msdn.microsoft.com/4e2dbc67-a429-4120-b56f-3a93a1003905). This can be done via Tools -> Extensions and Updates in Visual Studio.
@@ -82,7 +100,7 @@ Currently, the only supported method for using TypeSql is via a VisualStudio ext
 This is an alpha release. There are an infinite number of scenarios we have not thought of. We welcome your feedback. But please be gentle, our egos are fragile and we cry easily.
 
 ##Performance
-Internally, TypeSql uses [Dapper](http://code.google.com/p/dapper-dot-net/) for data-access. Its performance is effectively identical, which is fast. Checkout the [benchmarks](http://code.google.com/p/dapper-dot-net/#Performance).
+Internally, TypeSql uses [Dapper](http://code.google.com/p/dapper-dot-net/) for data-access. Its performance is effectively identical, which is itself effectively identical to raw ADO.NET. Checkout the [benchmarks](http://code.google.com/p/dapper-dot-net/#Performance).
 
 ##Credits
 TypeSql stands on the shoulders of two brilliant projects.
