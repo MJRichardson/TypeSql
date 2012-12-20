@@ -1,6 +1,6 @@
 #TypeSql
 
-TypeSql is a compiler. It compiles annotated SQL into strongly-typed data-access-objects.
+TypeSql is a compiler. It compiles annotated SQL into strongly-typed data-access-objects. The inspiration was [TypeScript](http://www.typescriptlang.org/).
 
 Do you believe that a strongly-typed, object-orientated programming language is the best way to write applications?
 Do you believe that SQL is *still* the best language for querying relational databases?
@@ -15,9 +15,6 @@ Here's our wish-list:
 
 So that's where we're coming from.
 
-##Availability
-Currently, the only TypeSql flavor available is C#.
-
 ##Show me some code! 
 Here's how it works. We have some data in our relational DB. We want to query it. We write our parameterised SQL ( let's suppose its in a file called 'TurtlesByColor.sql' ).
 
@@ -31,7 +28,7 @@ Now we annotate it with types.
 	FROM TeenageMutantNinjaTurtles
 	WHERE SashColor= @Color:string
 
-Compile with TypeSql. This produces a class called `TurtlesByColor`. `TurtlesByColor` has two constructors:
+Compile with TypeSql. This produces a class called `TurtlesByColor`. `TurtlesByColor` has two constructors (in C#):
 
 	TurtlesByColor(string connectionStringName)
 
@@ -47,11 +44,37 @@ The 'TurtlesByColorResult' class looks like:
 	{
 		public TurtlesByColorResult(int id, string name)
 		{
-			public int Id { get; private set; }	
-
-			public string Name{ get; private set; }
+			Id = id;
+			Name = name;
 		}
+
+		public int Id { get; private set; }	
+
+		public string Name{ get; private set; }
+		
 	}
 
-##Usage
+##Availability
+Currently, TypeSQL is available in C# flavor only. Hopefully, we will be coming soon to a language near you.
 
+##Usage
+Currently, the only supported method for using TypeSql is via a VisualStudio extension in Visual Studio 2010 or Visual Studio 2012. 
+
+###Installation
+- Install the [TypeSql Visual Studio extension](http://visualstudiogallery.msdn.microsoft.com/4e2dbc67-a429-4120-b56f-3a93a1003905). This can be done via Tools -> Extensions and Updates in Visual Studio.
+- Install the [TypeSql nuget package](https://nuget.org/packages/TypeSql).
+
+###Type that SQL baby!
+- Add a new text file to your project; you can give it whatever extension you like (eg: OverdueBooks.tsql).
+- Enter your type-annotated SQL.
+- Right click on the file in the Visual Studio Solution Explorer, click 'Properties', and set the 'Custom Tool' property to 'TypeSql'.
+- Two dependent files should be added under your TypeSql file: One will contain the source code of your generated data-access class; the other will contain the raw, unadorned SQL (this is just for convenience if you want to execute the SQL directly). 
+
+##Credits
+Internally, TypeSql stands on the shoulders of two brilliant projects.
+
+###ANTLR
+If you need to parse text, [ANTLR](http://www.antlr.org/) is your tool. [Terence Parr](http://www.cs.usfca.edu/~parrt/) has made language-recognition possible for mere mortals. And thanks to Sam Harwell for the C# version.
+
+###Dapper
+[Dapper](http://code.google.com/p/dapper-dot-net/) has been called a micro-ORM. Whatever you call it, [Sam Saffron](http://samsaffron.com/) and [Marc Gravell](http://marcgravell.blogspot.com.au/) have created a super-useful component. 
