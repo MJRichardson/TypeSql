@@ -4,7 +4,7 @@ TypeSql is a compiler. It compiles annotated SQL into strongly-typed data-access
 
 The inspiration was [TypeScript](http://www.typescriptlang.org/). But don't try to take the analogy too far. TypeScript takes annotated javascript and compiles it into plain javascript. Its primary purpose is verification. TypeSQL takes annotated SQL and compiles it into a different, general-purpose programming language (C# only, for the moment). Our primary purpose is for you to write less code. Less code means less bugs and more functionality. It means you can ask for more money and go home earlier. Your family will love you more, and you will live longer. 
 
-##It sounds interesting, but I'm scared of disappointment. Should I keep reading?
+##Are you talking to me?
 Do you believe that a strongly-typed, object-orientated programming language is the best way to write applications?
 Do you believe that SQL is *still* the best language for querying relational databases?
 
