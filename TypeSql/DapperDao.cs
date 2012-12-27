@@ -8,7 +8,7 @@ using TypeSql.Dapper;
 
 namespace TypeSql
 {
-    public abstract class DapperDao<TResult>
+    public abstract class DapperDao<TResult> : ITypeSqlStatement
     {
         protected DapperDao(string connectionStringName)
         {

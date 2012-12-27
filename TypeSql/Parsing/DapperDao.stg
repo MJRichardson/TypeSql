@@ -17,7 +17,7 @@ public interface I$name$
         bool buffered=true  );
 }
 
-public class $name$ : DapperDao<$name$Result>, I$name$
+public class $name$ : DapperDao<$name$Result>, I$name$ 
 {
 
 	public $name$(string connectionStringName) : base(connectionStringName)

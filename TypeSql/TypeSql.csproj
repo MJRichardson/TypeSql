@@ -47,6 +47,7 @@
     <Antlr3 Include="Parsing\Antlr\Antlr3.StringTemplate\Language\Template.g3">
       <Generator>MSBuild:Compile</Generator>
     </Antlr3>
+    <Compile Include="ITypeSqlStatement.cs" />
     <Compile Include="TypeSqlCompiler.cs" />
     <Compile Include="Parsing\Antlr\Antlr3.StringTemplate\Language\TemplateLexerHelper.cs">
       <DependentUpon>Template.g3</DependentUpon>
