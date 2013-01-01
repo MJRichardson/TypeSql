@@ -2,6 +2,7 @@ group DapperDao;
 
 dao(name, outputTokens, inputTokens, rawSql) ::= <<
 using System.Data;
+using System.Data.Common;
 using TypeSql; 
 using System.Collections.Generic;
 
@@ -21,8 +22,13 @@ public class $name$ : DapperDao<$name$Result>, I$name$
 {
 
 	public $name$(string connectionStringName) : base(connectionStringName)
-        {
-        }
+    {
+    }
+
+	public $name$(IDbConnection connection, IDbTransaction transaction=null)
+		:base(connection, transaction) 
+	{
+	}
         
         public IEnumerable<$name$Result> Execute( $inputTokens:inputParameter(); separator=", "$
         $if (inputTokens)$ , $endif$ 
