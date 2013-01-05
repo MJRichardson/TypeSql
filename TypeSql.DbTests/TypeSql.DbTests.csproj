@@ -80,6 +80,8 @@
     <Compile Include="Roslyn\DapperTemplateViaRoslyn.cs" />
     <Compile Include="Roslyn\OneInputOneOutput.cs" />
     <Compile Include="Roslyn\OneOutput.cs" />
+    <Compile Include="Roslyn\UsingExistingConnection.cs" />
+    <Compile Include="Roslyn\UsingExistingConnectionAndTransaction.cs" />
     <Compile Include="Templates\DbTemplate.cs" />
     <Compile Include="Templates\SelectTemplate.cs" />
     <Compile Include="Templates\SelectTemplateTests.cs" />

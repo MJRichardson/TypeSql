@@ -50,10 +50,15 @@ namespace TypeSql.DbTests.Roslyn
 
              var engine = new ScriptEngine();
              Session = engine.CreateSession();
+             Session.AddReference("System");
              Session.AddReference("System.Core");
              Session.AddReference(typeof(DapperDao<>).Assembly);
              Session.AddReference(typeof(IDbConnection).Assembly);
+             Session.AddReference("System.Configuration");
              Session.Execute("using System.Linq;");
+             Session.Execute("using System.Data.SqlClient;");
+             Session.Execute("using System.Data.Common;");
+             Session.Execute("using System.Configuration;");
 
              Session.Execute(compileResult.Dao);
          }
