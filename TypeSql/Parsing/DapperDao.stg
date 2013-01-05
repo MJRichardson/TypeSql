@@ -1,6 +1,7 @@
 group DapperDao;
 
 dao(name, outputTokens, inputTokens, rawSql) ::= <<
+using System;
 using System.Data;
 using System.Data.Common;
 using TypeSql; 
