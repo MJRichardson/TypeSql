@@ -16,19 +16,26 @@ using TypeSql.Parsing;
 @namespace { TypeSql.Parsing }
 @modifier{internal}
 
-public sql [string name, string rawSql]
+public typeSql [string name, string rawSql]
 @init {
 	var outputTokens = new List<OutputToken>();
 	var inputTokens = new List<InputToken>();
+	var usingNamespaces = new List<string>();
 }
-	:	^(SQL (
-			outputToken { outputTokens.Add($outputToken.token); } 
-			| inputToken { inputTokens.Add($inputToken.token); }
-			| .
+	:	^(TYPESQL 
+			(^(USING NAMESPACE) { usingNamespaces.Add($NAMESPACE.text); } )* 
+			(^(SQL (
+				outputToken { outputTokens.Add($outputToken.token); } 
+				| inputToken { inputTokens.Add($inputToken.token); }
+				| .
 			)*
-		) 
-		-> dao(name={name}, outputTokens={outputTokens}, inputTokens={inputTokens}, rawSql={rawSql} )
+		))		 )
+		-> dao(name={name}, usingNamespaces={usingNamespaces}, outputTokens={outputTokens}, inputTokens={inputTokens}, rawSql={rawSql} )
 	;
+
+//usingStatement	: ^(USING NAMESPACE) { usingNamespaces.Add($NAMESPACE.text); }	
+//	;
+
 	
 
 outputToken returns [OutputToken token]

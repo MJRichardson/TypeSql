@@ -13,15 +13,18 @@ namespace TypeSql.UnitTests.Parsing.ANTLR
             //act
             var lexer = new TypeSqlLexer(new ANTLRStringStream(sql));
             var parser = new TypeSqlParser(new CommonTokenStream(lexer));
-            var parseResult = parser.sql();
+            var parseResult = parser.typesql();
             AST = (CommonTree) parseResult.Tree;
+            SqlNode = (CommonTree)AST.GetFirstChildWithType(TypeSqlParser.SQL);
         }
 
         protected CommonTree AST { get; private set; }
 
-        protected IList<CommonTree> GetSubTrees(int type)
+        protected CommonTree SqlNode { get; private set; }
+
+        protected IList<CommonTree> GetSubTrees(CommonTree parent, int type)
         {
-            return AST.Children.Where(child => child.Type == type).Cast<CommonTree>().ToList();
+            return parent.Children.Where(child => child.Type == type).Cast<CommonTree>().ToList();
         }
     }
 }

@@ -54,6 +54,7 @@ namespace TypeSql.DbTests.Roslyn
              Session.AddReference("System.Core");
              Session.AddReference(typeof(DapperDao<>).Assembly);
              Session.AddReference(typeof(IDbConnection).Assembly);
+             Session.AddReference(this.GetType().Assembly);
              Session.AddReference("System.Configuration");
              Session.Execute("using System.Linq;");
              Session.Execute("using System.Data.SqlClient;");

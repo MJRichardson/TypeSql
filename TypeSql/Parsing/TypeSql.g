@@ -6,6 +6,7 @@ options {
 }
 
 tokens {
+TYPESQL;
 SQL;
 OUTPUT_TOKEN;
 INPUT_TOKEN;
@@ -15,9 +16,19 @@ INPUT_TOKEN;
 @lexer::modifier{internal}
 @namespace { TypeSql.Parsing }
 
-public sql	:	token* -> ^(SQL token*)
+public typesql	:	usingNamespace* sql -> ^(TYPESQL usingNamespace* sql)
+//public typesql	:	 token* -> ^(TYPESQL ^(SQL token*))
 	;
 
+sql	:	token* -> ^(SQL token*)
+	;
+
+usingNamespace	: USING NAMESPACE -> ^(USING NAMESPACE)
+	;
+
+//nameSpace : NAMESPACE_SEGMENT ('.' NAMESPACE_SEGMENT)* 
+	//;
+	
 token 	:	 outputToken
 		|	('@' ID ':') => inputToken
 		|	.
@@ -41,10 +52,19 @@ inputToken
 //INPUT_TOKEN :
 //	'@' ID ':' ID
 //	;	
-
+USING	: ('U'|'u')('S'|'s')('I'|'i')('N'|'n')('G'|'g') 	
+	;
 ID  :	
 	('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|DIGIT|'_')*
     ;
+
+NAMESPACE  
+	: (NAMESPACE_SEGMENT) ('.' NAMESPACE_SEGMENT)*	
+	;
+
+fragment NAMESPACE_SEGMENT 
+	:	('a'..'z'|'A'..'Z'|DIGIT)*
+	;
 
 fragment DIGIT 	: 
 	'0'..'9'
@@ -59,3 +79,4 @@ WHITESPACE  :   (' '|'\t')+ {$channel = Hidden;}
 
 ANY 	:	.
 	;
+

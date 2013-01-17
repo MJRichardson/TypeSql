@@ -14,23 +14,23 @@ namespace TypeSql.UnitTests.Parsing.ANTLR
         }
 
         [Fact]
-        public void CreatesSqlAst()
+        public void CreatesTypeSqlAst()
         {
-           Assert.Equal(TypeSqlParser.SQL,AST.Type);
+           Assert.Equal(TypeSqlParser.TYPESQL,AST.Type);
 
         }
 
         [Fact]
         public void AstContainsOutputToken()
         {
-            var outputToken = AST.GetChild(1);
+            var outputToken = SqlNode.GetChild(1);
             Assert.Equal(TypeSqlParser.OUTPUT_TOKEN, outputToken.Type );
         }
 
         [Fact]
         public void OutputTokenContainsIdAndType()
         {
-            var outputToken = AST.GetChild(1);
+            var outputToken = SqlNode.GetChild(1);
             var idNode = outputToken.GetChild(0);
             var typeNode = outputToken.GetChild(1);
 

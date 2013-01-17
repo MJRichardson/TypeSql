@@ -17,8 +17,9 @@ namespace TypeSql.UnitTests.Parsing.ANTLR
         [Fact]
         public void OutputTokenIsParsed()
         {
-           Assert.Equal(1, GetSubTrees(TypeSqlParser.OUTPUT_TOKEN).Count); 
-            var outputTokenTree = GetSubTrees(TypeSqlParser.OUTPUT_TOKEN).First();
+            var sqlNode = GetSubTrees(AST, TypeSqlParser.SQL).Single(); 
+           Assert.Equal(1, GetSubTrees(sqlNode, TypeSqlParser.OUTPUT_TOKEN).Count); 
+            var outputTokenTree = GetSubTrees(sqlNode, TypeSqlParser.OUTPUT_TOKEN).First();
             Assert.Equal("Count", outputTokenTree.GetChild(0).Text);
             Assert.Equal("int", outputTokenTree.GetChild(1).Text);
         }

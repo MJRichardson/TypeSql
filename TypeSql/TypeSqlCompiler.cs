@@ -19,13 +19,13 @@ namespace TypeSql
             var parser = new TypeSqlParser(rewriteTokenStream);
 
             //parse the typeSql, producing the AST
-            var ast = (CommonTree) parser.sql().Tree;
+            var ast = (CommonTree) parser.typesql().Tree;
              var nodeStream = new CommonTreeNodeStream(ast);
 
             //transform the AST into raw-sql
              var rawSqlOutput = new RawSqlTransform(nodeStream);
              nodeStream.TokenStream = rewriteTokenStream;
-             rawSqlOutput.sql();
+             rawSqlOutput.typeSql();
              string rawSql = rewriteTokenStream.ToString();
 
             //reset 
@@ -36,7 +36,7 @@ namespace TypeSql
              var daoTransform = new DaoTransform(nodeStream){TemplateGroup = new StringTemplateGroup(
                 new StreamReader(typeof(TypeSqlCompiler).Assembly.GetManifestResourceStream("TypeSql.Parsing.DapperDao.stg")),
                 typeof (TemplateLexer))};
-             var template = daoTransform.sql(typeSqlFileName, rawSql).Template;
+             var template = daoTransform.typeSql(typeSqlFileName, rawSql).Template;
              string daoSourceCode = template.ToString();
 
             return new CompileResult(daoSourceCode, rawSql);

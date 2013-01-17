@@ -1,11 +1,12 @@
 group DapperDao;
 
-dao(name, outputTokens, inputTokens, rawSql) ::= <<
+dao(name, usingNamespaces, outputTokens, inputTokens, rawSql) ::= <<
 using System;
 using System.Data;
 using System.Data.Common;
 using TypeSql; 
 using System.Collections.Generic;
+$usingNamespaces:using()$
 
 public partial class $name$Result 
 {
@@ -54,6 +55,9 @@ public partial class $name$ : DapperDao<$name$Result>, I$name$
 
 }
 >>
+
+using(namespace) ::= <<
+using $namespace$; >>
 
 outputGetter(outputToken) ::= <<
 public $outputToken.Type$ $outputToken.Id$

@@ -11,15 +11,16 @@ options {
 @namespace { TypeSql.Parsing }
 @modifier{internal}
 
-public sql 
+public typeSql 
 
-	:	^(SQL (
-			outputToken 
-			| inputToken
-			| .
-			)*
-		) 
+	:	^(TYPESQL 
+			usingNamespace*
+			^(SQL (	outputToken | inputToken | . )*	) 
+		)
 	;
+
+usingNamespace 	:	^(USING NAMESPACE) -> template() ""
+;
 
 outputToken 
 	:	^(OUTPUT_TOKEN id=ID type=ID ) -> template(id={$id.text}, type={$type.text}) "[<id>]" 

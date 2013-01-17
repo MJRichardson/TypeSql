@@ -24,7 +24,7 @@ namespace TypeSql.UnitTests.Parsing.ANTLR
             var lexer = new TypeSqlLexer(input);
             var tokenStream = new CommonTokenStream(lexer);
             var parser = new TypeSqlParser(tokenStream);
-            var parseResult = parser.sql();
+            var parseResult = parser.typesql();
 
             var templateGroup = new StringTemplateGroup(
                 new StreamReader(new FileStream(@"..\..\..\TypeSql\Parsing\DapperDao.stg", FileMode.Open)),
@@ -55,7 +55,7 @@ namespace TypeSql.UnitTests.Parsing.ANTLR
             var tokenStream = new CommonTokenStream(lexer);
             var parser = new TypeSqlParser(tokenStream);
 
-            var parseResult = parser.sql();
+            var parseResult = parser.typesql();
 
         }
 
@@ -73,7 +73,7 @@ namespace TypeSql.UnitTests.Parsing.ANTLR
             var tokenStream = new CommonTokenStream(lexer);
             var parser = new TypeSqlParser(tokenStream);
 
-            var parseResult = parser.sql();
+            var parseResult = parser.typesql();
 
         }
         
@@ -91,7 +91,7 @@ namespace TypeSql.UnitTests.Parsing.ANTLR
             var tokenStream = new CommonTokenStream(lexer);
             var parser = new TypeSqlParser(tokenStream);
 
-            var parseResult = parser.sql();
+            var parseResult = parser.typesql();
 
         }
         //private static IEnumerable<TypeSqlOutputToken> GetOutputTokens(Lexer lexer)

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g 2012-12-16 21:08:58
+// $ANTLR 3.4 C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g 2013-01-17 17:15:39
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -37,24 +37,28 @@ namespace  TypeSql.Parsing
 {
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "3.4")]
 [System.CLSCompliant(false)]
-internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
+internal partial class DaoTransform : Antlr.Runtime.Tree.TreeParser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ANY", "DIGIT", "ID", "INPUT_TOKEN", "NEWLINE", "OUTPUT_TOKEN", "SQL", "WHITESPACE", "':'", "'@'", "'['", "']'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ANY", "DIGIT", "ID", "INPUT_TOKEN", "NAMESPACE", "NAMESPACE_SEGMENT", "NEWLINE", "OUTPUT_TOKEN", "SQL", "TYPESQL", "USING", "WHITESPACE", "':'", "'@'", "'['", "']'"
 	};
 	public const int EOF=-1;
-	public const int T__12=12;
-	public const int T__13=13;
-	public const int T__14=14;
-	public const int T__15=15;
+	public const int T__16=16;
+	public const int T__17=17;
+	public const int T__18=18;
+	public const int T__19=19;
 	public const int ANY=4;
 	public const int DIGIT=5;
 	public const int ID=6;
 	public const int INPUT_TOKEN=7;
-	public const int NEWLINE=8;
-	public const int OUTPUT_TOKEN=9;
-	public const int SQL=10;
-	public const int WHITESPACE=11;
+	public const int NAMESPACE=8;
+	public const int NAMESPACE_SEGMENT=9;
+	public const int NEWLINE=10;
+	public const int OUTPUT_TOKEN=11;
+	public const int SQL=12;
+	public const int TYPESQL=13;
+	public const int USING=14;
+	public const int WHITESPACE=15;
 
 	public DaoTransform(ITreeNodeStream input)
 		: this(input, new RecognizerSharedState())
@@ -74,7 +78,7 @@ internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
 	}
 
 	public override string[] TokenNames { get { return DaoTransform.tokenNames; } }
-	public override string GrammarFileName { get { return "C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g"; } }
+	public override string GrammarFileName { get { return "C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g"; } }
 
 
 	partial void OnCreated();
@@ -82,95 +86,155 @@ internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule(string ruleName, int ruleIndex);
 
 	#region Rules
-	partial void EnterRule_sql();
-	partial void LeaveRule_sql();
+	partial void EnterRule_typeSql();
+	partial void LeaveRule_typeSql();
 
-	// $ANTLR start "sql"
-	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:19:8: public sql[string name, string rawSql] : ^( SQL ( outputToken | inputToken | . )* ) -> dao(name=nameoutputTokens=outputTokensinputTokens=inputTokensrawSql=rawSql);
-	[GrammarRule("sql")]
-	public TemplateTreeRuleReturnScope<StringTemplate, CommonTree> sql(string name, string rawSql)
+	// $ANTLR start "typeSql"
+	// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:19:8: public typeSql[string name, string rawSql] : ^( TYPESQL ( ^( USING NAMESPACE ) )* ( ^( SQL ( outputToken | inputToken | . )* ) ) ) -> dao(name=nameusingNamespaces=usingNamespacesoutputTokens=outputTokensinputTokens=inputTokensrawSql=rawSql);
+	[GrammarRule("typeSql")]
+	public TemplateTreeRuleReturnScope<StringTemplate, CommonTree> typeSql(string name, string rawSql)
 	{
-		EnterRule_sql();
-		EnterRule("sql", 1);
-		TraceIn("sql", 1);
+		EnterRule_typeSql();
+		EnterRule("typeSql", 1);
+		TraceIn("typeSql", 1);
 		TemplateTreeRuleReturnScope<StringTemplate, CommonTree> retval = new TemplateTreeRuleReturnScope<StringTemplate, CommonTree>();
 		retval.Start = (CommonTree)input.LT(1);
 
-		DaoTransform.outputToken_return outputToken1 = default(DaoTransform.outputToken_return);
-		DaoTransform.inputToken_return inputToken2 = default(DaoTransform.inputToken_return);
+		CommonTree NAMESPACE1 = default(CommonTree);
+		DaoTransform.outputToken_return outputToken2 = default(DaoTransform.outputToken_return);
+		DaoTransform.inputToken_return inputToken3 = default(DaoTransform.inputToken_return);
 
 
 			var outputTokens = new List<OutputToken>();
 			var inputTokens = new List<InputToken>();
+			var usingNamespaces = new List<string>();
 
-		try { DebugEnterRule(GrammarFileName, "sql");
+		try { DebugEnterRule(GrammarFileName, "typeSql");
 		DebugLocation(19, 1);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:24:2: ( ^( SQL ( outputToken | inputToken | . )* ) -> dao(name=nameoutputTokens=outputTokensinputTokens=inputTokensrawSql=rawSql))
+			// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:25:2: ( ^( TYPESQL ( ^( USING NAMESPACE ) )* ( ^( SQL ( outputToken | inputToken | . )* ) ) ) -> dao(name=nameusingNamespaces=usingNamespacesoutputTokens=outputTokensinputTokens=inputTokensrawSql=rawSql))
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:24:4: ^( SQL ( outputToken | inputToken | . )* )
+			// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:25:4: ^( TYPESQL ( ^( USING NAMESPACE ) )* ( ^( SQL ( outputToken | inputToken | . )* ) ) )
 			{
-			DebugLocation(24, 4);
-			DebugLocation(24, 6);
-			Match(input,SQL,Follow._SQL_in_sql80); 
+			DebugLocation(25, 4);
+			DebugLocation(25, 6);
+			Match(input,TYPESQL,Follow._TYPESQL_in_typeSql80); 
+
+			Match(input, TokenTypes.Down, null); 
+			DebugLocation(26, 4);
+			// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:26:4: ( ^( USING NAMESPACE ) )*
+			try { DebugEnterSubRule(1);
+			while (true)
+			{
+				int alt1=2;
+				try { DebugEnterDecision(1, false);
+				int LA1_0 = input.LA(1);
+
+				if ((LA1_0==USING))
+				{
+					alt1 = 1;
+				}
+
+
+				} finally { DebugExitDecision(1); }
+				switch ( alt1 )
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:26:5: ^( USING NAMESPACE )
+					{
+					DebugLocation(26, 5);
+					DebugLocation(26, 7);
+					Match(input,USING,Follow._USING_in_typeSql88); 
+
+					Match(input, TokenTypes.Down, null); 
+					DebugLocation(26, 13);
+					NAMESPACE1=(CommonTree)Match(input,NAMESPACE,Follow._NAMESPACE_in_typeSql90); 
+
+					Match(input, TokenTypes.Up, null); 
+
+					DebugLocation(26, 24);
+					 usingNamespaces.Add((NAMESPACE1!=null?NAMESPACE1.Text:null)); 
+
+					}
+					break;
+
+				default:
+					goto loop1;
+				}
+			}
+
+			loop1:
+				;
+
+			} finally { DebugExitSubRule(1); }
+
+			DebugLocation(27, 4);
+			// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:27:4: ( ^( SQL ( outputToken | inputToken | . )* ) )
+			DebugEnterAlt(1);
+			// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:27:5: ^( SQL ( outputToken | inputToken | . )* )
+			{
+			DebugLocation(27, 5);
+			DebugLocation(27, 7);
+			Match(input,SQL,Follow._SQL_in_typeSql104); 
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); 
-				DebugLocation(24, 10);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:24:10: ( outputToken | inputToken | . )*
-				try { DebugEnterSubRule(1);
+				DebugLocation(27, 11);
+				// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:27:11: ( outputToken | inputToken | . )*
+				try { DebugEnterSubRule(2);
 				while (true)
 				{
-					int alt1=4;
-					try { DebugEnterDecision(1, false);
+					int alt2=4;
+					try { DebugEnterDecision(2, false);
 					switch (input.LA(1))
 					{
 					case OUTPUT_TOKEN:
 						{
-						int LA1_2 = input.LA(2);
+						int LA2_2 = input.LA(2);
 
-						if ((LA1_2==DOWN))
+						if ((LA2_2==DOWN))
 						{
-							int LA1_5 = input.LA(3);
+							int LA2_5 = input.LA(3);
 
-							if ((LA1_5==ID))
+							if ((LA2_5==ID))
 							{
-								int LA1_7 = input.LA(4);
+								int LA2_7 = input.LA(4);
 
-								if ((LA1_7==ID))
+								if ((LA2_7==ID))
 								{
-									int LA1_9 = input.LA(5);
+									int LA2_9 = input.LA(5);
 
-									if ((LA1_9==UP))
+									if ((LA2_9==UP))
 									{
-										alt1 = 1;
+										alt2 = 1;
 									}
-									else if (((LA1_9>=ANY && LA1_9<=15)))
+									else if (((LA2_9>=ANY && LA2_9<=19)))
 									{
-										alt1 = 3;
+										alt2 = 3;
 									}
 
 
 								}
-								else if (((LA1_7>=UP && LA1_7<=DIGIT)||(LA1_7>=INPUT_TOKEN && LA1_7<=15)))
+								else if (((LA2_7>=UP && LA2_7<=DIGIT)||(LA2_7>=INPUT_TOKEN && LA2_7<=19)))
 								{
-									alt1 = 3;
+									alt2 = 3;
 								}
 
 
 							}
-							else if (((LA1_5>=ANY && LA1_5<=DIGIT)||(LA1_5>=INPUT_TOKEN && LA1_5<=15)))
+							else if (((LA2_5>=ANY && LA2_5<=DIGIT)||(LA2_5>=INPUT_TOKEN && LA2_5<=19)))
 							{
-								alt1 = 3;
+								alt2 = 3;
 							}
 
 
 						}
-						else if (((LA1_2>=UP && LA1_2<=15)))
+						else if (((LA2_2>=UP && LA2_2<=19)))
 						{
-							alt1 = 3;
+							alt2 = 3;
 						}
 
 
@@ -178,48 +242,48 @@ internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
 						break;
 					case INPUT_TOKEN:
 						{
-						int LA1_3 = input.LA(2);
+						int LA2_3 = input.LA(2);
 
-						if ((LA1_3==DOWN))
+						if ((LA2_3==DOWN))
 						{
-							int LA1_6 = input.LA(3);
+							int LA2_6 = input.LA(3);
 
-							if ((LA1_6==ID))
+							if ((LA2_6==ID))
 							{
-								int LA1_8 = input.LA(4);
+								int LA2_8 = input.LA(4);
 
-								if ((LA1_8==ID))
+								if ((LA2_8==ID))
 								{
-									int LA1_10 = input.LA(5);
+									int LA2_10 = input.LA(5);
 
-									if ((LA1_10==UP))
+									if ((LA2_10==UP))
 									{
-										alt1 = 2;
+										alt2 = 2;
 									}
-									else if (((LA1_10>=ANY && LA1_10<=15)))
+									else if (((LA2_10>=ANY && LA2_10<=19)))
 									{
-										alt1 = 3;
+										alt2 = 3;
 									}
 
 
 								}
-								else if (((LA1_8>=UP && LA1_8<=DIGIT)||(LA1_8>=INPUT_TOKEN && LA1_8<=15)))
+								else if (((LA2_8>=UP && LA2_8<=DIGIT)||(LA2_8>=INPUT_TOKEN && LA2_8<=19)))
 								{
-									alt1 = 3;
+									alt2 = 3;
 								}
 
 
 							}
-							else if (((LA1_6>=ANY && LA1_6<=DIGIT)||(LA1_6>=INPUT_TOKEN && LA1_6<=15)))
+							else if (((LA2_6>=ANY && LA2_6<=DIGIT)||(LA2_6>=INPUT_TOKEN && LA2_6<=19)))
 							{
-								alt1 = 3;
+								alt2 = 3;
 							}
 
 
 						}
-						else if (((LA1_3>=UP && LA1_3<=15)))
+						else if (((LA2_3>=UP && LA2_3<=19)))
 						{
-							alt1 = 3;
+							alt2 = 3;
 						}
 
 
@@ -228,80 +292,90 @@ internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
 					case ANY:
 					case DIGIT:
 					case ID:
+					case NAMESPACE:
+					case NAMESPACE_SEGMENT:
 					case NEWLINE:
 					case SQL:
+					case TYPESQL:
+					case USING:
 					case WHITESPACE:
-					case 12:
-					case 13:
-					case 14:
-					case 15:
+					case 16:
+					case 17:
+					case 18:
+					case 19:
 						{
-						alt1 = 3;
+						alt2 = 3;
 						}
 						break;
 					}
 
-					} finally { DebugExitDecision(1); }
-					switch ( alt1 )
+					} finally { DebugExitDecision(2); }
+					switch ( alt2 )
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:25:4: outputToken
+						// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:28:5: outputToken
 						{
-						DebugLocation(25, 4);
-						PushFollow(Follow._outputToken_in_sql87);
-						outputToken1=outputToken();
+						DebugLocation(28, 5);
+						PushFollow(Follow._outputToken_in_typeSql112);
+						outputToken2=outputToken();
 						PopFollow();
 
-						DebugLocation(25, 16);
-						 outputTokens.Add((outputToken1!=null?outputToken1.token:default(OutputToken))); 
+						DebugLocation(28, 17);
+						 outputTokens.Add((outputToken2!=null?outputToken2.token:default(OutputToken))); 
 
 						}
 						break;
 					case 2:
 						DebugEnterAlt(2);
-						// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:26:6: inputToken
+						// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:29:7: inputToken
 						{
-						DebugLocation(26, 6);
-						PushFollow(Follow._inputToken_in_sql97);
-						inputToken2=inputToken();
+						DebugLocation(29, 7);
+						PushFollow(Follow._inputToken_in_typeSql123);
+						inputToken3=inputToken();
 						PopFollow();
 
-						DebugLocation(26, 17);
-						 inputTokens.Add((inputToken2!=null?inputToken2.token:default(InputToken))); 
+						DebugLocation(29, 18);
+						 inputTokens.Add((inputToken3!=null?inputToken3.token:default(InputToken))); 
 
 						}
 						break;
 					case 3:
 						DebugEnterAlt(3);
-						// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:27:6: .
+						// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:30:7: .
 						{
-						DebugLocation(27, 6);
+						DebugLocation(30, 7);
 						MatchAny(input); 
 
 						}
 						break;
 
 					default:
-						goto loop1;
+						goto loop2;
 					}
 				}
 
-				loop1:
+				loop2:
 					;
 
-				} finally { DebugExitSubRule(1); }
+				} finally { DebugExitSubRule(2); }
 
 
 				Match(input, TokenTypes.Up, null); 
 			}
 
 
+			}
+
+
+			Match(input, TokenTypes.Up, null); 
+
+
 			// TEMPLATE REWRITE
-			// 30:3: -> dao(name=nameoutputTokens=outputTokensinputTokens=inputTokensrawSql=rawSql)
+			// 33:3: -> dao(name=nameusingNamespaces=usingNamespacesoutputTokens=outputTokensinputTokens=inputTokensrawSql=rawSql)
 			{
 				retval.Template = TemplateGroup.GetInstanceOf("dao",
-				new Dictionary<string, object>() { {"name", name}, {"outputTokens", outputTokens}, {"inputTokens", inputTokens}, {"rawSql", rawSql} }
+				new Dictionary<string, object>() { {"name", name}, {"usingNamespaces", usingNamespaces}, {"outputTokens", outputTokens}, {"inputTokens", inputTokens}, {"rawSql", rawSql} }
 			);
 			}
 
@@ -317,16 +391,16 @@ internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("sql", 1);
-			LeaveRule("sql", 1);
-			LeaveRule_sql();
+			TraceOut("typeSql", 1);
+			LeaveRule("typeSql", 1);
+			LeaveRule_typeSql();
 		}
-		DebugLocation(31, 1);
-		} finally { DebugExitRule(GrammarFileName, "sql"); }
+		DebugLocation(34, 1);
+		} finally { DebugExitRule(GrammarFileName, "typeSql"); }
 		return retval;
 
 	}
-	// $ANTLR end "sql"
+	// $ANTLR end "typeSql"
 
 	private sealed partial class outputToken_return : TemplateTreeRuleReturnScope<StringTemplate, CommonTree>
 	{
@@ -339,7 +413,7 @@ internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_outputToken();
 
 	// $ANTLR start "outputToken"
-	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:34:1: outputToken returns [OutputToken token] : ^( OUTPUT_TOKEN id= ID type= ID ) ;
+	// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:41:1: outputToken returns [OutputToken token] : ^( OUTPUT_TOKEN id= ID type= ID ) ;
 	[GrammarRule("outputToken")]
 	private DaoTransform.outputToken_return outputToken()
 	{
@@ -353,26 +427,26 @@ internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
 		CommonTree type = default(CommonTree);
 
 		try { DebugEnterRule(GrammarFileName, "outputToken");
-		DebugLocation(34, 1);
+		DebugLocation(41, 1);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:35:2: ( ^( OUTPUT_TOKEN id= ID type= ID ) )
+			// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:42:2: ( ^( OUTPUT_TOKEN id= ID type= ID ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:35:4: ^( OUTPUT_TOKEN id= ID type= ID )
+			// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:42:4: ^( OUTPUT_TOKEN id= ID type= ID )
 			{
-			DebugLocation(35, 4);
-			DebugLocation(35, 6);
-			Match(input,OUTPUT_TOKEN,Follow._OUTPUT_TOKEN_in_outputToken162); 
+			DebugLocation(42, 4);
+			DebugLocation(42, 6);
+			Match(input,OUTPUT_TOKEN,Follow._OUTPUT_TOKEN_in_outputToken202); 
 
 			Match(input, TokenTypes.Down, null); 
-			DebugLocation(35, 21);
-			id=(CommonTree)Match(input,ID,Follow._ID_in_outputToken166); 
-			DebugLocation(35, 29);
-			type=(CommonTree)Match(input,ID,Follow._ID_in_outputToken170); 
+			DebugLocation(42, 21);
+			id=(CommonTree)Match(input,ID,Follow._ID_in_outputToken206); 
+			DebugLocation(42, 29);
+			type=(CommonTree)Match(input,ID,Follow._ID_in_outputToken210); 
 
 			Match(input, TokenTypes.Up, null); 
 
-			DebugLocation(35, 36);
+			DebugLocation(42, 36);
 			 retval.token = new OutputToken((id!=null?id.Text:null), (type!=null?type.Text:null)); 
 
 			}
@@ -389,7 +463,7 @@ internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
 			LeaveRule("outputToken", 2);
 			LeaveRule_outputToken();
 		}
-		DebugLocation(36, 1);
+		DebugLocation(43, 1);
 		} finally { DebugExitRule(GrammarFileName, "outputToken"); }
 		return retval;
 
@@ -407,7 +481,7 @@ internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_inputToken();
 
 	// $ANTLR start "inputToken"
-	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:38:1: inputToken returns [InputToken token] : ^( INPUT_TOKEN id= ID type= ID ) ;
+	// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:45:1: inputToken returns [InputToken token] : ^( INPUT_TOKEN id= ID type= ID ) ;
 	[GrammarRule("inputToken")]
 	private DaoTransform.inputToken_return inputToken()
 	{
@@ -421,26 +495,26 @@ internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
 		CommonTree type = default(CommonTree);
 
 		try { DebugEnterRule(GrammarFileName, "inputToken");
-		DebugLocation(38, 1);
+		DebugLocation(45, 1);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:39:2: ( ^( INPUT_TOKEN id= ID type= ID ) )
+			// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:46:2: ( ^( INPUT_TOKEN id= ID type= ID ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:39:4: ^( INPUT_TOKEN id= ID type= ID )
+			// C:\\code\\TypeSql\\TypeSql\\Parsing\\DaoTransform.g:46:4: ^( INPUT_TOKEN id= ID type= ID )
 			{
-			DebugLocation(39, 4);
-			DebugLocation(39, 6);
-			Match(input,INPUT_TOKEN,Follow._INPUT_TOKEN_in_inputToken191); 
+			DebugLocation(46, 4);
+			DebugLocation(46, 6);
+			Match(input,INPUT_TOKEN,Follow._INPUT_TOKEN_in_inputToken231); 
 
 			Match(input, TokenTypes.Down, null); 
-			DebugLocation(39, 20);
-			id=(CommonTree)Match(input,ID,Follow._ID_in_inputToken195); 
-			DebugLocation(39, 28);
-			type=(CommonTree)Match(input,ID,Follow._ID_in_inputToken199); 
+			DebugLocation(46, 20);
+			id=(CommonTree)Match(input,ID,Follow._ID_in_inputToken235); 
+			DebugLocation(46, 28);
+			type=(CommonTree)Match(input,ID,Follow._ID_in_inputToken239); 
 
 			Match(input, TokenTypes.Up, null); 
 
-			DebugLocation(39, 35);
+			DebugLocation(46, 35);
 			 retval.token = new InputToken((id!=null?id.Text:null), (type!=null?type.Text:null)); 
 
 			}
@@ -457,7 +531,7 @@ internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
 			LeaveRule("inputToken", 3);
 			LeaveRule_inputToken();
 		}
-		DebugLocation(40, 1);
+		DebugLocation(47, 1);
 		} finally { DebugExitRule(GrammarFileName, "inputToken"); }
 		return retval;
 
@@ -469,15 +543,18 @@ internal partial class DaoTransform : TypeSql.Antlr.Runtime.Tree.TreeParser
 	#region Follow sets
 	private static class Follow
 	{
-		public static readonly BitSet _SQL_in_sql80 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _outputToken_in_sql87 = new BitSet(new ulong[]{0xFFF8UL});
-		public static readonly BitSet _inputToken_in_sql97 = new BitSet(new ulong[]{0xFFF8UL});
-		public static readonly BitSet _OUTPUT_TOKEN_in_outputToken162 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_outputToken166 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _ID_in_outputToken170 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _INPUT_TOKEN_in_inputToken191 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_inputToken195 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _ID_in_inputToken199 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _TYPESQL_in_typeSql80 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _USING_in_typeSql88 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _NAMESPACE_in_typeSql90 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SQL_in_typeSql104 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _outputToken_in_typeSql112 = new BitSet(new ulong[]{0xFFFF8UL});
+		public static readonly BitSet _inputToken_in_typeSql123 = new BitSet(new ulong[]{0xFFFF8UL});
+		public static readonly BitSet _OUTPUT_TOKEN_in_outputToken202 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_outputToken206 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _ID_in_outputToken210 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _INPUT_TOKEN_in_inputToken231 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_inputToken235 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _ID_in_inputToken239 = new BitSet(new ulong[]{0x8UL});
 	}
 	#endregion Follow sets
 }
