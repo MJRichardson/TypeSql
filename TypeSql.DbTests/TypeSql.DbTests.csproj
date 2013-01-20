@@ -86,9 +86,6 @@
     <Compile Include="Roslyn\OneOutput.cs" />
     <Compile Include="Roslyn\UsingExistingConnection.cs" />
     <Compile Include="Roslyn\UsingExistingConnectionAndTransaction.cs" />
-    <Compile Include="Templates\DbTemplate.cs" />
-    <Compile Include="Templates\SelectTemplate.cs" />
-    <Compile Include="Templates\SelectTemplateTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\AdventureWorksLT2008_Data.mdf" />
