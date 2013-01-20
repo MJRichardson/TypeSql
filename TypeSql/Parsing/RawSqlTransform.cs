@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g 2013-01-17 17:28:25
+// $ANTLR 3.4 C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g 2013-01-20 15:06:39
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -35,13 +35,14 @@ namespace  TypeSql.Parsing
 internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ANY", "DIGIT", "ID", "INPUT_TOKEN", "NAMESPACE", "NAMESPACE_SEGMENT", "NEWLINE", "OUTPUT_TOKEN", "SQL", "TYPESQL", "USING", "WHITESPACE", "':'", "'@'", "'['", "']'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ANY", "DIGIT", "ID", "INPUT_TOKEN", "NAMESPACE", "NAMESPACE_SEGMENT", "NEWLINE", "OUTPUT_TOKEN", "SQL", "TYPE", "TYPESQL", "USING", "WHITESPACE", "':'", "'?'", "'@'", "'['", "']'"
 	};
 	public const int EOF=-1;
-	public const int T__16=16;
 	public const int T__17=17;
 	public const int T__18=18;
 	public const int T__19=19;
+	public const int T__20=20;
+	public const int T__21=21;
 	public const int ANY=4;
 	public const int DIGIT=5;
 	public const int ID=6;
@@ -51,9 +52,10 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 	public const int NEWLINE=10;
 	public const int OUTPUT_TOKEN=11;
 	public const int SQL=12;
-	public const int TYPESQL=13;
-	public const int USING=14;
-	public const int WHITESPACE=15;
+	public const int TYPE=13;
+	public const int TYPESQL=14;
+	public const int USING=15;
+	public const int WHITESPACE=16;
 
 	public RawSqlTransform(ITreeNodeStream input)
 		: this(input, new RecognizerSharedState())
@@ -73,7 +75,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 	}
 
 	public override string[] TokenNames { get { return RawSqlTransform.tokenNames; } }
-	public override string GrammarFileName { get { return "C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g"; } }
+	public override string GrammarFileName { get { return "C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g"; } }
 
 
 	partial void OnCreated();
@@ -85,7 +87,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_typeSql();
 
 	// $ANTLR start "typeSql"
-	// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:14:8: public typeSql : ^( TYPESQL ( usingNamespace )* ^( SQL ( outputToken | inputToken | . )* ) ) ;
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:14:8: public typeSql : ^( TYPESQL ( usingNamespace )* ^( SQL ( outputToken | inputToken | . )* ) ) ;
 	[GrammarRule("typeSql")]
 	public TemplateTreeRuleReturnScope<StringTemplate, CommonTree> typeSql()
 	{
@@ -99,9 +101,9 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 		DebugLocation(14, 1);
 		try
 		{
-			// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:16:2: ( ^( TYPESQL ( usingNamespace )* ^( SQL ( outputToken | inputToken | . )* ) ) )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:16:2: ( ^( TYPESQL ( usingNamespace )* ^( SQL ( outputToken | inputToken | . )* ) ) )
 			DebugEnterAlt(1);
-			// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:16:4: ^( TYPESQL ( usingNamespace )* ^( SQL ( outputToken | inputToken | . )* ) )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:16:4: ^( TYPESQL ( usingNamespace )* ^( SQL ( outputToken | inputToken | . )* ) )
 			{
 			DebugLocation(16, 4);
 			DebugLocation(16, 6);
@@ -109,7 +111,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 
 			Match(input, TokenTypes.Down, null); 
 			DebugLocation(17, 4);
-			// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:17:4: ( usingNamespace )*
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:17:4: ( usingNamespace )*
 			try { DebugEnterSubRule(1);
 			while (true)
 			{
@@ -128,7 +130,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:17:4: usingNamespace
+					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:17:4: usingNamespace
 					{
 					DebugLocation(17, 4);
 					PushFollow(Follow._usingNamespace_in_typeSql81);
@@ -157,7 +159,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 			{
 				Match(input, TokenTypes.Down, null); 
 				DebugLocation(18, 10);
-				// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:18:10: ( outputToken | inputToken | . )*
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:18:10: ( outputToken | inputToken | . )*
 				try { DebugEnterSubRule(2);
 				while (true)
 				{
@@ -177,36 +179,36 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 							{
 								int LA2_7 = input.LA(4);
 
-								if ((LA2_7==ID))
+								if ((LA2_7==TYPE))
 								{
 									int LA2_9 = input.LA(5);
 
-									if ((LA2_9==UP))
+									if ((LA2_9==DOWN))
 									{
 										alt2 = 1;
 									}
-									else if (((LA2_9>=ANY && LA2_9<=19)))
+									else if (((LA2_9>=UP && LA2_9<=21)))
 									{
 										alt2 = 3;
 									}
 
 
 								}
-								else if (((LA2_7>=UP && LA2_7<=DIGIT)||(LA2_7>=INPUT_TOKEN && LA2_7<=19)))
+								else if (((LA2_7>=UP && LA2_7<=SQL)||(LA2_7>=TYPESQL && LA2_7<=21)))
 								{
 									alt2 = 3;
 								}
 
 
 							}
-							else if (((LA2_5>=ANY && LA2_5<=DIGIT)||(LA2_5>=INPUT_TOKEN && LA2_5<=19)))
+							else if (((LA2_5>=ANY && LA2_5<=DIGIT)||(LA2_5>=INPUT_TOKEN && LA2_5<=21)))
 							{
 								alt2 = 3;
 							}
 
 
 						}
-						else if (((LA2_2>=UP && LA2_2<=19)))
+						else if (((LA2_2>=UP && LA2_2<=21)))
 						{
 							alt2 = 3;
 						}
@@ -226,36 +228,36 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 							{
 								int LA2_8 = input.LA(4);
 
-								if ((LA2_8==ID))
+								if ((LA2_8==TYPE))
 								{
 									int LA2_10 = input.LA(5);
 
-									if ((LA2_10==UP))
+									if ((LA2_10==DOWN))
 									{
 										alt2 = 2;
 									}
-									else if (((LA2_10>=ANY && LA2_10<=19)))
+									else if (((LA2_10>=UP && LA2_10<=21)))
 									{
 										alt2 = 3;
 									}
 
 
 								}
-								else if (((LA2_8>=UP && LA2_8<=DIGIT)||(LA2_8>=INPUT_TOKEN && LA2_8<=19)))
+								else if (((LA2_8>=UP && LA2_8<=SQL)||(LA2_8>=TYPESQL && LA2_8<=21)))
 								{
 									alt2 = 3;
 								}
 
 
 							}
-							else if (((LA2_6>=ANY && LA2_6<=DIGIT)||(LA2_6>=INPUT_TOKEN && LA2_6<=19)))
+							else if (((LA2_6>=ANY && LA2_6<=DIGIT)||(LA2_6>=INPUT_TOKEN && LA2_6<=21)))
 							{
 								alt2 = 3;
 							}
 
 
 						}
-						else if (((LA2_3>=UP && LA2_3<=19)))
+						else if (((LA2_3>=UP && LA2_3<=21)))
 						{
 							alt2 = 3;
 						}
@@ -270,13 +272,15 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 					case NAMESPACE_SEGMENT:
 					case NEWLINE:
 					case SQL:
+					case TYPE:
 					case TYPESQL:
 					case USING:
 					case WHITESPACE:
-					case 16:
 					case 17:
 					case 18:
 					case 19:
+					case 20:
+					case 21:
 						{
 						alt2 = 3;
 						}
@@ -288,7 +292,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:18:12: outputToken
+						// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:18:12: outputToken
 						{
 						DebugLocation(18, 12);
 						PushFollow(Follow._outputToken_in_typeSql92);
@@ -300,7 +304,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 						break;
 					case 2:
 						DebugEnterAlt(2);
-						// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:18:26: inputToken
+						// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:18:26: inputToken
 						{
 						DebugLocation(18, 26);
 						PushFollow(Follow._inputToken_in_typeSql96);
@@ -312,7 +316,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 						break;
 					case 3:
 						DebugEnterAlt(3);
-						// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:18:39: .
+						// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:18:39: .
 						{
 						DebugLocation(18, 39);
 						MatchAny(input); 
@@ -363,7 +367,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_usingNamespace();
 
 	// $ANTLR start "usingNamespace"
-	// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:1: usingNamespace : ^( USING NAMESPACE ) -> template( \"\";
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:1: usingNamespace : ^( USING NAMESPACE ) -> template( \"\";
 	[GrammarRule("usingNamespace")]
 	private TemplateTreeRuleReturnScope<StringTemplate, CommonTree> usingNamespace()
 	{
@@ -377,9 +381,9 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 		DebugLocation(22, 0);
 		try
 		{
-			// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:17: ( ^( USING NAMESPACE ) -> template( \"\")
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:17: ( ^( USING NAMESPACE ) -> template( \"\")
 			DebugEnterAlt(1);
-			// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:19: ^( USING NAMESPACE )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:19: ^( USING NAMESPACE )
 			{
 			DebugLocation(22, 19);
 			DebugLocation(22, 21);
@@ -430,7 +434,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_outputToken();
 
 	// $ANTLR start "outputToken"
-	// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:25:1: outputToken : ^( OUTPUT_TOKEN id= ID type= ID ) -> template(id=$id.texttype=$type.text) \"[<id>]\";
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:25:1: outputToken : ^( OUTPUT_TOKEN id= ID type ) -> template(id=$id.text) \"[<id>]\";
 	[GrammarRule("outputToken")]
 	private TemplateTreeRuleReturnScope<StringTemplate, CommonTree> outputToken()
 	{
@@ -441,15 +445,14 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 		retval.Start = (CommonTree)input.LT(1);
 
 		CommonTree id = default(CommonTree);
-		CommonTree type = default(CommonTree);
 
 		try { DebugEnterRule(GrammarFileName, "outputToken");
 		DebugLocation(25, 1);
 		try
 		{
-			// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:26:2: ( ^( OUTPUT_TOKEN id= ID type= ID ) -> template(id=$id.texttype=$type.text) \"[<id>]\")
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:26:2: ( ^( OUTPUT_TOKEN id= ID type ) -> template(id=$id.text) \"[<id>]\")
 			DebugEnterAlt(1);
-			// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:26:4: ^( OUTPUT_TOKEN id= ID type= ID )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:26:4: ^( OUTPUT_TOKEN id= ID type )
 			{
 			DebugLocation(26, 4);
 			DebugLocation(26, 6);
@@ -458,17 +461,20 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 			Match(input, TokenTypes.Down, null); 
 			DebugLocation(26, 21);
 			id=(CommonTree)Match(input,ID,Follow._ID_in_outputToken149); 
-			DebugLocation(26, 29);
-			type=(CommonTree)Match(input,ID,Follow._ID_in_outputToken153); 
+			DebugLocation(26, 25);
+			PushFollow(Follow._type_in_outputToken151);
+			type();
+			PopFollow();
+
 
 			Match(input, TokenTypes.Up, null); 
 
 
 			// TEMPLATE REWRITE
-			// 26:35: -> template(id=$id.texttype=$type.text) \"[<id>]\"
+			// 26:32: -> template(id=$id.text) \"[<id>]\"
 			{
 				retval.Template = new StringTemplate(TemplateGroup, "[<id>]",
-				new Dictionary<string, object>() { {"id", (id!=null?id.Text:null)}, {"type", (type!=null?type.Text:null)} }
+				new Dictionary<string, object>() { {"id", (id!=null?id.Text:null)} }
 			);
 			}
 
@@ -504,7 +510,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_inputToken();
 
 	// $ANTLR start "inputToken"
-	// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:29:1: inputToken : ^( INPUT_TOKEN id= ID type= ID ) -> template(id=$id.texttype=$type.text) \"@<id>\";
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:29:1: inputToken : ^( INPUT_TOKEN id= ID type ) -> template(id=$id.text) \"@<id>\";
 	[GrammarRule("inputToken")]
 	private TemplateTreeRuleReturnScope<StringTemplate, CommonTree> inputToken()
 	{
@@ -515,34 +521,36 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 		retval.Start = (CommonTree)input.LT(1);
 
 		CommonTree id = default(CommonTree);
-		CommonTree type = default(CommonTree);
 
 		try { DebugEnterRule(GrammarFileName, "inputToken");
 		DebugLocation(29, 1);
 		try
 		{
-			// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:30:2: ( ^( INPUT_TOKEN id= ID type= ID ) -> template(id=$id.texttype=$type.text) \"@<id>\")
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:30:2: ( ^( INPUT_TOKEN id= ID type ) -> template(id=$id.text) \"@<id>\")
 			DebugEnterAlt(1);
-			// C:\\code\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:30:4: ^( INPUT_TOKEN id= ID type= ID )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:30:4: ^( INPUT_TOKEN id= ID type )
 			{
 			DebugLocation(30, 4);
 			DebugLocation(30, 6);
-			Match(input,INPUT_TOKEN,Follow._INPUT_TOKEN_in_inputToken186); 
+			Match(input,INPUT_TOKEN,Follow._INPUT_TOKEN_in_inputToken179); 
 
 			Match(input, TokenTypes.Down, null); 
 			DebugLocation(30, 20);
-			id=(CommonTree)Match(input,ID,Follow._ID_in_inputToken190); 
-			DebugLocation(30, 28);
-			type=(CommonTree)Match(input,ID,Follow._ID_in_inputToken194); 
+			id=(CommonTree)Match(input,ID,Follow._ID_in_inputToken183); 
+			DebugLocation(30, 24);
+			PushFollow(Follow._type_in_inputToken185);
+			type();
+			PopFollow();
+
 
 			Match(input, TokenTypes.Up, null); 
 
 
 			// TEMPLATE REWRITE
-			// 30:34: -> template(id=$id.texttype=$type.text) \"@<id>\"
+			// 30:31: -> template(id=$id.text) \"@<id>\"
 			{
 				retval.Template = new StringTemplate(TemplateGroup, "@<id>",
-				new Dictionary<string, object>() { {"id", (id!=null?id.Text:null)}, {"type", (type!=null?type.Text:null)} }
+				new Dictionary<string, object>() { {"id", (id!=null?id.Text:null)} }
 			);
 			}
 
@@ -573,6 +581,100 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 
 	}
 	// $ANTLR end "inputToken"
+
+	private sealed partial class type_return : TemplateTreeRuleReturnScope<StringTemplate, CommonTree>
+	{
+		public string typeName;
+		public type_return(RawSqlTransform grammar) {OnCreated(grammar);}
+		partial void OnCreated(RawSqlTransform grammar);
+	}
+
+	partial void EnterRule_type();
+	partial void LeaveRule_type();
+
+	// $ANTLR start "type"
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:33:1: type returns [string typeName] : ^( TYPE ID ( '?' )? ) ;
+	[GrammarRule("type")]
+	private RawSqlTransform.type_return type()
+	{
+		EnterRule_type();
+		EnterRule("type", 5);
+		TraceIn("type", 5);
+		RawSqlTransform.type_return retval = new RawSqlTransform.type_return(this);
+		retval.Start = (CommonTree)input.LT(1);
+
+		CommonTree ID1 = default(CommonTree);
+
+		try { DebugEnterRule(GrammarFileName, "type");
+		DebugLocation(33, 67);
+		try
+		{
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:34:2: ( ^( TYPE ID ( '?' )? ) )
+			DebugEnterAlt(1);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:34:4: ^( TYPE ID ( '?' )? )
+			{
+			DebugLocation(34, 4);
+			DebugLocation(34, 6);
+			Match(input,TYPE,Follow._TYPE_in_type218); 
+
+			Match(input, TokenTypes.Down, null); 
+			DebugLocation(34, 11);
+			ID1=(CommonTree)Match(input,ID,Follow._ID_in_type220); 
+			DebugLocation(34, 14);
+			 retval.typeName =(ID1!=null?ID1.Text:null); 
+			DebugLocation(34, 38);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:34:38: ( '?' )?
+			int alt3=2;
+			try { DebugEnterSubRule(3);
+			try { DebugEnterDecision(3, false);
+			int LA3_0 = input.LA(1);
+
+			if ((LA3_0==18))
+			{
+				alt3 = 1;
+			}
+			} finally { DebugExitDecision(3); }
+			switch (alt3)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:34:39: '?'
+				{
+				DebugLocation(34, 39);
+				Match(input,18,Follow._18_in_type225); 
+				DebugLocation(34, 43);
+				retval.typeName += '?'; 
+
+				}
+				break;
+
+			}
+			} finally { DebugExitSubRule(3); }
+
+
+			Match(input, TokenTypes.Up, null); 
+
+
+			}
+
+		}
+		catch (RecognitionException re)
+		{
+			ReportError(re);
+			Recover(input,re);
+		}
+		finally
+		{
+			TraceOut("type", 5);
+			LeaveRule("type", 5);
+			LeaveRule_type();
+		}
+		DebugLocation(34, 67);
+		} finally { DebugExitRule(GrammarFileName, "type"); }
+		return retval;
+
+	}
+	// $ANTLR end "type"
 	#endregion Rules
 
 
@@ -580,18 +682,21 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 	private static class Follow
 	{
 		public static readonly BitSet _TYPESQL_in_typeSql75 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _usingNamespace_in_typeSql81 = new BitSet(new ulong[]{0x5000UL});
+		public static readonly BitSet _usingNamespace_in_typeSql81 = new BitSet(new ulong[]{0x9000UL});
 		public static readonly BitSet _SQL_in_typeSql88 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _outputToken_in_typeSql92 = new BitSet(new ulong[]{0xFFFF8UL});
-		public static readonly BitSet _inputToken_in_typeSql96 = new BitSet(new ulong[]{0xFFFF8UL});
+		public static readonly BitSet _outputToken_in_typeSql92 = new BitSet(new ulong[]{0x3FFFF8UL});
+		public static readonly BitSet _inputToken_in_typeSql96 = new BitSet(new ulong[]{0x3FFFF8UL});
 		public static readonly BitSet _USING_in_usingNamespace122 = new BitSet(new ulong[]{0x4UL});
 		public static readonly BitSet _NAMESPACE_in_usingNamespace124 = new BitSet(new ulong[]{0x8UL});
 		public static readonly BitSet _OUTPUT_TOKEN_in_outputToken145 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_outputToken149 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _ID_in_outputToken153 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _INPUT_TOKEN_in_inputToken186 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_inputToken190 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _ID_in_inputToken194 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ID_in_outputToken149 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _type_in_outputToken151 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _INPUT_TOKEN_in_inputToken179 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_inputToken183 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _type_in_inputToken185 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _TYPE_in_type218 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_type220 = new BitSet(new ulong[]{0x40008UL});
+		public static readonly BitSet _18_in_type225 = new BitSet(new ulong[]{0x8UL});
 	}
 	#endregion Follow sets
 }

@@ -65,6 +65,7 @@
     <Compile Include="Parsing\ANTLR\AntlrParserTest.cs" />
     <Compile Include="Parsing\ANTLR\AntlrParsing.cs" />
     <Compile Include="Parsing\ANTLR\BracketedOutputId.cs" />
+    <Compile Include="Parsing\ANTLR\NullableOutput.cs" />
     <Compile Include="Parsing\ANTLR\OneOutput.cs" />
     <Compile Include="Parsing\ANTLR\OneOutputOneInput.cs" />
     <Compile Include="Parsing\ANTLR\UsingStatement.cs" />

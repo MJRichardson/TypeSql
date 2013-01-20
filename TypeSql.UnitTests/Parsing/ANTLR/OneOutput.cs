@@ -37,8 +37,8 @@ namespace TypeSql.UnitTests.Parsing.ANTLR
             Assert.Equal(TypeSqlParser.ID, idNode.Type);
             Assert.Equal("UserId", idNode.Text);
 
-            Assert.Equal(TypeSqlParser.ID, typeNode.Type);
-            Assert.Equal("int", typeNode.Text);
+            Assert.Equal(TypeSqlParser.TYPE, typeNode.Type);
+            Assert.Equal("int", typeNode.GetChild(0).Text);
         }
     }
 }

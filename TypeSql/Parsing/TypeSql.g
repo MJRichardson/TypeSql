@@ -10,6 +10,7 @@ TYPESQL;
 SQL;
 OUTPUT_TOKEN;
 INPUT_TOKEN;
+TYPE;
 }
 
 @modifier{internal}
@@ -35,12 +36,16 @@ token 	:	 outputToken
 	;
 	
 outputToken  
-	:	(ID ':')=> id=ID ':' type=ID -> ^(OUTPUT_TOKEN $id $type)
-	|	('[' ID ']')=>'[' id=ID ']' ':' type=ID -> ^(OUTPUT_TOKEN $id $type)
+	:	(ID ':')=> id=ID ':' type -> ^(OUTPUT_TOKEN $id type)
+	|	('[' ID ']')=>'[' id=ID ']' ':' type -> ^(OUTPUT_TOKEN $id type)
 	;
 	
 inputToken
-	: 	'@' id=ID ':' type=ID -> ^(INPUT_TOKEN $id $type)
+	: 	'@' id=ID ':' type -> ^(INPUT_TOKEN $id type)
+	;
+	
+type
+	: ID '?'? -> ^(TYPE ID '?'?)
 	;
 
 //OUTPUT_TOKEN  : 

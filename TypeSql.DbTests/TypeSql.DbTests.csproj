@@ -81,6 +81,7 @@
     <Compile Include="Roslyn\DapperTemplateViaRoslyn.cs" />
     <Compile Include="Roslyn\DateTimeParameter.cs" />
     <Compile Include="Roslyn\EnumOutput.cs" />
+    <Compile Include="Roslyn\NullableOutput.cs" />
     <Compile Include="Roslyn\OneInputOneOutput.cs" />
     <Compile Include="Roslyn\OneOutput.cs" />
     <Compile Include="Roslyn\UsingExistingConnection.cs" />

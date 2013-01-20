@@ -23,9 +23,12 @@ usingNamespace 	:	^(USING NAMESPACE) -> template() ""
 ;
 
 outputToken 
-	:	^(OUTPUT_TOKEN id=ID type=ID ) -> template(id={$id.text}, type={$type.text}) "[<id>]" 
+	:	^(OUTPUT_TOKEN id=ID type ) -> template(id={$id.text}) "[<id>]" 
 	;
 	
 inputToken 
-	:	^(INPUT_TOKEN id=ID type=ID ) -> template(id={$id.text}, type={$type.text}) "@<id>" 
+	:	^(INPUT_TOKEN id=ID type ) -> template(id={$id.text}) "@<id>" 
 	;
+	
+type returns [string typeName] 	
+	:	^(TYPE ID { $typeName=$ID.text; } ('?' {$typeName += '?'; })? )	;

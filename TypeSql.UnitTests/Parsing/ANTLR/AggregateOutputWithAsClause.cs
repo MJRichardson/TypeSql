@@ -21,7 +21,7 @@ namespace TypeSql.UnitTests.Parsing.ANTLR
            Assert.Equal(1, GetSubTrees(sqlNode, TypeSqlParser.OUTPUT_TOKEN).Count); 
             var outputTokenTree = GetSubTrees(sqlNode, TypeSqlParser.OUTPUT_TOKEN).First();
             Assert.Equal("Count", outputTokenTree.GetChild(0).Text);
-            Assert.Equal("int", outputTokenTree.GetChild(1).Text);
+            Assert.Equal("int", outputTokenTree.GetChild(1).GetChild(0).Text);
         }
     }
 }

@@ -39,11 +39,14 @@ public typeSql [string name, string rawSql]
 	
 
 outputToken returns [OutputToken token]
-	:	^(OUTPUT_TOKEN id=ID type=ID )  { $token= new OutputToken($id.text, $type.text); }
+	:	^(OUTPUT_TOKEN id=ID type )  { $token= new OutputToken($id.text, $type.typeName); }
 	;
 
 inputToken returns [InputToken token]
-	:	^(INPUT_TOKEN id=ID type=ID )  { $token= new InputToken($id.text, $type.text); }
+	:	^(INPUT_TOKEN id=ID type )  { $token= new InputToken($id.text, $type.typeName); }
 	;
+
+type returns [string typeName] 	
+	:	^(TYPE ID { $typeName=$ID.text; } ('?' {$typeName += '?'; })? )	;
 
 
