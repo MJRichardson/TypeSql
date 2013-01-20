@@ -5,14 +5,15 @@ TypeSql is a compiler. It compiles annotated SQL into strongly-typed data-access
 The inspiration was [TypeScript](http://www.typescriptlang.org/). But don't try to take the analogy too far. TypeScript takes annotated javascript and compiles it into plain javascript. Its primary purpose is verification. TypeSQL takes annotated SQL and compiles it into a different, general-purpose programming language (C# only, for the moment). Our primary purpose is for you to write less code. Less code means less bugs and more functionality. It means you can ask for more money and go home earlier. Your family will love you more, and you will live longer. 
 
 ##Are you talking to me?
-Do you believe that a strongly-typed, object-orientated programming language is the best way to write applications?
+Do you believe that a strongly-typed, object-orientated programming language is the best way to write applications? 
+
 Do you believe that SQL is *still* the best language for querying relational databases?
 
 Good for you. Here at TypeSql HQ, we feel the same.
 
 Bridging the O-O relational-databases divide has been attempted many times, in many ways. Frankly, we don't love any of them.
 Here's our wish-list:
-- We want to use SQL. Not a vaguely SQLish language that we have to reverse-engineeer to produce the SQL we want (e.g. Linq, Hibernate Query Language, etc).
+- We want to use SQL. Not Linq, not Hibernate Query Language. SQL. 
 - We want the data returned to be typed. Call us old-fashioned if you will, but we like types. It's a little piece of certainty in an uncertain world.
 - We want getting our data to be minimum friction. We don't want to repeat ourselves. The typical data-retrieval ceremony (connection, command, reader, casting, etc) is tedious, and surface-area for bugs.
 
@@ -26,8 +27,10 @@ The closest we've found are micro-ORMs (eg. [Dapper](http://code.google.com/p/da
 
 **or**
 
-###Object reference may not be set to an instance of an object
+###Super DTO!
 One class that contains all possible properties that can be returned. Consumers of the class accessing, say `user.Address.Street` then play Russian-Roulette, hoping that the data-access operation they just performed resulted in the Address property being populated. Otherwise, its that most dreaded of exceptions.
+
+We have found that both approaches are messy to maintain. With TypeSql, you just the write and maintain the SQL. The data-access (DAO) and data-transfer (DTO) classes take care of themselves.
 
 So that's where we're coming from.
 
@@ -83,10 +86,8 @@ Accessing your data then looks like:
 ##Availability
 Currently, TypeSQL is available in C# flavor only. Hopefully, we will be coming soon to a language near you.
 
-##Usage
+##Installation
 Currently, the supported method for using TypeSql is via a VisualStudio extension in Visual Studio 2010 or Visual Studio 2012. 
-
-###Installation
 - Install the [TypeSql Visual Studio extension](http://visualstudiogallery.msdn.microsoft.com/4e2dbc67-a429-4120-b56f-3a93a1003905). This can be done via Tools -> Extensions and Updates in Visual Studio.
 - Install the [TypeSql nuget package](https://nuget.org/packages/TypeSql).
 
@@ -97,7 +98,7 @@ Currently, the supported method for using TypeSql is via a VisualStudio extensio
 - Two dependent files should be added under your TypeSql file: One will contain the source code of your generated data-access class; the other will contain the raw, unadorned SQL (this is just for convenience if you want to execute the SQL directly). 
 
 ##Its not you, its me
-This is an alpha release. There are an infinite number of scenarios we have not thought of. We welcome your feedback. But please be gentle, our egos are fragile and we cry easily.
+This is a work-in-progress. There are an infinite number of scenarios we have not thought of. We welcome your feedback. But please be gentle, our egos are fragile and we cry easily.
 
 ##Performance
 Internally, TypeSql uses [Dapper](http://code.google.com/p/dapper-dot-net/) for data-access. Its performance is effectively identical, which is itself effectively identical to raw ADO.NET. Checkout the [benchmarks](http://code.google.com/p/dapper-dot-net/#Performance).
@@ -110,3 +111,51 @@ If you need to parse text, [ANTLR](http://www.antlr.org/) is your tool. [Terence
 
 ###Dapper
 [Dapper](http://code.google.com/p/dapper-dot-net/) has been called a micro-ORM. Whatever you call it, [Sam Saffron](http://samsaffron.com/) and [Marc Gravell](http://marcgravell.blogspot.com.au/) have created a super-useful component. 
+
+##USAGE
+###Outputs
+Just append the items in your SELECT list with the types you expect them to be. e.g
+
+	SELECT Id:int, Name:string
+	FROM Smurfs
+
+#### Aggregates
+Yeah, you can do:
+
+	SELECT COUNT(*) AS SmurfCount:int
+	FROM Smurfs
+
+###Inputs
+Type your input parameters like so:
+
+	SELECT Name:string
+	FROM Smurfs
+	WHERE Id= @SmurfId:int
+
+###Nullable types
+Sure.
+
+	SELECT BirthDate:DateTime?
+	FROM Smurfs
+
+###Namespaces
+The USING statement is used to import namespaces.
+See Enums section below for an example.
+
+###Enums
+Yup. Say you have:
+
+	namespace SmurfSpace {
+		
+		public enum SmurfSex {
+			Female,
+			Male
+		}
+	}
+
+Then you can do:
+
+	USING SmurfSpace	
+	SELECT Id:int, Gender:SmurfSex
+
+
