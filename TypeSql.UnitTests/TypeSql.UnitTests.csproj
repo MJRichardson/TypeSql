@@ -68,6 +68,7 @@
     <Compile Include="Parsing\ANTLR\NullableOutput.cs" />
     <Compile Include="Parsing\ANTLR\OneOutput.cs" />
     <Compile Include="Parsing\ANTLR\OneOutputOneInput.cs" />
+    <Compile Include="Parsing\ANTLR\UsingNamespaceWithNoDots.cs" />
     <Compile Include="Parsing\ANTLR\UsingStatement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g 2013-01-20 15:06:39
+// $ANTLR 3.4 C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g 2013-01-20 17:20:57
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -35,9 +35,10 @@ namespace  TypeSql.Parsing
 internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ANY", "DIGIT", "ID", "INPUT_TOKEN", "NAMESPACE", "NAMESPACE_SEGMENT", "NEWLINE", "OUTPUT_TOKEN", "SQL", "TYPE", "TYPESQL", "USING", "WHITESPACE", "':'", "'?'", "'@'", "'['", "']'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ANY", "DIGIT", "ID", "INPUT_TOKEN", "NAMESPACE", "NEWLINE", "OUTPUT_TOKEN", "SQL", "TYPE", "TYPESQL", "USING", "WHITESPACE", "'.'", "':'", "'?'", "'@'", "'['", "']'"
 	};
 	public const int EOF=-1;
+	public const int T__16=16;
 	public const int T__17=17;
 	public const int T__18=18;
 	public const int T__19=19;
@@ -48,14 +49,13 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 	public const int ID=6;
 	public const int INPUT_TOKEN=7;
 	public const int NAMESPACE=8;
-	public const int NAMESPACE_SEGMENT=9;
-	public const int NEWLINE=10;
-	public const int OUTPUT_TOKEN=11;
-	public const int SQL=12;
-	public const int TYPE=13;
-	public const int TYPESQL=14;
-	public const int USING=15;
-	public const int WHITESPACE=16;
+	public const int NEWLINE=9;
+	public const int OUTPUT_TOKEN=10;
+	public const int SQL=11;
+	public const int TYPE=12;
+	public const int TYPESQL=13;
+	public const int USING=14;
+	public const int WHITESPACE=15;
 
 	public RawSqlTransform(ITreeNodeStream input)
 		: this(input, new RecognizerSharedState())
@@ -269,13 +269,13 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 					case DIGIT:
 					case ID:
 					case NAMESPACE:
-					case NAMESPACE_SEGMENT:
 					case NEWLINE:
 					case SQL:
 					case TYPE:
 					case TYPESQL:
 					case USING:
 					case WHITESPACE:
+					case 16:
 					case 17:
 					case 18:
 					case 19:
@@ -367,7 +367,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_usingNamespace();
 
 	// $ANTLR start "usingNamespace"
-	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:1: usingNamespace : ^( USING NAMESPACE ) -> template( \"\";
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:1: usingNamespace : ^( USING ^( NAMESPACE ID ( '.' ID )* ) ) -> template( \"\";
 	[GrammarRule("usingNamespace")]
 	private TemplateTreeRuleReturnScope<StringTemplate, CommonTree> usingNamespace()
 	{
@@ -381,9 +381,9 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 		DebugLocation(22, 0);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:17: ( ^( USING NAMESPACE ) -> template( \"\")
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:17: ( ^( USING ^( NAMESPACE ID ( '.' ID )* ) ) -> template( \"\")
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:19: ^( USING NAMESPACE )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:19: ^( USING ^( NAMESPACE ID ( '.' ID )* ) )
 			{
 			DebugLocation(22, 19);
 			DebugLocation(22, 21);
@@ -391,13 +391,61 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 
 			Match(input, TokenTypes.Down, null); 
 			DebugLocation(22, 27);
-			Match(input,NAMESPACE,Follow._NAMESPACE_in_usingNamespace124); 
+			DebugLocation(22, 29);
+			Match(input,NAMESPACE,Follow._NAMESPACE_in_usingNamespace125); 
+
+			Match(input, TokenTypes.Down, null); 
+			DebugLocation(22, 39);
+			Match(input,ID,Follow._ID_in_usingNamespace127); 
+			DebugLocation(22, 42);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:42: ( '.' ID )*
+			try { DebugEnterSubRule(3);
+			while (true)
+			{
+				int alt3=2;
+				try { DebugEnterDecision(3, false);
+				int LA3_0 = input.LA(1);
+
+				if ((LA3_0==16))
+				{
+					alt3 = 1;
+				}
+
+
+				} finally { DebugExitDecision(3); }
+				switch ( alt3 )
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:22:43: '.' ID
+					{
+					DebugLocation(22, 43);
+					Match(input,16,Follow._16_in_usingNamespace130); 
+					DebugLocation(22, 47);
+					Match(input,ID,Follow._ID_in_usingNamespace132); 
+
+					}
+					break;
+
+				default:
+					goto loop3;
+				}
+			}
+
+			loop3:
+				;
+
+			} finally { DebugExitSubRule(3); }
+
+
+			Match(input, TokenTypes.Up, null); 
+
 
 			Match(input, TokenTypes.Up, null); 
 
 
 			// TEMPLATE REWRITE
-			// 22:38: -> template( \"\"
+			// 22:54: -> template( \"\"
 			{
 				retval.Template = new StringTemplate(TemplateGroup, "");
 			}
@@ -456,13 +504,13 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 			{
 			DebugLocation(26, 4);
 			DebugLocation(26, 6);
-			Match(input,OUTPUT_TOKEN,Follow._OUTPUT_TOKEN_in_outputToken145); 
+			Match(input,OUTPUT_TOKEN,Follow._OUTPUT_TOKEN_in_outputToken156); 
 
 			Match(input, TokenTypes.Down, null); 
 			DebugLocation(26, 21);
-			id=(CommonTree)Match(input,ID,Follow._ID_in_outputToken149); 
+			id=(CommonTree)Match(input,ID,Follow._ID_in_outputToken160); 
 			DebugLocation(26, 25);
-			PushFollow(Follow._type_in_outputToken151);
+			PushFollow(Follow._type_in_outputToken162);
 			type();
 			PopFollow();
 
@@ -532,13 +580,13 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 			{
 			DebugLocation(30, 4);
 			DebugLocation(30, 6);
-			Match(input,INPUT_TOKEN,Follow._INPUT_TOKEN_in_inputToken179); 
+			Match(input,INPUT_TOKEN,Follow._INPUT_TOKEN_in_inputToken190); 
 
 			Match(input, TokenTypes.Down, null); 
 			DebugLocation(30, 20);
-			id=(CommonTree)Match(input,ID,Follow._ID_in_inputToken183); 
+			id=(CommonTree)Match(input,ID,Follow._ID_in_inputToken194); 
 			DebugLocation(30, 24);
-			PushFollow(Follow._type_in_inputToken185);
+			PushFollow(Follow._type_in_inputToken196);
 			type();
 			PopFollow();
 
@@ -615,33 +663,33 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 			{
 			DebugLocation(34, 4);
 			DebugLocation(34, 6);
-			Match(input,TYPE,Follow._TYPE_in_type218); 
+			Match(input,TYPE,Follow._TYPE_in_type229); 
 
 			Match(input, TokenTypes.Down, null); 
 			DebugLocation(34, 11);
-			ID1=(CommonTree)Match(input,ID,Follow._ID_in_type220); 
+			ID1=(CommonTree)Match(input,ID,Follow._ID_in_type231); 
 			DebugLocation(34, 14);
 			 retval.typeName =(ID1!=null?ID1.Text:null); 
 			DebugLocation(34, 38);
 			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:34:38: ( '?' )?
-			int alt3=2;
-			try { DebugEnterSubRule(3);
-			try { DebugEnterDecision(3, false);
-			int LA3_0 = input.LA(1);
+			int alt4=2;
+			try { DebugEnterSubRule(4);
+			try { DebugEnterDecision(4, false);
+			int LA4_0 = input.LA(1);
 
-			if ((LA3_0==18))
+			if ((LA4_0==18))
 			{
-				alt3 = 1;
+				alt4 = 1;
 			}
-			} finally { DebugExitDecision(3); }
-			switch (alt3)
+			} finally { DebugExitDecision(4); }
+			switch (alt4)
 			{
 			case 1:
 				DebugEnterAlt(1);
 				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\RawSqlTransform.g:34:39: '?'
 				{
 				DebugLocation(34, 39);
-				Match(input,18,Follow._18_in_type225); 
+				Match(input,18,Follow._18_in_type236); 
 				DebugLocation(34, 43);
 				retval.typeName += '?'; 
 
@@ -649,7 +697,7 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 				break;
 
 			}
-			} finally { DebugExitSubRule(3); }
+			} finally { DebugExitSubRule(4); }
 
 
 			Match(input, TokenTypes.Up, null); 
@@ -682,21 +730,24 @@ internal partial class RawSqlTransform : Antlr.Runtime.Tree.TreeParser
 	private static class Follow
 	{
 		public static readonly BitSet _TYPESQL_in_typeSql75 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _usingNamespace_in_typeSql81 = new BitSet(new ulong[]{0x9000UL});
+		public static readonly BitSet _usingNamespace_in_typeSql81 = new BitSet(new ulong[]{0x4800UL});
 		public static readonly BitSet _SQL_in_typeSql88 = new BitSet(new ulong[]{0x4UL});
 		public static readonly BitSet _outputToken_in_typeSql92 = new BitSet(new ulong[]{0x3FFFF8UL});
 		public static readonly BitSet _inputToken_in_typeSql96 = new BitSet(new ulong[]{0x3FFFF8UL});
 		public static readonly BitSet _USING_in_usingNamespace122 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _NAMESPACE_in_usingNamespace124 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _OUTPUT_TOKEN_in_outputToken145 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_outputToken149 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _type_in_outputToken151 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _INPUT_TOKEN_in_inputToken179 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_inputToken183 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _type_in_inputToken185 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _TYPE_in_type218 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_type220 = new BitSet(new ulong[]{0x40008UL});
-		public static readonly BitSet _18_in_type225 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _NAMESPACE_in_usingNamespace125 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_usingNamespace127 = new BitSet(new ulong[]{0x10008UL});
+		public static readonly BitSet _16_in_usingNamespace130 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _ID_in_usingNamespace132 = new BitSet(new ulong[]{0x10008UL});
+		public static readonly BitSet _OUTPUT_TOKEN_in_outputToken156 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_outputToken160 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _type_in_outputToken162 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _INPUT_TOKEN_in_inputToken190 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_inputToken194 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _type_in_inputToken196 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _TYPE_in_type229 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_type231 = new BitSet(new ulong[]{0x40008UL});
+		public static readonly BitSet _18_in_type236 = new BitSet(new ulong[]{0x8UL});
 	}
 	#endregion Follow sets
 }

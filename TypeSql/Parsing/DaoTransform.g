@@ -23,7 +23,7 @@ public typeSql [string name, string rawSql]
 	var usingNamespaces = new List<string>();
 }
 	:	^(TYPESQL 
-			(^(USING NAMESPACE) { usingNamespaces.Add($NAMESPACE.text); } )* 
+			(^(USING nameSpace) { usingNamespaces.Add($nameSpace.ns); } )* 
 			(^(SQL (
 				outputToken { outputTokens.Add($outputToken.token); } 
 				| inputToken { inputTokens.Add($inputToken.token); }
@@ -36,7 +36,9 @@ public typeSql [string name, string rawSql]
 //usingStatement	: ^(USING NAMESPACE) { usingNamespaces.Add($NAMESPACE.text); }	
 //	;
 
-	
+nameSpace returns [string ns]
+	:	^(NAMESPACE part1=ID {$ns = $part1.text; } ('.' partN=ID { $ns+= ("." + $partN.text ); })* )
+	;
 
 outputToken returns [OutputToken token]
 	:	^(OUTPUT_TOKEN id=ID type )  { $token= new OutputToken($id.text, $type.typeName); }

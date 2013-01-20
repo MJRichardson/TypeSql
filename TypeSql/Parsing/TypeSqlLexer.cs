@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g 2013-01-20 14:19:08
+// $ANTLR 3.4 C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g 2013-01-20 17:17:01
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -29,6 +29,7 @@ using TypeSql.Antlr.Runtime.Misc;
 internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 {
 	public const int EOF=-1;
+	public const int T__16=16;
 	public const int T__17=17;
 	public const int T__18=18;
 	public const int T__19=19;
@@ -39,14 +40,13 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	public const int ID=6;
 	public const int INPUT_TOKEN=7;
 	public const int NAMESPACE=8;
-	public const int NAMESPACE_SEGMENT=9;
-	public const int NEWLINE=10;
-	public const int OUTPUT_TOKEN=11;
-	public const int SQL=12;
-	public const int TYPE=13;
-	public const int TYPESQL=14;
-	public const int USING=15;
-	public const int WHITESPACE=16;
+	public const int NEWLINE=9;
+	public const int OUTPUT_TOKEN=10;
+	public const int SQL=11;
+	public const int TYPE=12;
+	public const int TYPESQL=13;
+	public const int USING=14;
+	public const int WHITESPACE=15;
 
     // delegates
     // delegators
@@ -74,6 +74,41 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	partial void EnterRule(string ruleName, int ruleIndex);
 	partial void LeaveRule(string ruleName, int ruleIndex);
 
+	partial void EnterRule_T__16();
+	partial void LeaveRule_T__16();
+
+	// $ANTLR start "T__16"
+	[GrammarRule("T__16")]
+	private void mT__16()
+	{
+		EnterRule_T__16();
+		EnterRule("T__16", 1);
+		TraceIn("T__16", 1);
+		try
+		{
+			int _type = T__16;
+			int _channel = DefaultTokenChannel;
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:9:7: ( '.' )
+			DebugEnterAlt(1);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:9:9: '.'
+			{
+			DebugLocation(9, 9);
+			Match('.'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__16", 1);
+			LeaveRule("T__16", 1);
+			LeaveRule_T__16();
+		}
+	}
+	// $ANTLR end "T__16"
+
 	partial void EnterRule_T__17();
 	partial void LeaveRule_T__17();
 
@@ -82,17 +117,17 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	private void mT__17()
 	{
 		EnterRule_T__17();
-		EnterRule("T__17", 1);
-		TraceIn("T__17", 1);
+		EnterRule("T__17", 2);
+		TraceIn("T__17", 2);
 		try
 		{
 			int _type = T__17;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:9:7: ( ':' )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:10:7: ( ':' )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:9:9: ':'
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:10:9: ':'
 			{
-			DebugLocation(9, 9);
+			DebugLocation(10, 9);
 			Match(':'); 
 
 			}
@@ -102,8 +137,8 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__17", 1);
-			LeaveRule("T__17", 1);
+			TraceOut("T__17", 2);
+			LeaveRule("T__17", 2);
 			LeaveRule_T__17();
 		}
 	}
@@ -117,17 +152,17 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	private void mT__18()
 	{
 		EnterRule_T__18();
-		EnterRule("T__18", 2);
-		TraceIn("T__18", 2);
+		EnterRule("T__18", 3);
+		TraceIn("T__18", 3);
 		try
 		{
 			int _type = T__18;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:10:7: ( '?' )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:11:7: ( '?' )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:10:9: '?'
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:11:9: '?'
 			{
-			DebugLocation(10, 9);
+			DebugLocation(11, 9);
 			Match('?'); 
 
 			}
@@ -137,8 +172,8 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__18", 2);
-			LeaveRule("T__18", 2);
+			TraceOut("T__18", 3);
+			LeaveRule("T__18", 3);
 			LeaveRule_T__18();
 		}
 	}
@@ -152,17 +187,17 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	private void mT__19()
 	{
 		EnterRule_T__19();
-		EnterRule("T__19", 3);
-		TraceIn("T__19", 3);
+		EnterRule("T__19", 4);
+		TraceIn("T__19", 4);
 		try
 		{
 			int _type = T__19;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:11:7: ( '@' )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:12:7: ( '@' )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:11:9: '@'
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:12:9: '@'
 			{
-			DebugLocation(11, 9);
+			DebugLocation(12, 9);
 			Match('@'); 
 
 			}
@@ -172,8 +207,8 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__19", 3);
-			LeaveRule("T__19", 3);
+			TraceOut("T__19", 4);
+			LeaveRule("T__19", 4);
 			LeaveRule_T__19();
 		}
 	}
@@ -187,17 +222,17 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	private void mT__20()
 	{
 		EnterRule_T__20();
-		EnterRule("T__20", 4);
-		TraceIn("T__20", 4);
+		EnterRule("T__20", 5);
+		TraceIn("T__20", 5);
 		try
 		{
 			int _type = T__20;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:12:7: ( '[' )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:13:7: ( '[' )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:12:9: '['
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:13:9: '['
 			{
-			DebugLocation(12, 9);
+			DebugLocation(13, 9);
 			Match('['); 
 
 			}
@@ -207,8 +242,8 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__20", 4);
-			LeaveRule("T__20", 4);
+			TraceOut("T__20", 5);
+			LeaveRule("T__20", 5);
 			LeaveRule_T__20();
 		}
 	}
@@ -222,17 +257,17 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	private void mT__21()
 	{
 		EnterRule_T__21();
-		EnterRule("T__21", 5);
-		TraceIn("T__21", 5);
+		EnterRule("T__21", 6);
+		TraceIn("T__21", 6);
 		try
 		{
 			int _type = T__21;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:13:7: ( ']' )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:14:7: ( ']' )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:13:9: ']'
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:14:9: ']'
 			{
-			DebugLocation(13, 9);
+			DebugLocation(14, 9);
 			Match(']'); 
 
 			}
@@ -242,8 +277,8 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__21", 5);
-			LeaveRule("T__21", 5);
+			TraceOut("T__21", 6);
+			LeaveRule("T__21", 6);
 			LeaveRule_T__21();
 		}
 	}
@@ -257,17 +292,17 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	private void mUSING()
 	{
 		EnterRule_USING();
-		EnterRule("USING", 6);
-		TraceIn("USING", 6);
+		EnterRule("USING", 7);
+		TraceIn("USING", 7);
 		try
 		{
 			int _type = USING;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:60:7: ( ( 'U' | 'u' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'G' | 'g' ) )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:62:7: ( ( 'U' | 'u' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'G' | 'g' ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:60:9: ( 'U' | 'u' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'G' | 'g' )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:62:9: ( 'U' | 'u' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'G' | 'g' )
 			{
-			DebugLocation(60, 9);
+			DebugLocation(62, 9);
 			if (input.LA(1)=='U'||input.LA(1)=='u')
 			{
 				input.Consume();
@@ -280,7 +315,7 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(60, 18);
+			DebugLocation(62, 18);
 			if (input.LA(1)=='S'||input.LA(1)=='s')
 			{
 				input.Consume();
@@ -293,7 +328,7 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(60, 27);
+			DebugLocation(62, 27);
 			if (input.LA(1)=='I'||input.LA(1)=='i')
 			{
 				input.Consume();
@@ -306,7 +341,7 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(60, 36);
+			DebugLocation(62, 36);
 			if (input.LA(1)=='N'||input.LA(1)=='n')
 			{
 				input.Consume();
@@ -319,7 +354,7 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(60, 45);
+			DebugLocation(62, 45);
 			if (input.LA(1)=='G'||input.LA(1)=='g')
 			{
 				input.Consume();
@@ -340,8 +375,8 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("USING", 6);
-			LeaveRule("USING", 6);
+			TraceOut("USING", 7);
+			LeaveRule("USING", 7);
 			LeaveRule_USING();
 		}
 	}
@@ -355,17 +390,17 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	private void mID()
 	{
 		EnterRule_ID();
-		EnterRule("ID", 7);
-		TraceIn("ID", 7);
+		EnterRule("ID", 8);
+		TraceIn("ID", 8);
 		try
 		{
 			int _type = ID;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:62:5: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | DIGIT | '_' )* )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:64:5: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | DIGIT | '_' )* )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:63:2: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | DIGIT | '_' )*
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:65:2: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | DIGIT | '_' )*
 			{
-			DebugLocation(63, 2);
+			DebugLocation(65, 2);
 			if ((input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z'))
 			{
 				input.Consume();
@@ -378,8 +413,8 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(63, 26);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:63:26: ( 'a' .. 'z' | 'A' .. 'Z' | DIGIT | '_' )*
+			DebugLocation(65, 26);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:65:26: ( 'a' .. 'z' | 'A' .. 'Z' | DIGIT | '_' )*
 			try { DebugEnterSubRule(1);
 			while (true)
 			{
@@ -400,7 +435,7 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:
 					{
-					DebugLocation(63, 26);
+					DebugLocation(65, 26);
 					input.Consume();
 
 
@@ -425,163 +460,12 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("ID", 7);
-			LeaveRule("ID", 7);
+			TraceOut("ID", 8);
+			LeaveRule("ID", 8);
 			LeaveRule_ID();
 		}
 	}
 	// $ANTLR end "ID"
-
-	partial void EnterRule_NAMESPACE();
-	partial void LeaveRule_NAMESPACE();
-
-	// $ANTLR start "NAMESPACE"
-	[GrammarRule("NAMESPACE")]
-	private void mNAMESPACE()
-	{
-		EnterRule_NAMESPACE();
-		EnterRule("NAMESPACE", 8);
-		TraceIn("NAMESPACE", 8);
-		try
-		{
-			int _type = NAMESPACE;
-			int _channel = DefaultTokenChannel;
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:67:2: ( ( NAMESPACE_SEGMENT ) ( '.' NAMESPACE_SEGMENT )* )
-			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:67:4: ( NAMESPACE_SEGMENT ) ( '.' NAMESPACE_SEGMENT )*
-			{
-			DebugLocation(67, 4);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:67:4: ( NAMESPACE_SEGMENT )
-			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:67:5: NAMESPACE_SEGMENT
-			{
-			DebugLocation(67, 5);
-			mNAMESPACE_SEGMENT(); 
-
-			}
-
-			DebugLocation(67, 24);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:67:24: ( '.' NAMESPACE_SEGMENT )*
-			try { DebugEnterSubRule(2);
-			while (true)
-			{
-				int alt2=2;
-				try { DebugEnterDecision(2, false);
-				int LA2_0 = input.LA(1);
-
-				if ((LA2_0=='.'))
-				{
-					alt2 = 1;
-				}
-
-
-				} finally { DebugExitDecision(2); }
-				switch ( alt2 )
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:67:25: '.' NAMESPACE_SEGMENT
-					{
-					DebugLocation(67, 25);
-					Match('.'); 
-					DebugLocation(67, 29);
-					mNAMESPACE_SEGMENT(); 
-
-					}
-					break;
-
-				default:
-					goto loop2;
-				}
-			}
-
-			loop2:
-				;
-
-			} finally { DebugExitSubRule(2); }
-
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally
-		{
-			TraceOut("NAMESPACE", 8);
-			LeaveRule("NAMESPACE", 8);
-			LeaveRule_NAMESPACE();
-		}
-	}
-	// $ANTLR end "NAMESPACE"
-
-	partial void EnterRule_NAMESPACE_SEGMENT();
-	partial void LeaveRule_NAMESPACE_SEGMENT();
-
-	// $ANTLR start "NAMESPACE_SEGMENT"
-	[GrammarRule("NAMESPACE_SEGMENT")]
-	private void mNAMESPACE_SEGMENT()
-	{
-		EnterRule_NAMESPACE_SEGMENT();
-		EnterRule("NAMESPACE_SEGMENT", 9);
-		TraceIn("NAMESPACE_SEGMENT", 9);
-		try
-		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:71:2: ( ( 'a' .. 'z' | 'A' .. 'Z' | DIGIT )* )
-			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:71:4: ( 'a' .. 'z' | 'A' .. 'Z' | DIGIT )*
-			{
-			DebugLocation(71, 4);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:71:4: ( 'a' .. 'z' | 'A' .. 'Z' | DIGIT )*
-			try { DebugEnterSubRule(3);
-			while (true)
-			{
-				int alt3=2;
-				try { DebugEnterDecision(3, false);
-				int LA3_0 = input.LA(1);
-
-				if (((LA3_0>='0' && LA3_0<='9')||(LA3_0>='A' && LA3_0<='Z')||(LA3_0>='a' && LA3_0<='z')))
-				{
-					alt3 = 1;
-				}
-
-
-				} finally { DebugExitDecision(3); }
-				switch ( alt3 )
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:
-					{
-					DebugLocation(71, 4);
-					input.Consume();
-
-
-					}
-					break;
-
-				default:
-					goto loop3;
-				}
-			}
-
-			loop3:
-				;
-
-			} finally { DebugExitSubRule(3); }
-
-
-			}
-
-		}
-		finally
-		{
-			TraceOut("NAMESPACE_SEGMENT", 9);
-			LeaveRule("NAMESPACE_SEGMENT", 9);
-			LeaveRule_NAMESPACE_SEGMENT();
-		}
-	}
-	// $ANTLR end "NAMESPACE_SEGMENT"
 
 	partial void EnterRule_DIGIT();
 	partial void LeaveRule_DIGIT();
@@ -591,15 +475,15 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	private void mDIGIT()
 	{
 		EnterRule_DIGIT();
-		EnterRule("DIGIT", 10);
-		TraceIn("DIGIT", 10);
+		EnterRule("DIGIT", 9);
+		TraceIn("DIGIT", 9);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:74:17: ( '0' .. '9' )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:68:17: ( '0' .. '9' )
 			DebugEnterAlt(1);
 			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:
 			{
-			DebugLocation(74, 17);
+			DebugLocation(68, 17);
 			if ((input.LA(1)>='0' && input.LA(1)<='9'))
 			{
 				input.Consume();
@@ -618,8 +502,8 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("DIGIT", 10);
-			LeaveRule("DIGIT", 10);
+			TraceOut("DIGIT", 9);
+			LeaveRule("DIGIT", 9);
 			LeaveRule_DIGIT();
 		}
 	}
@@ -633,46 +517,46 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	private void mNEWLINE()
 	{
 		EnterRule_NEWLINE();
-		EnterRule("NEWLINE", 11);
-		TraceIn("NEWLINE", 11);
+		EnterRule("NEWLINE", 10);
+		TraceIn("NEWLINE", 10);
 		try
 		{
 			int _type = NEWLINE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:78:9: ( ( '\\r' )? '\\n' )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:72:9: ( ( '\\r' )? '\\n' )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:79:2: ( '\\r' )? '\\n'
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:73:2: ( '\\r' )? '\\n'
 			{
-			DebugLocation(79, 2);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:79:2: ( '\\r' )?
-			int alt4=2;
-			try { DebugEnterSubRule(4);
-			try { DebugEnterDecision(4, false);
-			int LA4_0 = input.LA(1);
+			DebugLocation(73, 2);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:73:2: ( '\\r' )?
+			int alt2=2;
+			try { DebugEnterSubRule(2);
+			try { DebugEnterDecision(2, false);
+			int LA2_0 = input.LA(1);
 
-			if ((LA4_0=='\r'))
+			if ((LA2_0=='\r'))
 			{
-				alt4 = 1;
+				alt2 = 1;
 			}
-			} finally { DebugExitDecision(4); }
-			switch (alt4)
+			} finally { DebugExitDecision(2); }
+			switch (alt2)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:79:2: '\\r'
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:73:2: '\\r'
 				{
-				DebugLocation(79, 2);
+				DebugLocation(73, 2);
 				Match('\r'); 
 
 				}
 				break;
 
 			}
-			} finally { DebugExitSubRule(4); }
+			} finally { DebugExitSubRule(2); }
 
-			DebugLocation(79, 8);
+			DebugLocation(73, 8);
 			Match('\n'); 
-			DebugLocation(79, 12);
+			DebugLocation(73, 12);
 			 _channel = Hidden; 
 
 			}
@@ -682,8 +566,8 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("NEWLINE", 11);
-			LeaveRule("NEWLINE", 11);
+			TraceOut("NEWLINE", 10);
+			LeaveRule("NEWLINE", 10);
 			LeaveRule_NEWLINE();
 		}
 	}
@@ -697,40 +581,40 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	private void mWHITESPACE()
 	{
 		EnterRule_WHITESPACE();
-		EnterRule("WHITESPACE", 12);
-		TraceIn("WHITESPACE", 12);
+		EnterRule("WHITESPACE", 11);
+		TraceIn("WHITESPACE", 11);
 		try
 		{
 			int _type = WHITESPACE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:82:13: ( ( ' ' | '\\t' )+ )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:76:13: ( ( ' ' | '\\t' )+ )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:82:17: ( ' ' | '\\t' )+
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:76:17: ( ' ' | '\\t' )+
 			{
-			DebugLocation(82, 17);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:82:17: ( ' ' | '\\t' )+
-			int cnt5=0;
-			try { DebugEnterSubRule(5);
+			DebugLocation(76, 17);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:76:17: ( ' ' | '\\t' )+
+			int cnt3=0;
+			try { DebugEnterSubRule(3);
 			while (true)
 			{
-				int alt5=2;
-				try { DebugEnterDecision(5, false);
-				int LA5_0 = input.LA(1);
+				int alt3=2;
+				try { DebugEnterDecision(3, false);
+				int LA3_0 = input.LA(1);
 
-				if ((LA5_0=='\t'||LA5_0==' '))
+				if ((LA3_0=='\t'||LA3_0==' '))
 				{
-					alt5 = 1;
+					alt3 = 1;
 				}
 
 
-				} finally { DebugExitDecision(5); }
-				switch (alt5)
+				} finally { DebugExitDecision(3); }
+				switch (alt3)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:
 					{
-					DebugLocation(82, 17);
+					DebugLocation(76, 17);
 					input.Consume();
 
 
@@ -738,21 +622,21 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 					break;
 
 				default:
-					if (cnt5 >= 1)
-						goto loop5;
+					if (cnt3 >= 1)
+						goto loop3;
 
-					EarlyExitException eee5 = new EarlyExitException( 5, input );
-					DebugRecognitionException(eee5);
-					throw eee5;
+					EarlyExitException eee3 = new EarlyExitException( 3, input );
+					DebugRecognitionException(eee3);
+					throw eee3;
 				}
-				cnt5++;
+				cnt3++;
 			}
-			loop5:
+			loop3:
 				;
 
-			} finally { DebugExitSubRule(5); }
+			} finally { DebugExitSubRule(3); }
 
-			DebugLocation(82, 29);
+			DebugLocation(76, 29);
 			_channel = Hidden;
 
 			}
@@ -762,8 +646,8 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("WHITESPACE", 12);
-			LeaveRule("WHITESPACE", 12);
+			TraceOut("WHITESPACE", 11);
+			LeaveRule("WHITESPACE", 11);
 			LeaveRule_WHITESPACE();
 		}
 	}
@@ -777,17 +661,17 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 	private void mANY()
 	{
 		EnterRule_ANY();
-		EnterRule("ANY", 13);
-		TraceIn("ANY", 13);
+		EnterRule("ANY", 12);
+		TraceIn("ANY", 12);
 		try
 		{
 			int _type = ANY;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:85:6: ( . )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:79:6: ( . )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:85:8: .
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:79:8: .
 			{
-			DebugLocation(85, 8);
+			DebugLocation(79, 8);
 			MatchAny(); 
 
 			}
@@ -797,8 +681,8 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("ANY", 13);
-			LeaveRule("ANY", 13);
+			TraceOut("ANY", 12);
+			LeaveRule("ANY", 12);
 			LeaveRule_ANY();
 		}
 	}
@@ -806,116 +690,217 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 
 	public override void mTokens()
 	{
-		// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:8: ( T__17 | T__18 | T__19 | T__20 | T__21 | USING | ID | NAMESPACE | NEWLINE | WHITESPACE | ANY )
-		int alt6=11;
-		try { DebugEnterDecision(6, false);
-		try
+		// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:8: ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | USING | ID | NEWLINE | WHITESPACE | ANY )
+		int alt4=11;
+		try { DebugEnterDecision(4, false);
+		int LA4_0 = input.LA(1);
+
+		if ((LA4_0=='.'))
 		{
-			alt6 = dfa6.Predict(input);
+			alt4 = 1;
 		}
-		catch (NoViableAltException nvae)
+		else if ((LA4_0==':'))
 		{
+			alt4 = 2;
+		}
+		else if ((LA4_0=='?'))
+		{
+			alt4 = 3;
+		}
+		else if ((LA4_0=='@'))
+		{
+			alt4 = 4;
+		}
+		else if ((LA4_0=='['))
+		{
+			alt4 = 5;
+		}
+		else if ((LA4_0==']'))
+		{
+			alt4 = 6;
+		}
+		else if ((LA4_0=='U'||LA4_0=='u'))
+		{
+			int LA4_7 = input.LA(2);
+
+			if ((LA4_7=='S'||LA4_7=='s'))
+			{
+				int LA4_19 = input.LA(3);
+
+				if ((LA4_19=='I'||LA4_19=='i'))
+				{
+					int LA4_23 = input.LA(4);
+
+					if ((LA4_23=='N'||LA4_23=='n'))
+					{
+						int LA4_24 = input.LA(5);
+
+						if ((LA4_24=='G'||LA4_24=='g'))
+						{
+							int LA4_25 = input.LA(6);
+
+							if (((LA4_25>='0' && LA4_25<='9')||(LA4_25>='A' && LA4_25<='Z')||LA4_25=='_'||(LA4_25>='a' && LA4_25<='z')))
+							{
+								alt4 = 8;
+							}
+							else
+							{
+								alt4 = 7;
+							}
+						}
+						else
+						{
+							alt4 = 8;
+						}
+					}
+					else
+					{
+						alt4 = 8;
+					}
+				}
+				else
+				{
+					alt4 = 8;
+				}
+			}
+			else
+			{
+				alt4 = 8;
+			}
+		}
+		else if (((LA4_0>='A' && LA4_0<='T')||(LA4_0>='V' && LA4_0<='Z')||LA4_0=='_'||(LA4_0>='a' && LA4_0<='t')||(LA4_0>='v' && LA4_0<='z')))
+		{
+			alt4 = 8;
+		}
+		else if ((LA4_0=='\r'))
+		{
+			int LA4_9 = input.LA(2);
+
+			if ((LA4_9=='\n'))
+			{
+				alt4 = 9;
+			}
+			else
+			{
+				alt4 = 11;
+			}
+		}
+		else if ((LA4_0=='\n'))
+		{
+			alt4 = 9;
+		}
+		else if ((LA4_0=='\t'||LA4_0==' '))
+		{
+			alt4 = 10;
+		}
+		else if (((LA4_0>='\u0000' && LA4_0<='\b')||(LA4_0>='\u000B' && LA4_0<='\f')||(LA4_0>='\u000E' && LA4_0<='\u001F')||(LA4_0>='!' && LA4_0<='-')||(LA4_0>='/' && LA4_0<='9')||(LA4_0>=';' && LA4_0<='>')||LA4_0=='\\'||LA4_0=='^'||LA4_0=='`'||(LA4_0>='{' && LA4_0<='\uFFFF')))
+		{
+			alt4 = 11;
+		}
+		else
+		{
+			NoViableAltException nvae = new NoViableAltException("", 4, 0, input);
 			DebugRecognitionException(nvae);
-			throw;
+			throw nvae;
 		}
-		} finally { DebugExitDecision(6); }
-		switch (alt6)
+		} finally { DebugExitDecision(4); }
+		switch (alt4)
 		{
 		case 1:
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:10: T__17
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:10: T__16
 			{
 			DebugLocation(1, 10);
-			mT__17(); 
+			mT__16(); 
 
 			}
 			break;
 		case 2:
 			DebugEnterAlt(2);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:16: T__18
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:16: T__17
 			{
 			DebugLocation(1, 16);
-			mT__18(); 
+			mT__17(); 
 
 			}
 			break;
 		case 3:
 			DebugEnterAlt(3);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:22: T__19
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:22: T__18
 			{
 			DebugLocation(1, 22);
-			mT__19(); 
+			mT__18(); 
 
 			}
 			break;
 		case 4:
 			DebugEnterAlt(4);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:28: T__20
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:28: T__19
 			{
 			DebugLocation(1, 28);
-			mT__20(); 
+			mT__19(); 
 
 			}
 			break;
 		case 5:
 			DebugEnterAlt(5);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:34: T__21
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:34: T__20
 			{
 			DebugLocation(1, 34);
-			mT__21(); 
+			mT__20(); 
 
 			}
 			break;
 		case 6:
 			DebugEnterAlt(6);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:40: USING
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:40: T__21
 			{
 			DebugLocation(1, 40);
-			mUSING(); 
+			mT__21(); 
 
 			}
 			break;
 		case 7:
 			DebugEnterAlt(7);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:46: ID
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:46: USING
 			{
 			DebugLocation(1, 46);
-			mID(); 
+			mUSING(); 
 
 			}
 			break;
 		case 8:
 			DebugEnterAlt(8);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:49: NAMESPACE
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:52: ID
 			{
-			DebugLocation(1, 49);
-			mNAMESPACE(); 
+			DebugLocation(1, 52);
+			mID(); 
 
 			}
 			break;
 		case 9:
 			DebugEnterAlt(9);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:59: NEWLINE
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:55: NEWLINE
 			{
-			DebugLocation(1, 59);
+			DebugLocation(1, 55);
 			mNEWLINE(); 
 
 			}
 			break;
 		case 10:
 			DebugEnterAlt(10);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:67: WHITESPACE
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:63: WHITESPACE
 			{
-			DebugLocation(1, 67);
+			DebugLocation(1, 63);
 			mWHITESPACE(); 
 
 			}
 			break;
 		case 11:
 			DebugEnterAlt(11);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:78: ANY
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:1:74: ANY
 			{
-			DebugLocation(1, 78);
+			DebugLocation(1, 74);
 			mANY(); 
 
 			}
@@ -927,161 +912,12 @@ internal partial class TypeSqlLexer : TypeSql.Antlr.Runtime.Lexer
 
 
 	#region DFA
-	DFA6 dfa6;
 
 	protected override void InitDFAs()
 	{
 		base.InitDFAs();
-		dfa6 = new DFA6(this, SpecialStateTransition6);
 	}
 
-	private class DFA6 : DFA
-	{
-		private const string DFA6_eotS =
-			"\x1\xA\x5\xFFFF\x2\x17\x4\xFFFF\x1\xF\x8\xFFFF\x2\x17\x3\xFFFF\x2\x17"+
-			"\x1\x1D\x1\xFFFF";
-		private const string DFA6_eofS =
-			"\x1E\xFFFF";
-		private const string DFA6_minS =
-			"\x1\x0\x5\xFFFF\x2\x2E\x4\xFFFF\x1\xA\x8\xFFFF\x2\x2E\x3\xFFFF\x3\x2E"+
-			"\x1\xFFFF";
-		private const string DFA6_maxS =
-			"\x1\xFFFF\x5\xFFFF\x2\x7A\x4\xFFFF\x1\xA\x8\xFFFF\x2\x7A\x3\xFFFF\x3"+
-			"\x7A\x1\xFFFF";
-		private const string DFA6_acceptS =
-			"\x1\xFFFF\x1\x1\x1\x2\x1\x3\x1\x4\x1\x5\x2\xFFFF\x1\x7\x3\x8\x1\xFFFF"+
-			"\x1\x9\x1\xA\x1\xB\x1\x1\x1\x2\x1\x3\x1\x4\x1\x5\x2\xFFFF\x1\x7\x1\x9"+
-			"\x1\xA\x3\xFFFF\x1\x6";
-		private const string DFA6_specialS =
-			"\x1\x0\x1D\xFFFF}>";
-		private static readonly string[] DFA6_transitionS =
-			{
-				"\x9\xF\x1\xE\x1\xD\x2\xF\x1\xC\x12\xF\x1\xE\xD\xF\x1\xB\x1\xF\xA\x9"+
-				"\x1\x1\x4\xF\x1\x2\x1\x3\x14\x7\x1\x6\x5\x7\x1\x4\x1\xF\x1\x5\x1\xF"+
-				"\x1\x8\x1\xF\x14\x7\x1\x6\x5\x7\xFF85\xF",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"\x1\xA\x1\xFFFF\xA\x16\x7\xFFFF\x12\x16\x1\x15\x7\x16\x6\xFFFF\x12"+
-				"\x16\x1\x15\x7\x16",
-				"\x1\xA\x1\xFFFF\xA\x16\x7\xFFFF\x1A\x16\x6\xFFFF\x1A\x16",
-				"",
-				"",
-				"",
-				"",
-				"\x1\x18",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"\x1\xA\x1\xFFFF\xA\x16\x7\xFFFF\x8\x16\x1\x1A\x11\x16\x6\xFFFF\x8\x16"+
-				"\x1\x1A\x11\x16",
-				"\x1\xA\x1\xFFFF\xA\x16\x7\xFFFF\x1A\x16\x6\xFFFF\x1A\x16",
-				"",
-				"",
-				"",
-				"\x1\xA\x1\xFFFF\xA\x16\x7\xFFFF\xD\x16\x1\x1B\xC\x16\x6\xFFFF\xD\x16"+
-				"\x1\x1B\xC\x16",
-				"\x1\xA\x1\xFFFF\xA\x16\x7\xFFFF\x6\x16\x1\x1C\x13\x16\x6\xFFFF\x6\x16"+
-				"\x1\x1C\x13\x16",
-				"\x1\xA\x1\xFFFF\xA\x16\x7\xFFFF\x1A\x16\x4\xFFFF\x1\x17\x1\xFFFF\x1A"+
-				"\x16",
-				""
-			};
-
-		private static readonly short[] DFA6_eot = DFA.UnpackEncodedString(DFA6_eotS);
-		private static readonly short[] DFA6_eof = DFA.UnpackEncodedString(DFA6_eofS);
-		private static readonly char[] DFA6_min = DFA.UnpackEncodedStringToUnsignedChars(DFA6_minS);
-		private static readonly char[] DFA6_max = DFA.UnpackEncodedStringToUnsignedChars(DFA6_maxS);
-		private static readonly short[] DFA6_accept = DFA.UnpackEncodedString(DFA6_acceptS);
-		private static readonly short[] DFA6_special = DFA.UnpackEncodedString(DFA6_specialS);
-		private static readonly short[][] DFA6_transition;
-
-		static DFA6()
-		{
-			int numStates = DFA6_transitionS.Length;
-			DFA6_transition = new short[numStates][];
-			for ( int i=0; i < numStates; i++ )
-			{
-				DFA6_transition[i] = DFA.UnpackEncodedString(DFA6_transitionS[i]);
-			}
-		}
-
-		public DFA6( BaseRecognizer recognizer, SpecialStateTransitionHandler specialStateTransition )
-			: base(specialStateTransition)
-		{
-			this.recognizer = recognizer;
-			this.decisionNumber = 6;
-			this.eot = DFA6_eot;
-			this.eof = DFA6_eof;
-			this.min = DFA6_min;
-			this.max = DFA6_max;
-			this.accept = DFA6_accept;
-			this.special = DFA6_special;
-			this.transition = DFA6_transition;
-		}
-
-		public override string Description { get { return "1:1: Tokens : ( T__17 | T__18 | T__19 | T__20 | T__21 | USING | ID | NAMESPACE | NEWLINE | WHITESPACE | ANY );"; } }
-
-		public override void Error(NoViableAltException nvae)
-		{
-			DebugRecognitionException(nvae);
-		}
-	}
-
-	private int SpecialStateTransition6(DFA dfa, int s, IIntStream _input)
-	{
-		IIntStream input = _input;
-		int _s = s;
-		switch (s)
-		{
-			case 0:
-				int LA6_0 = input.LA(1);
-
-				s = -1;
-				if ((LA6_0==':')) {s = 1;}
-
-				else if ((LA6_0=='?')) {s = 2;}
-
-				else if ((LA6_0=='@')) {s = 3;}
-
-				else if ((LA6_0=='[')) {s = 4;}
-
-				else if ((LA6_0==']')) {s = 5;}
-
-				else if ((LA6_0=='U'||LA6_0=='u')) {s = 6;}
-
-				else if (((LA6_0>='A' && LA6_0<='T')||(LA6_0>='V' && LA6_0<='Z')||(LA6_0>='a' && LA6_0<='t')||(LA6_0>='v' && LA6_0<='z'))) {s = 7;}
-
-				else if ((LA6_0=='_')) {s = 8;}
-
-				else if (((LA6_0>='0' && LA6_0<='9'))) {s = 9;}
-
-				else if ((LA6_0=='.')) {s = 11;}
-
-				else if ((LA6_0=='\r')) {s = 12;}
-
-				else if ((LA6_0=='\n')) {s = 13;}
-
-				else if ((LA6_0=='\t'||LA6_0==' ')) {s = 14;}
-
-				else if (((LA6_0>='\u0000' && LA6_0<='\b')||(LA6_0>='\u000B' && LA6_0<='\f')||(LA6_0>='\u000E' && LA6_0<='\u001F')||(LA6_0>='!' && LA6_0<='-')||LA6_0=='/'||(LA6_0>=';' && LA6_0<='>')||LA6_0=='\\'||LA6_0=='^'||LA6_0=='`'||(LA6_0>='{' && LA6_0<='\uFFFF'))) {s = 15;}
-
-				else s = 10;
-
-				if (s >= 0) return s;
-				break;
-		}
-		NoViableAltException nvae = new NoViableAltException(dfa.Description, 6, _s, input);
-		dfa.Error(nvae);
-		throw nvae;
-	}
  
 	#endregion
 

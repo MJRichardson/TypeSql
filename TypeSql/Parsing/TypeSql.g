@@ -11,6 +11,7 @@ SQL;
 OUTPUT_TOKEN;
 INPUT_TOKEN;
 TYPE;
+NAMESPACE;
 }
 
 @modifier{internal}
@@ -24,11 +25,11 @@ public typesql	:	usingNamespace* sql -> ^(TYPESQL usingNamespace* sql)
 sql	:	token* -> ^(SQL token*)
 	;
 
-usingNamespace	: USING NAMESPACE -> ^(USING NAMESPACE)
+usingNamespace	: USING nameSpace -> ^(USING nameSpace )
 	;
 
-//nameSpace : NAMESPACE_SEGMENT ('.' NAMESPACE_SEGMENT)* 
-	//;
+nameSpace 	: ID  ( '.' ID )* -> ^(NAMESPACE ID  ( '.' ID )*)
+	;
 	
 token 	:	 outputToken
 		|	('@' ID ':') => inputToken
@@ -48,6 +49,7 @@ type
 	: ID '?'? -> ^(TYPE ID '?'?)
 	;
 
+
 //OUTPUT_TOKEN  : 
 //	id=ID ':' type=ID 
 	// {TypeSqlTokenId=$id.text; TypeSqlTokenType=$type.text;} 
@@ -62,14 +64,6 @@ USING	: ('U'|'u')('S'|'s')('I'|'i')('N'|'n')('G'|'g')
 ID  :	
 	('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|DIGIT|'_')*
     ;
-
-NAMESPACE  
-	: (NAMESPACE_SEGMENT) ('.' NAMESPACE_SEGMENT)*	
-	;
-
-fragment NAMESPACE_SEGMENT 
-	:	('a'..'z'|'A'..'Z'|DIGIT)*
-	;
 
 fragment DIGIT 	: 
 	'0'..'9'

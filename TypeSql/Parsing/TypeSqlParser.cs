@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g 2013-01-20 14:19:07
+// $ANTLR 3.4 C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g 2013-01-20 17:17:01
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -35,9 +35,10 @@ namespace  TypeSql.Parsing
 internal partial class TypeSqlParser : Antlr.Runtime.Parser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ANY", "DIGIT", "ID", "INPUT_TOKEN", "NAMESPACE", "NAMESPACE_SEGMENT", "NEWLINE", "OUTPUT_TOKEN", "SQL", "TYPE", "TYPESQL", "USING", "WHITESPACE", "':'", "'?'", "'@'", "'['", "']'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ANY", "DIGIT", "ID", "INPUT_TOKEN", "NAMESPACE", "NEWLINE", "OUTPUT_TOKEN", "SQL", "TYPE", "TYPESQL", "USING", "WHITESPACE", "'.'", "':'", "'?'", "'@'", "'['", "']'"
 	};
 	public const int EOF=-1;
+	public const int T__16=16;
 	public const int T__17=17;
 	public const int T__18=18;
 	public const int T__19=19;
@@ -48,14 +49,13 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 	public const int ID=6;
 	public const int INPUT_TOKEN=7;
 	public const int NAMESPACE=8;
-	public const int NAMESPACE_SEGMENT=9;
-	public const int NEWLINE=10;
-	public const int OUTPUT_TOKEN=11;
-	public const int SQL=12;
-	public const int TYPE=13;
-	public const int TYPESQL=14;
-	public const int USING=15;
-	public const int WHITESPACE=16;
+	public const int NEWLINE=9;
+	public const int OUTPUT_TOKEN=10;
+	public const int SQL=11;
+	public const int TYPE=12;
+	public const int TYPESQL=13;
+	public const int USING=14;
+	public const int WHITESPACE=15;
 
 	public TypeSqlParser(ITokenStream input)
 		: this(input, new RecognizerSharedState())
@@ -100,7 +100,7 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 	partial void LeaveRule_typesql();
 
 	// $ANTLR start "typesql"
-	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:20:8: public typesql : ( usingNamespace )* sql -> ^( TYPESQL ( usingNamespace )* sql ) ;
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:21:8: public typesql : ( usingNamespace )* sql -> ^( TYPESQL ( usingNamespace )* sql ) ;
 	[GrammarRule("typesql")]
 	public AstParserRuleReturnScope<object, IToken> typesql()
 	{
@@ -118,15 +118,15 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_sql=new RewriteRuleSubtreeStream(adaptor,"rule sql");
 		RewriteRuleSubtreeStream stream_usingNamespace=new RewriteRuleSubtreeStream(adaptor,"rule usingNamespace");
 		try { DebugEnterRule(GrammarFileName, "typesql");
-		DebugLocation(20, 1);
+		DebugLocation(21, 1);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:20:16: ( ( usingNamespace )* sql -> ^( TYPESQL ( usingNamespace )* sql ) )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:21:16: ( ( usingNamespace )* sql -> ^( TYPESQL ( usingNamespace )* sql ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:20:18: ( usingNamespace )* sql
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:21:18: ( usingNamespace )* sql
 			{
-			DebugLocation(20, 18);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:20:18: ( usingNamespace )*
+			DebugLocation(21, 18);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:21:18: ( usingNamespace )*
 			try { DebugEnterSubRule(1);
 			while (true)
 			{
@@ -138,7 +138,7 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 				{
 					int LA1_2 = input.LA(2);
 
-					if ((LA1_2==NAMESPACE))
+					if ((LA1_2==ID))
 					{
 						alt1 = 1;
 					}
@@ -152,10 +152,10 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:20:18: usingNamespace
+					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:21:18: usingNamespace
 					{
-					DebugLocation(20, 18);
-					PushFollow(Follow._usingNamespace_in_typesql72);
+					DebugLocation(21, 18);
+					PushFollow(Follow._usingNamespace_in_typesql75);
 					usingNamespace1=usingNamespace();
 					PopFollow();
 					if (state.failed) return retval;
@@ -174,8 +174,8 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 
 			} finally { DebugExitSubRule(1); }
 
-			DebugLocation(20, 34);
-			PushFollow(Follow._sql_in_typesql75);
+			DebugLocation(21, 34);
+			PushFollow(Follow._sql_in_typesql78);
 			sql2=sql();
 			PopFollow();
 			if (state.failed) return retval;
@@ -184,7 +184,7 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: sql, usingNamespace
+			// elements: usingNamespace, sql
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -195,25 +195,25 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 20:38: -> ^( TYPESQL ( usingNamespace )* sql )
+			// 21:38: -> ^( TYPESQL ( usingNamespace )* sql )
 			{
-				DebugLocation(20, 41);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:20:41: ^( TYPESQL ( usingNamespace )* sql )
+				DebugLocation(21, 41);
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:21:41: ^( TYPESQL ( usingNamespace )* sql )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(20, 43);
+				DebugLocation(21, 43);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(TYPESQL, "TYPESQL"), root_1);
 
-				DebugLocation(20, 51);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:20:51: ( usingNamespace )*
+				DebugLocation(21, 51);
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:21:51: ( usingNamespace )*
 				while ( stream_usingNamespace.HasNext )
 				{
-					DebugLocation(20, 51);
+					DebugLocation(21, 51);
 					adaptor.AddChild(root_1, stream_usingNamespace.NextTree());
 
 				}
 				stream_usingNamespace.Reset();
-				DebugLocation(20, 67);
+				DebugLocation(21, 67);
 				adaptor.AddChild(root_1, stream_sql.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -247,7 +247,7 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 			LeaveRule("typesql", 1);
 			LeaveRule_typesql();
 		}
-		DebugLocation(22, 1);
+		DebugLocation(23, 1);
 		} finally { DebugExitRule(GrammarFileName, "typesql"); }
 		return retval;
 
@@ -258,7 +258,7 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 	partial void LeaveRule_sql();
 
 	// $ANTLR start "sql"
-	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:24:1: sql : ( token )* -> ^( SQL ( token )* ) ;
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:25:1: sql : ( token )* -> ^( SQL ( token )* ) ;
 	[GrammarRule("sql")]
 	private AstParserRuleReturnScope<object, IToken> sql()
 	{
@@ -274,15 +274,15 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 
 		RewriteRuleSubtreeStream stream_token=new RewriteRuleSubtreeStream(adaptor,"rule token");
 		try { DebugEnterRule(GrammarFileName, "sql");
-		DebugLocation(24, 1);
+		DebugLocation(25, 1);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:24:5: ( ( token )* -> ^( SQL ( token )* ) )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:25:5: ( ( token )* -> ^( SQL ( token )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:24:7: ( token )*
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:25:7: ( token )*
 			{
-			DebugLocation(24, 7);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:24:7: ( token )*
+			DebugLocation(25, 7);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:25:7: ( token )*
 			try { DebugEnterSubRule(2);
 			while (true)
 			{
@@ -301,10 +301,10 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:24:7: token
+					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:25:7: token
 					{
-					DebugLocation(24, 7);
-					PushFollow(Follow._token_in_sql97);
+					DebugLocation(25, 7);
+					PushFollow(Follow._token_in_sql100);
 					token3=token();
 					PopFollow();
 					if (state.failed) return retval;
@@ -338,20 +338,20 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 24:14: -> ^( SQL ( token )* )
+			// 25:14: -> ^( SQL ( token )* )
 			{
-				DebugLocation(24, 17);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:24:17: ^( SQL ( token )* )
+				DebugLocation(25, 17);
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:25:17: ^( SQL ( token )* )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(24, 19);
+				DebugLocation(25, 19);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(SQL, "SQL"), root_1);
 
-				DebugLocation(24, 23);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:24:23: ( token )*
+				DebugLocation(25, 23);
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:25:23: ( token )*
 				while ( stream_token.HasNext )
 				{
-					DebugLocation(24, 23);
+					DebugLocation(25, 23);
 					adaptor.AddChild(root_1, stream_token.NextTree());
 
 				}
@@ -388,7 +388,7 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 			LeaveRule("sql", 2);
 			LeaveRule_sql();
 		}
-		DebugLocation(25, 1);
+		DebugLocation(26, 1);
 		} finally { DebugExitRule(GrammarFileName, "sql"); }
 		return retval;
 
@@ -399,7 +399,7 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 	partial void LeaveRule_usingNamespace();
 
 	// $ANTLR start "usingNamespace"
-	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:27:1: usingNamespace : USING NAMESPACE -> ^( USING NAMESPACE ) ;
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:28:1: usingNamespace : USING nameSpace -> ^( USING nameSpace ) ;
 	[GrammarRule("usingNamespace")]
 	private AstParserRuleReturnScope<object, IToken> usingNamespace()
 	{
@@ -412,33 +412,34 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 		object root_0 = default(object);
 
 		IToken USING4 = default(IToken);
-		IToken NAMESPACE5 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> nameSpace5 = default(AstParserRuleReturnScope<object, IToken>);
 
 		object USING4_tree = default(object);
-		object NAMESPACE5_tree = default(object);
 		RewriteRuleITokenStream stream_USING=new RewriteRuleITokenStream(adaptor,"token USING");
-		RewriteRuleITokenStream stream_NAMESPACE=new RewriteRuleITokenStream(adaptor,"token NAMESPACE");
+		RewriteRuleSubtreeStream stream_nameSpace=new RewriteRuleSubtreeStream(adaptor,"rule nameSpace");
 		try { DebugEnterRule(GrammarFileName, "usingNamespace");
-		DebugLocation(27, 1);
+		DebugLocation(28, 1);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:27:16: ( USING NAMESPACE -> ^( USING NAMESPACE ) )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:28:16: ( USING nameSpace -> ^( USING nameSpace ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:27:18: USING NAMESPACE
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:28:18: USING nameSpace
 			{
-			DebugLocation(27, 18);
-			USING4=(IToken)Match(input,USING,Follow._USING_in_usingNamespace117); if (state.failed) return retval; 
+			DebugLocation(28, 18);
+			USING4=(IToken)Match(input,USING,Follow._USING_in_usingNamespace120); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_USING.Add(USING4);
 
-			DebugLocation(27, 24);
-			NAMESPACE5=(IToken)Match(input,NAMESPACE,Follow._NAMESPACE_in_usingNamespace119); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_NAMESPACE.Add(NAMESPACE5);
-
+			DebugLocation(28, 24);
+			PushFollow(Follow._nameSpace_in_usingNamespace122);
+			nameSpace5=nameSpace();
+			PopFollow();
+			if (state.failed) return retval;
+			if (state.backtracking == 0) stream_nameSpace.Add(nameSpace5.Tree);
 
 
 			{
 			// AST REWRITE
-			// elements: USING, NAMESPACE
+			// elements: nameSpace, USING
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -449,17 +450,17 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 27:34: -> ^( USING NAMESPACE )
+			// 28:34: -> ^( USING nameSpace )
 			{
-				DebugLocation(27, 37);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:27:37: ^( USING NAMESPACE )
+				DebugLocation(28, 37);
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:28:37: ^( USING nameSpace )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(27, 39);
+				DebugLocation(28, 39);
 				root_1 = (object)adaptor.BecomeRoot(stream_USING.NextNode(), root_1);
 
-				DebugLocation(27, 45);
-				adaptor.AddChild(root_1, stream_NAMESPACE.NextNode());
+				DebugLocation(28, 45);
+				adaptor.AddChild(root_1, stream_nameSpace.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
 				}
@@ -492,75 +493,240 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 			LeaveRule("usingNamespace", 3);
 			LeaveRule_usingNamespace();
 		}
-		DebugLocation(28, 1);
+		DebugLocation(29, 1);
 		} finally { DebugExitRule(GrammarFileName, "usingNamespace"); }
 		return retval;
 
 	}
 	// $ANTLR end "usingNamespace"
 
-	partial void EnterRule_token();
-	partial void LeaveRule_token();
+	partial void EnterRule_nameSpace();
+	partial void LeaveRule_nameSpace();
 
-	// $ANTLR start "token"
-	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:33:1: token : ( outputToken | ( '@' ID ':' )=> inputToken | . );
-	[GrammarRule("token")]
-	private AstParserRuleReturnScope<object, IToken> token()
+	// $ANTLR start "nameSpace"
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:31:1: nameSpace : ID ( '.' ID )* -> ^( NAMESPACE ID ( '.' ID )* ) ;
+	[GrammarRule("nameSpace")]
+	private AstParserRuleReturnScope<object, IToken> nameSpace()
 	{
-		EnterRule_token();
-		EnterRule("token", 4);
-		TraceIn("token", 4);
+		EnterRule_nameSpace();
+		EnterRule("nameSpace", 4);
+		TraceIn("nameSpace", 4);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
-		IToken wildcard8 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> outputToken6 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> inputToken7 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken ID6 = default(IToken);
+		IToken char_literal7 = default(IToken);
+		IToken ID8 = default(IToken);
 
-		object wildcard8_tree = default(object);
-		try { DebugEnterRule(GrammarFileName, "token");
-		DebugLocation(33, 1);
+		object ID6_tree = default(object);
+		object char_literal7_tree = default(object);
+		object ID8_tree = default(object);
+		RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
+		RewriteRuleITokenStream stream_16=new RewriteRuleITokenStream(adaptor,"token 16");
+		try { DebugEnterRule(GrammarFileName, "nameSpace");
+		DebugLocation(31, 1);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:33:8: ( outputToken | ( '@' ID ':' )=> inputToken | . )
-			int alt3=3;
-			try { DebugEnterDecision(3, false);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:31:12: ( ID ( '.' ID )* -> ^( NAMESPACE ID ( '.' ID )* ) )
+			DebugEnterAlt(1);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:31:14: ID ( '.' ID )*
+			{
+			DebugLocation(31, 14);
+			ID6=(IToken)Match(input,ID,Follow._ID_in_nameSpace142); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_ID.Add(ID6);
+
+			DebugLocation(31, 18);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:31:18: ( '.' ID )*
+			try { DebugEnterSubRule(3);
+			while (true)
+			{
+				int alt3=2;
+				try { DebugEnterDecision(3, false);
+				int LA3_0 = input.LA(1);
+
+				if ((LA3_0==16))
+				{
+					int LA3_2 = input.LA(2);
+
+					if ((LA3_2==ID))
+					{
+						alt3 = 1;
+					}
+
+
+				}
+
+
+				} finally { DebugExitDecision(3); }
+				switch ( alt3 )
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:31:20: '.' ID
+					{
+					DebugLocation(31, 20);
+					char_literal7=(IToken)Match(input,16,Follow._16_in_nameSpace147); if (state.failed) return retval; 
+					if (state.backtracking == 0) stream_16.Add(char_literal7);
+
+					DebugLocation(31, 24);
+					ID8=(IToken)Match(input,ID,Follow._ID_in_nameSpace149); if (state.failed) return retval; 
+					if (state.backtracking == 0) stream_ID.Add(ID8);
+
+
+					}
+					break;
+
+				default:
+					goto loop3;
+				}
+			}
+
+			loop3:
+				;
+
+			} finally { DebugExitSubRule(3); }
+
+
+
+			{
+			// AST REWRITE
+			// elements: ID, 16, ID
+			// token labels: 
+			// rule labels: retval
+			// token list labels: 
+			// rule list labels: 
+			// wildcard labels: 
+			if (state.backtracking == 0) {
+			retval.Tree = root_0;
+			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
+
+			root_0 = (object)adaptor.Nil();
+			// 31:30: -> ^( NAMESPACE ID ( '.' ID )* )
+			{
+				DebugLocation(31, 33);
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:31:33: ^( NAMESPACE ID ( '.' ID )* )
+				{
+				object root_1 = (object)adaptor.Nil();
+				DebugLocation(31, 35);
+				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(NAMESPACE, "NAMESPACE"), root_1);
+
+				DebugLocation(31, 45);
+				adaptor.AddChild(root_1, stream_ID.NextNode());
+				DebugLocation(31, 49);
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:31:49: ( '.' ID )*
+				while ( stream_ID.HasNext||stream_16.HasNext )
+				{
+					DebugLocation(31, 51);
+					adaptor.AddChild(root_1, stream_16.NextNode());
+					DebugLocation(31, 55);
+					adaptor.AddChild(root_1, stream_ID.NextNode());
+
+				}
+				stream_ID.Reset();
+				stream_16.Reset();
+
+				adaptor.AddChild(root_0, root_1);
+				}
+
+			}
+
+			retval.Tree = root_0;
+			}
+			}
+
+			}
+
+			retval.Stop = (IToken)input.LT(-1);
+
+			if (state.backtracking == 0) {
+			retval.Tree = (object)adaptor.RulePostProcessing(root_0);
+			adaptor.SetTokenBoundaries(retval.Tree, retval.Start, retval.Stop);
+			}
+		}
+		catch (RecognitionException re)
+		{
+			ReportError(re);
+			Recover(input,re);
+		retval.Tree = (object)adaptor.ErrorNode(input, retval.Start, input.LT(-1), re);
+
+		}
+		finally
+		{
+			TraceOut("nameSpace", 4);
+			LeaveRule("nameSpace", 4);
+			LeaveRule_nameSpace();
+		}
+		DebugLocation(32, 1);
+		} finally { DebugExitRule(GrammarFileName, "nameSpace"); }
+		return retval;
+
+	}
+	// $ANTLR end "nameSpace"
+
+	partial void EnterRule_token();
+	partial void LeaveRule_token();
+
+	// $ANTLR start "token"
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:34:1: token : ( outputToken | ( '@' ID ':' )=> inputToken | . );
+	[GrammarRule("token")]
+	private AstParserRuleReturnScope<object, IToken> token()
+	{
+		EnterRule_token();
+		EnterRule("token", 5);
+		TraceIn("token", 5);
+		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
+		retval.Start = (IToken)input.LT(1);
+
+		object root_0 = default(object);
+
+		IToken wildcard11 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> outputToken9 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> inputToken10 = default(AstParserRuleReturnScope<object, IToken>);
+
+		object wildcard11_tree = default(object);
+		try { DebugEnterRule(GrammarFileName, "token");
+		DebugLocation(34, 1);
+		try
+		{
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:34:8: ( outputToken | ( '@' ID ':' )=> inputToken | . )
+			int alt4=3;
+			try { DebugEnterDecision(4, false);
 			switch (input.LA(1))
 			{
 			case ID:
 				{
-				int LA3_1 = input.LA(2);
+				int LA4_1 = input.LA(2);
 
-				if ((LA3_1==17))
+				if ((LA4_1==17))
 				{
-					int LA3_5 = input.LA(3);
+					int LA4_5 = input.LA(3);
 
-					if ((LA3_5==ID))
+					if ((LA4_5==ID))
 					{
-						alt3 = 1;
+						alt4 = 1;
 					}
-					else if ((LA3_5==EOF||(LA3_5>=ANY && LA3_5<=DIGIT)||(LA3_5>=INPUT_TOKEN && LA3_5<=21)))
+					else if ((LA4_5==EOF||(LA4_5>=ANY && LA4_5<=DIGIT)||(LA4_5>=INPUT_TOKEN && LA4_5<=21)))
 					{
-						alt3 = 3;
+						alt4 = 3;
 					}
 					else
 					{
 						if (state.backtracking>0) {state.failed=true; return retval;}
-						NoViableAltException nvae = new NoViableAltException("", 3, 5, input);
+						NoViableAltException nvae = new NoViableAltException("", 4, 5, input);
 						DebugRecognitionException(nvae);
 						throw nvae;
 					}
 				}
-				else if ((LA3_1==EOF||(LA3_1>=ANY && LA3_1<=WHITESPACE)||(LA3_1>=18 && LA3_1<=21)))
+				else if ((LA4_1==EOF||(LA4_1>=ANY && LA4_1<=16)||(LA4_1>=18 && LA4_1<=21)))
 				{
-					alt3 = 3;
+					alt4 = 3;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 3, 1, input);
+					NoViableAltException nvae = new NoViableAltException("", 4, 1, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -568,68 +734,68 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 				break;
 			case 20:
 				{
-				int LA3_2 = input.LA(2);
+				int LA4_2 = input.LA(2);
 
-				if ((LA3_2==ID))
+				if ((LA4_2==ID))
 				{
-					int LA3_6 = input.LA(3);
+					int LA4_6 = input.LA(3);
 
-					if ((LA3_6==21))
+					if ((LA4_6==21))
 					{
-						int LA3_9 = input.LA(4);
+						int LA4_9 = input.LA(4);
 
-						if ((LA3_9==17))
+						if ((LA4_9==17))
 						{
-							int LA3_11 = input.LA(5);
+							int LA4_11 = input.LA(5);
 
-							if ((LA3_11==ID))
+							if ((LA4_11==ID))
 							{
-								alt3 = 1;
+								alt4 = 1;
 							}
-							else if ((LA3_11==EOF||(LA3_11>=ANY && LA3_11<=DIGIT)||(LA3_11>=INPUT_TOKEN && LA3_11<=21)))
+							else if ((LA4_11==EOF||(LA4_11>=ANY && LA4_11<=DIGIT)||(LA4_11>=INPUT_TOKEN && LA4_11<=21)))
 							{
-								alt3 = 3;
+								alt4 = 3;
 							}
 							else
 							{
 								if (state.backtracking>0) {state.failed=true; return retval;}
-								NoViableAltException nvae = new NoViableAltException("", 3, 11, input);
+								NoViableAltException nvae = new NoViableAltException("", 4, 11, input);
 								DebugRecognitionException(nvae);
 								throw nvae;
 							}
 						}
-						else if ((LA3_9==EOF||(LA3_9>=ANY && LA3_9<=WHITESPACE)||(LA3_9>=18 && LA3_9<=21)))
+						else if ((LA4_9==EOF||(LA4_9>=ANY && LA4_9<=16)||(LA4_9>=18 && LA4_9<=21)))
 						{
-							alt3 = 3;
+							alt4 = 3;
 						}
 						else
 						{
 							if (state.backtracking>0) {state.failed=true; return retval;}
-							NoViableAltException nvae = new NoViableAltException("", 3, 9, input);
+							NoViableAltException nvae = new NoViableAltException("", 4, 9, input);
 							DebugRecognitionException(nvae);
 							throw nvae;
 						}
 					}
-					else if ((LA3_6==EOF||(LA3_6>=ANY && LA3_6<=20)))
+					else if ((LA4_6==EOF||(LA4_6>=ANY && LA4_6<=20)))
 					{
-						alt3 = 3;
+						alt4 = 3;
 					}
 					else
 					{
 						if (state.backtracking>0) {state.failed=true; return retval;}
-						NoViableAltException nvae = new NoViableAltException("", 3, 6, input);
+						NoViableAltException nvae = new NoViableAltException("", 4, 6, input);
 						DebugRecognitionException(nvae);
 						throw nvae;
 					}
 				}
-				else if ((LA3_2==EOF||(LA3_2>=ANY && LA3_2<=DIGIT)||(LA3_2>=INPUT_TOKEN && LA3_2<=21)))
+				else if ((LA4_2==EOF||(LA4_2>=ANY && LA4_2<=DIGIT)||(LA4_2>=INPUT_TOKEN && LA4_2<=21)))
 				{
-					alt3 = 3;
+					alt4 = 3;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 3, 2, input);
+					NoViableAltException nvae = new NoViableAltException("", 4, 2, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -637,68 +803,68 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 				break;
 			case 19:
 				{
-				int LA3_3 = input.LA(2);
+				int LA4_3 = input.LA(2);
 
-				if ((LA3_3==ID))
+				if ((LA4_3==ID))
 				{
-					int LA3_7 = input.LA(3);
+					int LA4_7 = input.LA(3);
 
-					if ((LA3_7==17))
+					if ((LA4_7==17))
 					{
-						int LA3_10 = input.LA(4);
+						int LA4_10 = input.LA(4);
 
-						if ((LA3_10==ID))
+						if ((LA4_10==ID))
 						{
-							int LA3_12 = input.LA(5);
+							int LA4_12 = input.LA(5);
 
 							if ((EvaluatePredicate(synpred1_TypeSql_fragment)))
 							{
-								alt3 = 2;
+								alt4 = 2;
 							}
 							else if ((true))
 							{
-								alt3 = 3;
+								alt4 = 3;
 							}
 							else
 							{
 								if (state.backtracking>0) {state.failed=true; return retval;}
-								NoViableAltException nvae = new NoViableAltException("", 3, 12, input);
+								NoViableAltException nvae = new NoViableAltException("", 4, 12, input);
 								DebugRecognitionException(nvae);
 								throw nvae;
 							}
 						}
-						else if ((LA3_10==EOF||(LA3_10>=ANY && LA3_10<=DIGIT)||(LA3_10>=INPUT_TOKEN && LA3_10<=21)))
+						else if ((LA4_10==EOF||(LA4_10>=ANY && LA4_10<=DIGIT)||(LA4_10>=INPUT_TOKEN && LA4_10<=21)))
 						{
-							alt3 = 3;
+							alt4 = 3;
 						}
 						else
 						{
 							if (state.backtracking>0) {state.failed=true; return retval;}
-							NoViableAltException nvae = new NoViableAltException("", 3, 10, input);
+							NoViableAltException nvae = new NoViableAltException("", 4, 10, input);
 							DebugRecognitionException(nvae);
 							throw nvae;
 						}
 					}
-					else if ((LA3_7==EOF||(LA3_7>=ANY && LA3_7<=WHITESPACE)||(LA3_7>=18 && LA3_7<=21)))
+					else if ((LA4_7==EOF||(LA4_7>=ANY && LA4_7<=16)||(LA4_7>=18 && LA4_7<=21)))
 					{
-						alt3 = 3;
+						alt4 = 3;
 					}
 					else
 					{
 						if (state.backtracking>0) {state.failed=true; return retval;}
-						NoViableAltException nvae = new NoViableAltException("", 3, 7, input);
+						NoViableAltException nvae = new NoViableAltException("", 4, 7, input);
 						DebugRecognitionException(nvae);
 						throw nvae;
 					}
 				}
-				else if ((LA3_3==EOF||(LA3_3>=ANY && LA3_3<=DIGIT)||(LA3_3>=INPUT_TOKEN && LA3_3<=21)))
+				else if ((LA4_3==EOF||(LA4_3>=ANY && LA4_3<=DIGIT)||(LA4_3>=INPUT_TOKEN && LA4_3<=21)))
 				{
-					alt3 = 3;
+					alt4 = 3;
 				}
 				else
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 3, 3, input);
+					NoViableAltException nvae = new NoViableAltException("", 4, 3, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
@@ -708,7 +874,6 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 			case DIGIT:
 			case INPUT_TOKEN:
 			case NAMESPACE:
-			case NAMESPACE_SEGMENT:
 			case NEWLINE:
 			case OUTPUT_TOKEN:
 			case SQL:
@@ -716,69 +881,70 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 			case TYPESQL:
 			case USING:
 			case WHITESPACE:
+			case 16:
 			case 17:
 			case 18:
 			case 21:
 				{
-				alt3 = 3;
+				alt4 = 3;
 				}
 				break;
 			default:
 				{
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					NoViableAltException nvae = new NoViableAltException("", 3, 0, input);
+					NoViableAltException nvae = new NoViableAltException("", 4, 0, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 
-			} finally { DebugExitDecision(3); }
-			switch (alt3)
+			} finally { DebugExitDecision(4); }
+			switch (alt4)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:33:11: outputToken
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:34:11: outputToken
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(33, 11);
-				PushFollow(Follow._outputToken_in_token144);
-				outputToken6=outputToken();
+				DebugLocation(34, 11);
+				PushFollow(Follow._outputToken_in_token183);
+				outputToken9=outputToken();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, outputToken6.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, outputToken9.Tree);
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:34:5: ( '@' ID ':' )=> inputToken
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:35:5: ( '@' ID ':' )=> inputToken
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(34, 21);
-				PushFollow(Follow._inputToken_in_token160);
-				inputToken7=inputToken();
+				DebugLocation(35, 21);
+				PushFollow(Follow._inputToken_in_token199);
+				inputToken10=inputToken();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) adaptor.AddChild(root_0, inputToken7.Tree);
+				if (state.backtracking == 0) adaptor.AddChild(root_0, inputToken10.Tree);
 
 				}
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:35:5: .
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:36:5: .
 				{
 				root_0 = (object)adaptor.Nil();
 
-				DebugLocation(35, 5);
+				DebugLocation(36, 5);
 
-				wildcard8=(IToken)input.LT(1);
+				wildcard11=(IToken)input.LT(1);
 
 				MatchAny(input); if (state.failed) return retval;
 				if (state.backtracking == 0) {
-				wildcard8_tree = (object)adaptor.Create(wildcard8);
-				adaptor.AddChild(root_0, wildcard8_tree);
+				wildcard11_tree = (object)adaptor.Create(wildcard11);
+				adaptor.AddChild(root_0, wildcard11_tree);
 				}
 
 
@@ -802,11 +968,11 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("token", 4);
-			LeaveRule("token", 4);
+			TraceOut("token", 5);
+			LeaveRule("token", 5);
 			LeaveRule_token();
 		}
-		DebugLocation(36, 1);
+		DebugLocation(37, 1);
 		} finally { DebugExitRule(GrammarFileName, "token"); }
 		return retval;
 
@@ -817,86 +983,86 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 	partial void LeaveRule_outputToken();
 
 	// $ANTLR start "outputToken"
-	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:38:1: outputToken : ( ( ID ':' )=>id= ID ':' type -> ^( OUTPUT_TOKEN $id type ) | ( '[' ID ']' )=> '[' id= ID ']' ':' type -> ^( OUTPUT_TOKEN $id type ) );
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:39:1: outputToken : ( ( ID ':' )=>id= ID ':' type -> ^( OUTPUT_TOKEN $id type ) | ( '[' ID ']' )=> '[' id= ID ']' ':' type -> ^( OUTPUT_TOKEN $id type ) );
 	[GrammarRule("outputToken")]
 	private AstParserRuleReturnScope<object, IToken> outputToken()
 	{
 		EnterRule_outputToken();
-		EnterRule("outputToken", 5);
-		TraceIn("outputToken", 5);
+		EnterRule("outputToken", 6);
+		TraceIn("outputToken", 6);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
 		IToken id = default(IToken);
-		IToken char_literal9 = default(IToken);
-		IToken char_literal11 = default(IToken);
 		IToken char_literal12 = default(IToken);
-		IToken char_literal13 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> type10 = default(AstParserRuleReturnScope<object, IToken>);
-		AstParserRuleReturnScope<object, IToken> type14 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken char_literal14 = default(IToken);
+		IToken char_literal15 = default(IToken);
+		IToken char_literal16 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> type13 = default(AstParserRuleReturnScope<object, IToken>);
+		AstParserRuleReturnScope<object, IToken> type17 = default(AstParserRuleReturnScope<object, IToken>);
 
 		object id_tree = default(object);
-		object char_literal9_tree = default(object);
-		object char_literal11_tree = default(object);
 		object char_literal12_tree = default(object);
-		object char_literal13_tree = default(object);
+		object char_literal14_tree = default(object);
+		object char_literal15_tree = default(object);
+		object char_literal16_tree = default(object);
 		RewriteRuleITokenStream stream_21=new RewriteRuleITokenStream(adaptor,"token 21");
 		RewriteRuleITokenStream stream_20=new RewriteRuleITokenStream(adaptor,"token 20");
 		RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
 		RewriteRuleITokenStream stream_17=new RewriteRuleITokenStream(adaptor,"token 17");
 		RewriteRuleSubtreeStream stream_type=new RewriteRuleSubtreeStream(adaptor,"rule type");
 		try { DebugEnterRule(GrammarFileName, "outputToken");
-		DebugLocation(38, 1);
+		DebugLocation(39, 1);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:39:2: ( ( ID ':' )=>id= ID ':' type -> ^( OUTPUT_TOKEN $id type ) | ( '[' ID ']' )=> '[' id= ID ']' ':' type -> ^( OUTPUT_TOKEN $id type ) )
-			int alt4=2;
-			try { DebugEnterDecision(4, false);
-			int LA4_0 = input.LA(1);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:40:2: ( ( ID ':' )=>id= ID ':' type -> ^( OUTPUT_TOKEN $id type ) | ( '[' ID ']' )=> '[' id= ID ']' ':' type -> ^( OUTPUT_TOKEN $id type ) )
+			int alt5=2;
+			try { DebugEnterDecision(5, false);
+			int LA5_0 = input.LA(1);
 
-			if ((LA4_0==ID) && (EvaluatePredicate(synpred2_TypeSql_fragment)))
+			if ((LA5_0==ID) && (EvaluatePredicate(synpred2_TypeSql_fragment)))
 			{
-				alt4 = 1;
+				alt5 = 1;
 			}
-			else if ((LA4_0==20) && (EvaluatePredicate(synpred3_TypeSql_fragment)))
+			else if ((LA5_0==20) && (EvaluatePredicate(synpred3_TypeSql_fragment)))
 			{
-				alt4 = 2;
+				alt5 = 2;
 			}
 			else
 			{
 				if (state.backtracking>0) {state.failed=true; return retval;}
-				NoViableAltException nvae = new NoViableAltException("", 4, 0, input);
+				NoViableAltException nvae = new NoViableAltException("", 5, 0, input);
 				DebugRecognitionException(nvae);
 				throw nvae;
 			}
-			} finally { DebugExitDecision(4); }
-			switch (alt4)
+			} finally { DebugExitDecision(5); }
+			switch (alt5)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:39:4: ( ID ':' )=>id= ID ':' type
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:40:4: ( ID ':' )=>id= ID ':' type
 				{
-				DebugLocation(39, 17);
-				id=(IToken)Match(input,ID,Follow._ID_in_outputToken189); if (state.failed) return retval; 
+				DebugLocation(40, 17);
+				id=(IToken)Match(input,ID,Follow._ID_in_outputToken228); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_ID.Add(id);
 
-				DebugLocation(39, 21);
-				char_literal9=(IToken)Match(input,17,Follow._17_in_outputToken191); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_17.Add(char_literal9);
+				DebugLocation(40, 21);
+				char_literal12=(IToken)Match(input,17,Follow._17_in_outputToken230); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_17.Add(char_literal12);
 
-				DebugLocation(39, 25);
-				PushFollow(Follow._type_in_outputToken193);
-				type10=type();
+				DebugLocation(40, 25);
+				PushFollow(Follow._type_in_outputToken232);
+				type13=type();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_type.Add(type10.Tree);
+				if (state.backtracking == 0) stream_type.Add(type13.Tree);
 
 
 				{
 				// AST REWRITE
-				// elements: id, type
+				// elements: type, id
 				// token labels: id
 				// rule labels: retval
 				// token list labels: 
@@ -908,18 +1074,18 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (object)adaptor.Nil();
-				// 39:30: -> ^( OUTPUT_TOKEN $id type )
+				// 40:30: -> ^( OUTPUT_TOKEN $id type )
 				{
-					DebugLocation(39, 33);
-					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:39:33: ^( OUTPUT_TOKEN $id type )
+					DebugLocation(40, 33);
+					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:40:33: ^( OUTPUT_TOKEN $id type )
 					{
 					object root_1 = (object)adaptor.Nil();
-					DebugLocation(39, 35);
+					DebugLocation(40, 35);
 					root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(OUTPUT_TOKEN, "OUTPUT_TOKEN"), root_1);
 
-					DebugLocation(39, 49);
+					DebugLocation(40, 49);
 					adaptor.AddChild(root_1, stream_id.NextNode());
-					DebugLocation(39, 52);
+					DebugLocation(40, 52);
 					adaptor.AddChild(root_1, stream_type.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -935,30 +1101,30 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:40:4: ( '[' ID ']' )=> '[' id= ID ']' ':' type
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:41:4: ( '[' ID ']' )=> '[' id= ID ']' ':' type
 				{
-				DebugLocation(40, 18);
-				char_literal11=(IToken)Match(input,20,Follow._20_in_outputToken217); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_20.Add(char_literal11);
+				DebugLocation(41, 18);
+				char_literal14=(IToken)Match(input,20,Follow._20_in_outputToken256); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_20.Add(char_literal14);
 
-				DebugLocation(40, 24);
-				id=(IToken)Match(input,ID,Follow._ID_in_outputToken221); if (state.failed) return retval; 
+				DebugLocation(41, 24);
+				id=(IToken)Match(input,ID,Follow._ID_in_outputToken260); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_ID.Add(id);
 
-				DebugLocation(40, 28);
-				char_literal12=(IToken)Match(input,21,Follow._21_in_outputToken223); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_21.Add(char_literal12);
+				DebugLocation(41, 28);
+				char_literal15=(IToken)Match(input,21,Follow._21_in_outputToken262); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_21.Add(char_literal15);
 
-				DebugLocation(40, 32);
-				char_literal13=(IToken)Match(input,17,Follow._17_in_outputToken225); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_17.Add(char_literal13);
+				DebugLocation(41, 32);
+				char_literal16=(IToken)Match(input,17,Follow._17_in_outputToken264); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_17.Add(char_literal16);
 
-				DebugLocation(40, 36);
-				PushFollow(Follow._type_in_outputToken227);
-				type14=type();
+				DebugLocation(41, 36);
+				PushFollow(Follow._type_in_outputToken266);
+				type17=type();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_type.Add(type14.Tree);
+				if (state.backtracking == 0) stream_type.Add(type17.Tree);
 
 
 				{
@@ -975,18 +1141,18 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (object)adaptor.Nil();
-				// 40:41: -> ^( OUTPUT_TOKEN $id type )
+				// 41:41: -> ^( OUTPUT_TOKEN $id type )
 				{
-					DebugLocation(40, 44);
-					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:40:44: ^( OUTPUT_TOKEN $id type )
+					DebugLocation(41, 44);
+					// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:41:44: ^( OUTPUT_TOKEN $id type )
 					{
 					object root_1 = (object)adaptor.Nil();
-					DebugLocation(40, 46);
+					DebugLocation(41, 46);
 					root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(OUTPUT_TOKEN, "OUTPUT_TOKEN"), root_1);
 
-					DebugLocation(40, 60);
+					DebugLocation(41, 60);
 					adaptor.AddChild(root_1, stream_id.NextNode());
-					DebugLocation(40, 63);
+					DebugLocation(41, 63);
 					adaptor.AddChild(root_1, stream_type.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -1018,11 +1184,11 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("outputToken", 5);
-			LeaveRule("outputToken", 5);
+			TraceOut("outputToken", 6);
+			LeaveRule("outputToken", 6);
 			LeaveRule_outputToken();
 		}
-		DebugLocation(41, 1);
+		DebugLocation(42, 1);
 		} finally { DebugExitRule(GrammarFileName, "outputToken"); }
 		return retval;
 
@@ -1033,56 +1199,56 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 	partial void LeaveRule_inputToken();
 
 	// $ANTLR start "inputToken"
-	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:43:1: inputToken : '@' id= ID ':' type -> ^( INPUT_TOKEN $id type ) ;
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:44:1: inputToken : '@' id= ID ':' type -> ^( INPUT_TOKEN $id type ) ;
 	[GrammarRule("inputToken")]
 	private AstParserRuleReturnScope<object, IToken> inputToken()
 	{
 		EnterRule_inputToken();
-		EnterRule("inputToken", 6);
-		TraceIn("inputToken", 6);
+		EnterRule("inputToken", 7);
+		TraceIn("inputToken", 7);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
 		IToken id = default(IToken);
-		IToken char_literal15 = default(IToken);
-		IToken char_literal16 = default(IToken);
-		AstParserRuleReturnScope<object, IToken> type17 = default(AstParserRuleReturnScope<object, IToken>);
+		IToken char_literal18 = default(IToken);
+		IToken char_literal19 = default(IToken);
+		AstParserRuleReturnScope<object, IToken> type20 = default(AstParserRuleReturnScope<object, IToken>);
 
 		object id_tree = default(object);
-		object char_literal15_tree = default(object);
-		object char_literal16_tree = default(object);
+		object char_literal18_tree = default(object);
+		object char_literal19_tree = default(object);
 		RewriteRuleITokenStream stream_19=new RewriteRuleITokenStream(adaptor,"token 19");
 		RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
 		RewriteRuleITokenStream stream_17=new RewriteRuleITokenStream(adaptor,"token 17");
 		RewriteRuleSubtreeStream stream_type=new RewriteRuleSubtreeStream(adaptor,"rule type");
 		try { DebugEnterRule(GrammarFileName, "inputToken");
-		DebugLocation(43, 1);
+		DebugLocation(44, 1);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:44:2: ( '@' id= ID ':' type -> ^( INPUT_TOKEN $id type ) )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:45:2: ( '@' id= ID ':' type -> ^( INPUT_TOKEN $id type ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:44:5: '@' id= ID ':' type
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:45:5: '@' id= ID ':' type
 			{
-			DebugLocation(44, 5);
-			char_literal15=(IToken)Match(input,19,Follow._19_in_inputToken251); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_19.Add(char_literal15);
+			DebugLocation(45, 5);
+			char_literal18=(IToken)Match(input,19,Follow._19_in_inputToken290); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_19.Add(char_literal18);
 
-			DebugLocation(44, 11);
-			id=(IToken)Match(input,ID,Follow._ID_in_inputToken255); if (state.failed) return retval; 
+			DebugLocation(45, 11);
+			id=(IToken)Match(input,ID,Follow._ID_in_inputToken294); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ID.Add(id);
 
-			DebugLocation(44, 15);
-			char_literal16=(IToken)Match(input,17,Follow._17_in_inputToken257); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_17.Add(char_literal16);
+			DebugLocation(45, 15);
+			char_literal19=(IToken)Match(input,17,Follow._17_in_inputToken296); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_17.Add(char_literal19);
 
-			DebugLocation(44, 19);
-			PushFollow(Follow._type_in_inputToken259);
-			type17=type();
+			DebugLocation(45, 19);
+			PushFollow(Follow._type_in_inputToken298);
+			type20=type();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) stream_type.Add(type17.Tree);
+			if (state.backtracking == 0) stream_type.Add(type20.Tree);
 
 
 			{
@@ -1099,18 +1265,18 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 44:24: -> ^( INPUT_TOKEN $id type )
+			// 45:24: -> ^( INPUT_TOKEN $id type )
 			{
-				DebugLocation(44, 27);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:44:27: ^( INPUT_TOKEN $id type )
+				DebugLocation(45, 27);
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:45:27: ^( INPUT_TOKEN $id type )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(44, 29);
+				DebugLocation(45, 29);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(INPUT_TOKEN, "INPUT_TOKEN"), root_1);
 
-				DebugLocation(44, 42);
+				DebugLocation(45, 42);
 				adaptor.AddChild(root_1, stream_id.NextNode());
-				DebugLocation(44, 45);
+				DebugLocation(45, 45);
 				adaptor.AddChild(root_1, stream_type.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -1140,11 +1306,11 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("inputToken", 6);
-			LeaveRule("inputToken", 6);
+			TraceOut("inputToken", 7);
+			LeaveRule("inputToken", 7);
 			LeaveRule_inputToken();
 		}
-		DebugLocation(45, 1);
+		DebugLocation(46, 1);
 		} finally { DebugExitRule(GrammarFileName, "inputToken"); }
 		return retval;
 
@@ -1155,71 +1321,71 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 	partial void LeaveRule_type();
 
 	// $ANTLR start "type"
-	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:47:1: type : ID ( '?' )? -> ^( TYPE ID ( '?' )? ) ;
+	// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:48:1: type : ID ( '?' )? -> ^( TYPE ID ( '?' )? ) ;
 	[GrammarRule("type")]
 	private AstParserRuleReturnScope<object, IToken> type()
 	{
 		EnterRule_type();
-		EnterRule("type", 7);
-		TraceIn("type", 7);
+		EnterRule("type", 8);
+		TraceIn("type", 8);
 		AstParserRuleReturnScope<object, IToken> retval = new AstParserRuleReturnScope<object, IToken>();
 		retval.Start = (IToken)input.LT(1);
 
 		object root_0 = default(object);
 
-		IToken ID18 = default(IToken);
-		IToken char_literal19 = default(IToken);
+		IToken ID21 = default(IToken);
+		IToken char_literal22 = default(IToken);
 
-		object ID18_tree = default(object);
-		object char_literal19_tree = default(object);
+		object ID21_tree = default(object);
+		object char_literal22_tree = default(object);
 		RewriteRuleITokenStream stream_ID=new RewriteRuleITokenStream(adaptor,"token ID");
 		RewriteRuleITokenStream stream_18=new RewriteRuleITokenStream(adaptor,"token 18");
 		try { DebugEnterRule(GrammarFileName, "type");
-		DebugLocation(47, 1);
+		DebugLocation(48, 1);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:48:2: ( ID ( '?' )? -> ^( TYPE ID ( '?' )? ) )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:49:2: ( ID ( '?' )? -> ^( TYPE ID ( '?' )? ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:48:4: ID ( '?' )?
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:49:4: ID ( '?' )?
 			{
-			DebugLocation(48, 4);
-			ID18=(IToken)Match(input,ID,Follow._ID_in_type282); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_ID.Add(ID18);
+			DebugLocation(49, 4);
+			ID21=(IToken)Match(input,ID,Follow._ID_in_type321); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_ID.Add(ID21);
 
-			DebugLocation(48, 7);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:48:7: ( '?' )?
-			int alt5=2;
-			try { DebugEnterSubRule(5);
-			try { DebugEnterDecision(5, false);
-			int LA5_0 = input.LA(1);
+			DebugLocation(49, 7);
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:49:7: ( '?' )?
+			int alt6=2;
+			try { DebugEnterSubRule(6);
+			try { DebugEnterDecision(6, false);
+			int LA6_0 = input.LA(1);
 
-			if ((LA5_0==18))
+			if ((LA6_0==18))
 			{
-				alt5 = 1;
+				alt6 = 1;
 			}
-			} finally { DebugExitDecision(5); }
-			switch (alt5)
+			} finally { DebugExitDecision(6); }
+			switch (alt6)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:48:7: '?'
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:49:7: '?'
 				{
-				DebugLocation(48, 7);
-				char_literal19=(IToken)Match(input,18,Follow._18_in_type284); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_18.Add(char_literal19);
+				DebugLocation(49, 7);
+				char_literal22=(IToken)Match(input,18,Follow._18_in_type323); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_18.Add(char_literal22);
 
 
 				}
 				break;
 
 			}
-			} finally { DebugExitSubRule(5); }
+			} finally { DebugExitSubRule(6); }
 
 
 
 			{
 			// AST REWRITE
-			// elements: 18, ID
+			// elements: ID, 18
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1230,22 +1396,22 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (object)adaptor.Nil();
-			// 48:12: -> ^( TYPE ID ( '?' )? )
+			// 49:12: -> ^( TYPE ID ( '?' )? )
 			{
-				DebugLocation(48, 15);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:48:15: ^( TYPE ID ( '?' )? )
+				DebugLocation(49, 15);
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:49:15: ^( TYPE ID ( '?' )? )
 				{
 				object root_1 = (object)adaptor.Nil();
-				DebugLocation(48, 17);
+				DebugLocation(49, 17);
 				root_1 = (object)adaptor.BecomeRoot((object)adaptor.Create(TYPE, "TYPE"), root_1);
 
-				DebugLocation(48, 22);
+				DebugLocation(49, 22);
 				adaptor.AddChild(root_1, stream_ID.NextNode());
-				DebugLocation(48, 25);
-				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:48:25: ( '?' )?
+				DebugLocation(49, 25);
+				// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:49:25: ( '?' )?
 				if (stream_18.HasNext)
 				{
-					DebugLocation(48, 25);
+					DebugLocation(49, 25);
 					adaptor.AddChild(root_1, stream_18.NextNode());
 
 				}
@@ -1278,11 +1444,11 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 		}
 		finally
 		{
-			TraceOut("type", 7);
-			LeaveRule("type", 7);
+			TraceOut("type", 8);
+			LeaveRule("type", 8);
 			LeaveRule_type();
 		}
-		DebugLocation(49, 1);
+		DebugLocation(50, 1);
 		} finally { DebugExitRule(GrammarFileName, "type"); }
 		return retval;
 
@@ -1296,28 +1462,28 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 	public void synpred1_TypeSql_fragment()
 	{
 		EnterRule_synpred1_TypeSql_fragment();
-		EnterRule("synpred1_TypeSql_fragment", 8);
-		TraceIn("synpred1_TypeSql_fragment", 8);
+		EnterRule("synpred1_TypeSql_fragment", 9);
+		TraceIn("synpred1_TypeSql_fragment", 9);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:34:5: ( '@' ID ':' )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:35:5: ( '@' ID ':' )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:34:6: '@' ID ':'
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:35:6: '@' ID ':'
 			{
-			DebugLocation(34, 6);
-			Match(input,19,Follow._19_in_synpred1_TypeSql151); if (state.failed) return;
-			DebugLocation(34, 10);
-			Match(input,ID,Follow._ID_in_synpred1_TypeSql153); if (state.failed) return;
-			DebugLocation(34, 13);
-			Match(input,17,Follow._17_in_synpred1_TypeSql155); if (state.failed) return;
+			DebugLocation(35, 6);
+			Match(input,19,Follow._19_in_synpred1_TypeSql190); if (state.failed) return;
+			DebugLocation(35, 10);
+			Match(input,ID,Follow._ID_in_synpred1_TypeSql192); if (state.failed) return;
+			DebugLocation(35, 13);
+			Match(input,17,Follow._17_in_synpred1_TypeSql194); if (state.failed) return;
 
 			}
 
 		}
 		finally
 		{
-			TraceOut("synpred1_TypeSql_fragment", 8);
-			LeaveRule("synpred1_TypeSql_fragment", 8);
+			TraceOut("synpred1_TypeSql_fragment", 9);
+			LeaveRule("synpred1_TypeSql_fragment", 9);
 			LeaveRule_synpred1_TypeSql_fragment();
 		}
 	}
@@ -1330,26 +1496,26 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 	public void synpred2_TypeSql_fragment()
 	{
 		EnterRule_synpred2_TypeSql_fragment();
-		EnterRule("synpred2_TypeSql_fragment", 9);
-		TraceIn("synpred2_TypeSql_fragment", 9);
+		EnterRule("synpred2_TypeSql_fragment", 10);
+		TraceIn("synpred2_TypeSql_fragment", 10);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:39:4: ( ID ':' )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:40:4: ( ID ':' )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:39:5: ID ':'
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:40:5: ID ':'
 			{
-			DebugLocation(39, 5);
-			Match(input,ID,Follow._ID_in_synpred2_TypeSql181); if (state.failed) return;
-			DebugLocation(39, 8);
-			Match(input,17,Follow._17_in_synpred2_TypeSql183); if (state.failed) return;
+			DebugLocation(40, 5);
+			Match(input,ID,Follow._ID_in_synpred2_TypeSql220); if (state.failed) return;
+			DebugLocation(40, 8);
+			Match(input,17,Follow._17_in_synpred2_TypeSql222); if (state.failed) return;
 
 			}
 
 		}
 		finally
 		{
-			TraceOut("synpred2_TypeSql_fragment", 9);
-			LeaveRule("synpred2_TypeSql_fragment", 9);
+			TraceOut("synpred2_TypeSql_fragment", 10);
+			LeaveRule("synpred2_TypeSql_fragment", 10);
 			LeaveRule_synpred2_TypeSql_fragment();
 		}
 	}
@@ -1362,28 +1528,28 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 	public void synpred3_TypeSql_fragment()
 	{
 		EnterRule_synpred3_TypeSql_fragment();
-		EnterRule("synpred3_TypeSql_fragment", 10);
-		TraceIn("synpred3_TypeSql_fragment", 10);
+		EnterRule("synpred3_TypeSql_fragment", 11);
+		TraceIn("synpred3_TypeSql_fragment", 11);
 		try
 		{
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:40:4: ( '[' ID ']' )
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:41:4: ( '[' ID ']' )
 			DebugEnterAlt(1);
-			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:40:5: '[' ID ']'
+			// C:\\Users\\mjr\\src\\TypeSql\\TypeSql\\Parsing\\TypeSql.g:41:5: '[' ID ']'
 			{
-			DebugLocation(40, 5);
-			Match(input,20,Follow._20_in_synpred3_TypeSql210); if (state.failed) return;
-			DebugLocation(40, 9);
-			Match(input,ID,Follow._ID_in_synpred3_TypeSql212); if (state.failed) return;
-			DebugLocation(40, 12);
-			Match(input,21,Follow._21_in_synpred3_TypeSql214); if (state.failed) return;
+			DebugLocation(41, 5);
+			Match(input,20,Follow._20_in_synpred3_TypeSql249); if (state.failed) return;
+			DebugLocation(41, 9);
+			Match(input,ID,Follow._ID_in_synpred3_TypeSql251); if (state.failed) return;
+			DebugLocation(41, 12);
+			Match(input,21,Follow._21_in_synpred3_TypeSql253); if (state.failed) return;
 
 			}
 
 		}
 		finally
 		{
-			TraceOut("synpred3_TypeSql_fragment", 10);
-			LeaveRule("synpred3_TypeSql_fragment", 10);
+			TraceOut("synpred3_TypeSql_fragment", 11);
+			LeaveRule("synpred3_TypeSql_fragment", 11);
 			LeaveRule_synpred3_TypeSql_fragment();
 		}
 	}
@@ -1418,35 +1584,38 @@ internal partial class TypeSqlParser : Antlr.Runtime.Parser
 	#region Follow sets
 	private static class Follow
 	{
-		public static readonly BitSet _usingNamespace_in_typesql72 = new BitSet(new ulong[]{0x3FFFF0UL});
-		public static readonly BitSet _sql_in_typesql75 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _token_in_sql97 = new BitSet(new ulong[]{0x3FFFF2UL});
-		public static readonly BitSet _USING_in_usingNamespace117 = new BitSet(new ulong[]{0x100UL});
-		public static readonly BitSet _NAMESPACE_in_usingNamespace119 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _outputToken_in_token144 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _inputToken_in_token160 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_outputToken189 = new BitSet(new ulong[]{0x20000UL});
-		public static readonly BitSet _17_in_outputToken191 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _type_in_outputToken193 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _20_in_outputToken217 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _ID_in_outputToken221 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _21_in_outputToken223 = new BitSet(new ulong[]{0x20000UL});
-		public static readonly BitSet _17_in_outputToken225 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _type_in_outputToken227 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _19_in_inputToken251 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _ID_in_inputToken255 = new BitSet(new ulong[]{0x20000UL});
-		public static readonly BitSet _17_in_inputToken257 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _type_in_inputToken259 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_type282 = new BitSet(new ulong[]{0x40002UL});
-		public static readonly BitSet _18_in_type284 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _19_in_synpred1_TypeSql151 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _ID_in_synpred1_TypeSql153 = new BitSet(new ulong[]{0x20000UL});
-		public static readonly BitSet _17_in_synpred1_TypeSql155 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_synpred2_TypeSql181 = new BitSet(new ulong[]{0x20000UL});
-		public static readonly BitSet _17_in_synpred2_TypeSql183 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _20_in_synpred3_TypeSql210 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _ID_in_synpred3_TypeSql212 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _21_in_synpred3_TypeSql214 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _usingNamespace_in_typesql75 = new BitSet(new ulong[]{0x3FFFF0UL});
+		public static readonly BitSet _sql_in_typesql78 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _token_in_sql100 = new BitSet(new ulong[]{0x3FFFF2UL});
+		public static readonly BitSet _USING_in_usingNamespace120 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _nameSpace_in_usingNamespace122 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_nameSpace142 = new BitSet(new ulong[]{0x10002UL});
+		public static readonly BitSet _16_in_nameSpace147 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _ID_in_nameSpace149 = new BitSet(new ulong[]{0x10002UL});
+		public static readonly BitSet _outputToken_in_token183 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _inputToken_in_token199 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_outputToken228 = new BitSet(new ulong[]{0x20000UL});
+		public static readonly BitSet _17_in_outputToken230 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _type_in_outputToken232 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _20_in_outputToken256 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _ID_in_outputToken260 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _21_in_outputToken262 = new BitSet(new ulong[]{0x20000UL});
+		public static readonly BitSet _17_in_outputToken264 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _type_in_outputToken266 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _19_in_inputToken290 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _ID_in_inputToken294 = new BitSet(new ulong[]{0x20000UL});
+		public static readonly BitSet _17_in_inputToken296 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _type_in_inputToken298 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_type321 = new BitSet(new ulong[]{0x40002UL});
+		public static readonly BitSet _18_in_type323 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _19_in_synpred1_TypeSql190 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _ID_in_synpred1_TypeSql192 = new BitSet(new ulong[]{0x20000UL});
+		public static readonly BitSet _17_in_synpred1_TypeSql194 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_synpred2_TypeSql220 = new BitSet(new ulong[]{0x20000UL});
+		public static readonly BitSet _17_in_synpred2_TypeSql222 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _20_in_synpred3_TypeSql249 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _ID_in_synpred3_TypeSql251 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _21_in_synpred3_TypeSql253 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets
 }

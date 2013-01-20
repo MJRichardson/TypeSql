@@ -19,7 +19,7 @@ public typeSql
 		)
 	;
 
-usingNamespace 	:	^(USING NAMESPACE) -> template() ""
+usingNamespace 	:	^(USING ^(NAMESPACE ID ('.' ID)*)) -> template() ""
 ;
 
 outputToken 
