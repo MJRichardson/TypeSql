@@ -11,7 +11,7 @@ namespace TypeSql
     public class TypeSqlCompiler
     {
 
-        public static CompileResult Compile(string typeSql, string typeSqlFileName)
+        public static CompileResult Compile(string typeSql, string typeSqlFileName, TargetLanguage targetLanguage = TargetLanguage.CSharp)
         {
             //create the antlr-based lexer and parser
             var lexer = new TypeSqlLexer(new ANTLRStringStream(typeSql));

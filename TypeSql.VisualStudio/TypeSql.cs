@@ -97,7 +97,7 @@ namespace TypeSql.VisualStudio
                         as EnvDTE.ProjectItem;
 
             //compile the typeSql
-            var compileResult = TypeSqlCompiler.Compile(bstrInputFileContents, Path.GetFileNameWithoutExtension(wszInputFilePath));
+            var compileResult = TypeSqlCompiler.Compile(bstrInputFileContents, Path.GetFileNameWithoutExtension(wszInputFilePath), DetermineTargetLanguage());
 
             //create the raw-sql file
             //if the original type-sql file was named with a .sql extension, they we'll call the raw sql file {originalFileNameWithoutExtension}_raw.sql
@@ -195,6 +195,22 @@ namespace TypeSql.VisualStudio
                 }
             }
             return codeDomProvider;
+        }
+
+        private TargetLanguage DetermineTargetLanguage()
+        {
+            var codeDomProvider = GetCodeProvider();
+
+            //There's likely a better way to determine the language,
+            //rather than using the default file-extension...
+            switch (codeDomProvider.FileExtension.ToLower())
+            {
+                case ".vb":
+                    return TargetLanguage.VisualBasic;
+
+                default:
+                    return TargetLanguage.CSharp;
+            }
         }
 
         /// <summary>

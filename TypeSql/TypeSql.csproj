@@ -48,6 +48,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Antlr3>
     <Compile Include="ITypeSqlStatement.cs" />
+    <Compile Include="TargetLanguage.cs" />
     <Compile Include="TypeSqlCompiler.cs" />
     <Compile Include="Parsing\Antlr\Antlr3.StringTemplate\Language\TemplateLexerHelper.cs">
       <DependentUpon>Template.g3</DependentUpon>
@@ -94,6 +95,7 @@
     <Compile Include="Parsing\Antlr\Antlr3.StringTemplate\Language\AngleBracketTemplateLexerHelper.cs">
       <DependentUpon>AngleBracketTemplateLexer.g3</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Parsing\DapperDao.VisualBasic.stg" />
     <None Include="Parsing\TypeSql.g">
       <Generator>MSBuild:Compile</Generator>
     </None>
@@ -467,7 +469,7 @@
     <Compile Include="SqlMapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Parsing\DapperDao.stg" />
+    <EmbeddedResource Include="Parsing\DapperDao.CSharp.stg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

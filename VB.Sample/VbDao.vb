@@ -1,7 +1,11 @@
-﻿Imports TypeSql
+﻿Imports System
+Imports TypeSql
+Imports System.Data
+Imports System.Collections.Generic
 
-Public Class VbDao
+Partial Public Class VbDao
     Inherits DapperDao(Of Result)
+
 
     Public Sub New(connectionString As String)
         MyBase.New(connectionString)
