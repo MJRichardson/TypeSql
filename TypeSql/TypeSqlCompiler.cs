@@ -34,7 +34,7 @@ namespace TypeSql
              nodeStream.Reset();
             //and transform the AST into DAO source code
              var daoTransform = new DaoTransform(nodeStream){TemplateGroup = new StringTemplateGroup(
-                new StreamReader(typeof(TypeSqlCompiler).Assembly.GetManifestResourceStream("TypeSql.Parsing.DapperDao.stg")),
+                new StreamReader(typeof(TypeSqlCompiler).Assembly.GetManifestResourceStream(string.Format("TypeSql.Parsing.DapperDao.{0}.stg", targetLanguage.ToString() ))),
                 typeof (TemplateLexer))};
              var template = daoTransform.typeSql(typeSqlFileName, rawSql).Template;
              string daoSourceCode = template.ToString();

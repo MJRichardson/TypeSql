@@ -12,7 +12,7 @@ Partial Public Class $name$Result
 End Class
 
 Public Interface I$name$
-	Function Execute( $inputTokens:inputParameter(); separator=", "$ $if (inputTokens)$ , $endif$ bool buffered=true  ) As IEnumerable(Of $name$Result)
+	Function Execute( $inputTokens:inputParameter(); separator=", "$ $if (inputTokens)$ , $endif$ Optional buffered As Boolean=True  ) As IEnumerable(Of $name$Result)
 End Interface
 
 Partial Public Class $name$
@@ -27,14 +27,14 @@ Partial Public Class $name$
         MyBase.New(connection, transaction)
     End Sub
 
-    Public Overloads Function Execute() As IEnumerable(Of Result)
-        Dim parameters = New With {.blah = ""}
+    Public Overloads Function Execute( $inputTokens:inputParameter(); separator=", "$ $if (inputTokens)$ , $endif$ Optional buffered As Boolean=True  ) As IEnumerable(Of Result)
+        Dim parameters = New With {$ $if (inputTokens)$ .$endif$$inputTokens:tokenId(); separator=", ."$}
         Return MyBase.Execute(parameters, buffered)
     End Function
 
     Protected Overrides ReadOnly Property Sql As String
         Get
-
+			Return <string>![CDATA[$rawSql$]]></string>
         End Get
     End Property
 End Class

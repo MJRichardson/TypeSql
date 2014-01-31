@@ -22,7 +22,9 @@ Partial Public Class VbDao
 
     Protected Overrides ReadOnly Property Sql As String
         Get
-
+            Return <string><![CDATA[blah
+vaslfdk >< 
+askf ]]></string>
         End Get
     End Property
 End Class
