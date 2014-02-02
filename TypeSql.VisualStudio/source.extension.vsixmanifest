@@ -3,7 +3,7 @@
   <Identifier Id="TypeSql.412044A7-2824-43E1-9708-DCFD95C0FBCD">
     <Name>TypeSql</Name>
     <Author>Michael James Richardson</Author>
-    <Version>0.7</Version>
+    <Version>0.8</Version>
     <Description xml:space="preserve">TypeSQL compiles annotated SQL into strongly-typed data-access classes.</Description>
     <Locale>1033</Locale>
     <MoreInfoUrl>https://github.com/mjrichardson/TypeSql</MoreInfoUrl>

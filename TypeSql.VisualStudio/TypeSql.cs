@@ -71,6 +71,7 @@ namespace TypeSql.VisualStudio
 
             // obtain a reference to the current project as an IVsProject type
             Microsoft.VisualStudio.Shell.Interop.IVsProject VsProject = VsHelper.ToVsProject(project);
+
             // this locates, and returns a handle to our source file, as a ProjectItem
             VsProject.IsDocumentInProject(wszInputFilePath, out documentFound, pdwPriority, out itemId);
 
