@@ -2,6 +2,9 @@
 
 dao(name, usingNamespaces, outputTokens, inputTokens, rawSql) ::= <<
 Imports System
+Imports System.Core
+Imports System.Xml
+Imports System.Xml.Linq
 Imports TypeSql
 Imports System.Data
 Imports System.Collections.Generic
@@ -27,14 +30,14 @@ Partial Public Class $name$
         MyBase.New(connection, transaction)
     End Sub
 
-    Public Overloads Function Execute( $inputTokens:inputParameter(); separator=", "$ $if (inputTokens)$ , $endif$ Optional buffered As Boolean=True  ) As IEnumerable(Of Result)
-        Dim parameters = New With {$ $if (inputTokens)$ .$endif$$inputTokens:tokenId(); separator=", ."$}
+    Public Overloads Function Execute( $inputTokens:inputParameter(); separator=", "$ $if (inputTokens)$ , $endif$ Optional buffered As Boolean=True  ) As IEnumerable(Of $name$Result) Implements I$name$.Execute
+        Dim parameters = New With { $inputTokens:{inputToken | .$inputToken.Id$ = $inputToken.Id$ }$ }
         Return MyBase.Execute(parameters, buffered)
     End Function
 
     Protected Overrides ReadOnly Property Sql As String
         Get
-			Return <string>![CDATA[$rawSql$]]></string>
+			Return <string><![CDATA[$rawSql$]]></string>
         End Get
     End Property
 End Class
@@ -57,4 +60,8 @@ End Property
 
 inputParameter(inputToken) ::= <<
 Optional $inputToken.Id$ As $inputToken.Type$  = Nothing 
+>>
+
+tokenId(token) ::= <<
+$token.Id$
 >>

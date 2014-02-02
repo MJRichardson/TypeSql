@@ -54,11 +54,17 @@
     <Reference Include="Roslyn.Compilers.CSharp">
       <HintPath>..\packages\Roslyn.Compilers.CSharp.1.2.20906.2\lib\net45\Roslyn.Compilers.CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Roslyn.Compilers.VisualBasic">
+      <HintPath>..\packages\Roslyn.Compilers.VisualBasic.1.2.20906.2\lib\net45\Roslyn.Compilers.VisualBasic.dll</HintPath>
+    </Reference>
     <Reference Include="Roslyn.Services">
       <HintPath>..\packages\Roslyn.Services.Common.1.2.20906.2\lib\net45\Roslyn.Services.dll</HintPath>
     </Reference>
     <Reference Include="Roslyn.Services.CSharp">
       <HintPath>..\packages\Roslyn.Services.CSharp.1.2.20906.2\lib\net45\Roslyn.Services.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Services.VisualBasic">
+      <HintPath>..\packages\Roslyn.Services.VisualBasic.1.2.20906.2\lib\net45\Roslyn.Services.VisualBasic.dll</HintPath>
     </Reference>
     <Reference Include="Roslyn.Utilities">
       <HintPath>..\packages\Roslyn.Services.Common.1.2.20906.2\lib\net45\Roslyn.Utilities.dll</HintPath>
@@ -78,15 +84,18 @@
   <ItemGroup>
     <Compile Include="Data\ProductCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Roslyn\CommentsAreIgnored.cs" />
-    <Compile Include="Roslyn\DapperTemplateViaRoslyn.cs" />
-    <Compile Include="Roslyn\DateTimeParameter.cs" />
-    <Compile Include="Roslyn\EnumOutput.cs" />
-    <Compile Include="Roslyn\NullableOutput.cs" />
-    <Compile Include="Roslyn\OneInputOneOutput.cs" />
-    <Compile Include="Roslyn\OneOutput.cs" />
-    <Compile Include="Roslyn\UsingExistingConnection.cs" />
-    <Compile Include="Roslyn\UsingExistingConnectionAndTransaction.cs" />
+    <Compile Include="Roslyn\CSharp\CommentsAreIgnored.cs" />
+    <Compile Include="Roslyn\CSharp\CSharpRoslynFixture.cs" />
+    <Compile Include="Roslyn\RoslynFixture.cs" />
+    <Compile Include="Roslyn\CSharp\DateTimeParameter.cs" />
+    <Compile Include="Roslyn\CSharp\EnumOutput.cs" />
+    <Compile Include="Roslyn\CSharp\NullableOutput.cs" />
+    <Compile Include="Roslyn\CSharp\OneInputOneOutput.cs" />
+    <Compile Include="Roslyn\CSharp\OneOutput.cs" />
+    <Compile Include="Roslyn\CSharp\UsingExistingConnection.cs" />
+    <Compile Include="Roslyn\CSharp\UsingExistingConnectionAndTransaction.cs" />
+    <Compile Include="Roslyn\VisualBasic\OneInputOutOutput.cs" />
+    <Compile Include="Roslyn\VisualBasic\VBRoslynFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\AdventureWorksLT2008_Data.mdf" />
