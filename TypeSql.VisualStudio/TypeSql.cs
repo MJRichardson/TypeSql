@@ -16,6 +16,7 @@ namespace TypeSql.VisualStudio
     [ComVisible(true)]
     [Guid("DED9B845-2507-4B2E-B850-F52101E19C47")]
     [CodeGeneratorRegistration(typeof(TypeSql), "TypeSql", vsContextGuids.vsContextGuidVCSProject, GeneratesDesignTimeSource = true)]
+    [CodeGeneratorRegistration(typeof(TypeSql), "TypeSql", vsContextGuids.vsContextGuidVBProject, GeneratesDesignTimeSource = true)]
     [ProvideObject(typeof(TypeSql))]
     public class TypeSql : IVsSingleFileGenerator, IObjectWithSite 
     {
@@ -206,7 +207,7 @@ namespace TypeSql.VisualStudio
             //rather than using the default file-extension...
             switch (codeDomProvider.FileExtension.ToLower())
             {
-                case ".vb":
+                case "vb":
                     return TargetLanguage.VisualBasic;
 
                 default:
