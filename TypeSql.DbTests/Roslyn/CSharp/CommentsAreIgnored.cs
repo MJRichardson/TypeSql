@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using Xunit;
+﻿using Xunit;
 
-namespace TypeSql.DbTests.Roslyn
+namespace TypeSql.DbTests.Roslyn.CSharp
 {
-    public class CommentsAreIgnored_InLineComment : DapperTemplateViaRoslyn
+    public class CommentsAreIgnored_InLineComment : CSharpRoslynFixture
     {
         public const string Name = @"CustomerFirstNameQuery";
         public const string Sql = @"SELECT FirstName:string FROM SalesLT.Customer -- Test Comment One";
@@ -21,7 +20,7 @@ namespace TypeSql.DbTests.Roslyn
         }
     }
 
-    public class CommentsAreIgnored_BlockComment : DapperTemplateViaRoslyn
+    public class CommentsAreIgnored_BlockComment : CSharpRoslynFixture
     {
         public const string Name = @"CustomerFirstNameQuery";
         public const string Sql = @"SELECT FirstName:string FROM SalesLT.Customer /* Test Comment One */";
@@ -40,7 +39,7 @@ namespace TypeSql.DbTests.Roslyn
 
     }
 
-    public class CommentsAreIgnored_BothBlockAndInlineComment : DapperTemplateViaRoslyn
+    public class CommentsAreIgnored_BothBlockAndInlineComment : CSharpRoslynFixture
     {
         public const string Name = @"CustomerFirstNameQuery";
         public const string Sql = @"/* Test Comment One */ SELECT FirstName:string FROM SalesLT.Customer -- Test Comment Two";

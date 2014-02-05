@@ -1,9 +1,9 @@
 ﻿using System;
 using Xunit;
 
-namespace TypeSql.DbTests.Roslyn
+namespace TypeSql.DbTests.Roslyn.CSharp
 {
-    public class DateTimeParameter : DapperTemplateViaRoslyn
+    public class DateTimeParameter : CSharpRoslynFixture
     {
         public const string Name = @"SalesOrderDueDate";
         public const string Sql = @"SELECT DueDate:DateTime FROM SalesLT.SalesOrderHeader WHERE SalesOrderID = @id:int";

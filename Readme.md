@@ -2,7 +2,7 @@
 
 TypeSql is a compiler. It compiles annotated SQL into strongly-typed data-access-objects. 
 
-The inspiration was [TypeScript](http://www.typescriptlang.org/). But don't try to take the analogy too far. TypeScript takes annotated javascript and compiles it into plain javascript. Its primary purpose is verification. TypeSQL takes annotated SQL and compiles it into a different, general-purpose programming language (C# only, for the moment). Our primary purpose is for you to write less code. Less code means less bugs and more functionality. It means you can ask for more money and go home earlier. Your family will love you more, and you will live longer. 
+The inspiration was [TypeScript](http://www.typescriptlang.org/). But don't try to take the analogy too far. TypeScript takes annotated javascript and compiles it into plain javascript. Its primary purpose is verification. TypeSQL takes annotated SQL and compiles it into a different, general-purpose programming language (C# or VB.NET). Our primary purpose is for you to write less code. Less code means less bugs and more functionality. It means you can ask for more money and go home earlier. Your family will love you more, and you will live longer. 
 
 ##Are you talking to me?
 Do you believe that a strongly-typed, object-orientated programming language is the best way to write applications? 
@@ -84,7 +84,7 @@ Accessing your data then looks like:
 	IEnumerable<TurtlesByColorResult> redTurtles = new TurtlesByColor("turtlesDb").Execute("Red");
 
 ##Availability
-Currently, TypeSQL is available in C# flavor only. Hopefully, we will be coming soon to a language near you.
+Currently, TypeSQL is available in C# and VB.NET flavors. 
 
 ##Installation
 Currently, the supported method for using TypeSql is via a VisualStudio extension in Visual Studio 2010 or Visual Studio 2012. 

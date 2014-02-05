@@ -1,9 +1,9 @@
 ﻿using TypeSql.DbTests.Data;
 using Xunit;
 
-namespace TypeSql.DbTests.Roslyn
+namespace TypeSql.DbTests.Roslyn.CSharp
 {
-    public class EnumOutput : DapperTemplateViaRoslyn
+    public class EnumOutput : CSharpRoslynFixture
     {
          
         public const string Name = @"ProductCategoryQuery";

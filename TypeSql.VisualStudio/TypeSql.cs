@@ -16,6 +16,7 @@ namespace TypeSql.VisualStudio
     [ComVisible(true)]
     [Guid("DED9B845-2507-4B2E-B850-F52101E19C47")]
     [CodeGeneratorRegistration(typeof(TypeSql), "TypeSql", vsContextGuids.vsContextGuidVCSProject, GeneratesDesignTimeSource = true)]
+    [CodeGeneratorRegistration(typeof(TypeSql), "TypeSql", vsContextGuids.vsContextGuidVBProject, GeneratesDesignTimeSource = true)]
     [ProvideObject(typeof(TypeSql))]
     public class TypeSql : IVsSingleFileGenerator, IObjectWithSite 
     {
@@ -71,6 +72,7 @@ namespace TypeSql.VisualStudio
 
             // obtain a reference to the current project as an IVsProject type
             Microsoft.VisualStudio.Shell.Interop.IVsProject VsProject = VsHelper.ToVsProject(project);
+
             // this locates, and returns a handle to our source file, as a ProjectItem
             VsProject.IsDocumentInProject(wszInputFilePath, out documentFound, pdwPriority, out itemId);
 
@@ -97,7 +99,7 @@ namespace TypeSql.VisualStudio
                         as EnvDTE.ProjectItem;
 
             //compile the typeSql
-            var compileResult = TypeSqlCompiler.Compile(bstrInputFileContents, Path.GetFileNameWithoutExtension(wszInputFilePath));
+            var compileResult = TypeSqlCompiler.Compile(bstrInputFileContents, Path.GetFileNameWithoutExtension(wszInputFilePath), DetermineTargetLanguage());
 
             //create the raw-sql file
             //if the original type-sql file was named with a .sql extension, they we'll call the raw sql file {originalFileNameWithoutExtension}_raw.sql
@@ -195,6 +197,22 @@ namespace TypeSql.VisualStudio
                 }
             }
             return codeDomProvider;
+        }
+
+        private TargetLanguage DetermineTargetLanguage()
+        {
+            var codeDomProvider = GetCodeProvider();
+
+            //There's likely a better way to determine the language,
+            //rather than using the default file-extension...
+            switch (codeDomProvider.FileExtension.ToLower())
+            {
+                case "vb":
+                    return TargetLanguage.VisualBasic;
+
+                default:
+                    return TargetLanguage.CSharp;
+            }
         }
 
         /// <summary>

@@ -1,8 +1,8 @@
 ﻿using Xunit;
 
-namespace TypeSql.DbTests.Roslyn
+namespace TypeSql.DbTests.Roslyn.CSharp
 {
-    public class OneInputOneOutput : DapperTemplateViaRoslyn
+    public class OneInputOneOutput : CSharpRoslynFixture
     {
          
         public const string Name = @"CustomerLastNameByIdQuery";

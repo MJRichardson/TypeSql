@@ -1,11 +1,8 @@
-﻿using System.Configuration;
-using System.Data.Common;
-using System.Data.SqlClient;
-using Xunit;
+﻿using Xunit;
 
-namespace TypeSql.DbTests.Roslyn
+namespace TypeSql.DbTests.Roslyn.CSharp
 {
-    public class UsingExistingConnection : DapperTemplateViaRoslyn
+    public class UsingExistingConnection : CSharpRoslynFixture
     {
         public const string Name = @"CustomerLastNameByIdQuery";
         public const string Sql = @"SELECT LastName:string FROM SalesLT.Customer WHERE CustomerID = @id:int";

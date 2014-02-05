@@ -1,0 +1,67 @@
+﻿group DapperDao;
+
+dao(name, usingNamespaces, outputTokens, inputTokens, rawSql) ::= <<
+Imports System
+Imports System.Core
+Imports System.Xml
+Imports System.Xml.Linq
+Imports TypeSql
+Imports System.Data
+Imports System.Collections.Generic
+$usingNamespaces:imports()$
+
+Partial Public Class $name$Result
+	$outputTokens:outputGetter()$
+End Class
+
+Public Interface I$name$
+	Function Execute( $inputTokens:inputParameter(); separator=", "$ $if (inputTokens)$ , $endif$ Optional buffered As Boolean=True  ) As IEnumerable(Of $name$Result)
+End Interface
+
+Partial Public Class $name$
+    Inherits DapperDao(Of $name$Result)
+	Implements I$name$
+
+    Public Sub New(connectionString As String)
+        MyBase.New(connectionString)
+    End Sub
+
+    Public Sub New(connection As IDbConnection, Optional transaction As IDbTransaction = Nothing)
+        MyBase.New(connection, transaction)
+    End Sub
+
+    Public Overloads Function Execute( $inputTokens:inputParameter(); separator=", "$ $if (inputTokens)$ , $endif$ Optional buffered As Boolean=True  ) As IEnumerable(Of $name$Result) Implements I$name$.Execute
+        Dim parameters = New With { $inputTokens:{inputToken | .$inputToken.Id$ = $inputToken.Id$ }$ }
+        Return MyBase.Execute(parameters, buffered)
+    End Function
+
+    Protected Overrides ReadOnly Property Sql As String
+        Get
+			Return <string><![CDATA[$rawSql$]]></string>
+        End Get
+    End Property
+End Class
+>>
+
+imports(namespace) ::= <<
+Imports $namespace$ >>
+
+outputGetter(outputToken) ::= <<
+Private _$outputToken.Id$ As $outputToken.Type$
+Public Property $outputToken.Id$ As $outputToken.Type$
+	Get
+		Return _$outputToken.Id$
+	End Get
+	Private Set(value As $outputToken.Type$)
+		_$outputToken.Id$ = value
+	End Set
+End Property
+>>
+
+inputParameter(inputToken) ::= <<
+Optional $inputToken.Id$ As $inputToken.Type$  = Nothing 
+>>
+
+tokenId(token) ::= <<
+$token.Id$
+>>

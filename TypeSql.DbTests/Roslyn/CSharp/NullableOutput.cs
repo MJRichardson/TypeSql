@@ -1,8 +1,8 @@
 ﻿using Xunit;
 
-namespace TypeSql.DbTests.Roslyn
+namespace TypeSql.DbTests.Roslyn.CSharp
 {
-    public class NullableOutput :DapperTemplateViaRoslyn
+    public class NullableOutput :CSharpRoslynFixture
     {
         public const string Name = @"ParentProductCategoryQuery";
         public const string Sql = @"SELECT ParentProductCategoryID:int? FROM SalesLT.ProductCategory WHERE ProductCategoryID = @ProductCategoryId:int";

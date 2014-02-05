@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using Roslyn.Scripting;
+using Roslyn.Scripting.CSharp;
 using Xunit;
 
-namespace TypeSql.DbTests.Roslyn
+namespace TypeSql.DbTests.Roslyn.CSharp
 {
-    public class OneOutput : DapperTemplateViaRoslyn
+    public class OneOutput : CSharpRoslynFixture
     {
         public const string Name = @"CustomerFirstNameQuery";
         public const string Sql = @"SELECT FirstName:string FROM SalesLT.Customer";
@@ -22,12 +23,5 @@ namespace TypeSql.DbTests.Roslyn
             Assert.Equal(847,
                 Session.Execute<int>("results.Count();"));
         }
-
-        //[Fact]
-        //public void ResultTypeHasExpectedProperty()
-        //{
-        //}
-
-
     }
 }

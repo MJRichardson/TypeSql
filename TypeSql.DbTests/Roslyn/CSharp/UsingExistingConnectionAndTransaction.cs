@@ -1,10 +1,8 @@
-﻿using System.Data.SqlClient;
-using Roslyn.Scripting;
-using Xunit;
+﻿using Xunit;
 
-namespace TypeSql.DbTests.Roslyn
+namespace TypeSql.DbTests.Roslyn.CSharp
 {
-    public class UsingExistingConnectionAndTransaction : DapperTemplateViaRoslyn
+    public class UsingExistingConnectionAndTransaction : CSharpRoslynFixture
     {
          
         public const string Name = @"CustomerLastNameByIdQuery";
