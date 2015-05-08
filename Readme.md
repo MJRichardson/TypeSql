@@ -101,7 +101,7 @@ Currently, the supported method for using TypeSql is via a VisualStudio extensio
 This is a work-in-progress. There are an infinite number of scenarios we have not thought of. We welcome your feedback. But please be gentle, our egos are fragile and we cry easily.
 
 ##Performance
-Internally, TypeSql uses [Dapper](http://code.google.com/p/dapper-dot-net/) for data-access. Its performance is effectively identical, which is itself effectively identical to raw ADO.NET. Checkout the [benchmarks](http://code.google.com/p/dapper-dot-net/#Performance).
+Internally, TypeSql uses [Dapper](https://github.com/StackExchange/dapper-dot-net) for data-access. Its performance is effectively identical, which is itself effectively identical to raw ADO.NET. Checkout the [benchmarks](https://github.com/StackExchange/dapper-dot-net#performance).
 
 ##Credits
 TypeSql stands on the shoulders of two brilliant projects.
@@ -110,7 +110,7 @@ TypeSql stands on the shoulders of two brilliant projects.
 If you need to parse text, [ANTLR](http://www.antlr.org/) is your tool. [Terence Parr](http://www.cs.usfca.edu/~parrt/) has made language-recognition possible for mere mortals. And thanks to Sam Harwell for the C# version.
 
 ###Dapper
-[Dapper](http://code.google.com/p/dapper-dot-net/) has been called a micro-ORM. Whatever you call it, [Sam Saffron](http://samsaffron.com/) and [Marc Gravell](http://marcgravell.blogspot.com.au/) have created a super-useful component. 
+[Dapper](https://github.com/StackExchange/dapper-dot-net) has been called a micro-ORM. Whatever you call it, [Sam Saffron](http://samsaffron.com/) and [Marc Gravell](http://marcgravell.blogspot.com.au/) have created a super-useful component. 
 
 ##USAGE
 ###Outputs
